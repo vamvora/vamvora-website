@@ -1,0 +1,476 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&f[]=switzer@300,400,500,600,700,800,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Satoshi', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Switzer', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Switzer', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-satoshi: 'Satoshi', sans-serif;
+  --font-switzer: 'Switzer', sans-serif;
+  --color-electric-blue: #0145F2;
+  --color-tech-cyan: #0EA5E9;
+  --color-secure-emerald: #10B981;
+  --color-soft-bg: #F1F5F9;
+}
+
+@layer base {
+  :root {
+    --background: #F1F5F9;
+    --foreground: #0F172A;
+    --font-heading: 'Satoshi', sans-serif;
+    --font-body: 'Switzer', sans-serif;
+    --font-sans: 'Switzer', sans-serif;
+    --font-desc: 'Switzer', sans-serif;
+    --primary: #0145F2;
+    --tech-cyan: #0EA5E9;
+    --secure-emerald: #10B981;
+  }
+  
+  html {
+    font-family: 'Switzer', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+    color: #0F172A;
+    background-color: #F1F5F9;
+  }
+
+  body {
+    font-family: 'Switzer', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background: #F1F5F9;
+    color: #0F172A;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Satoshi', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  /* Accessible focus indicators */
+  *:focus-visible {
+    outline: 2px solid #0145F2;
+    outline-offset: 2px;
+  }
+}
+
+/* Custom Typography Utility Classes */
+.font-heading {
+  font-family: 'Satoshi', 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+  letter-spacing: -0.025em;
+}
+
+.font-body,
+.font-sans {
+  font-family: 'Switzer', 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+.font-satoshi {
+  font-family: 'Satoshi', sans-serif !important;
+}
+
+.font-switzer {
+  font-family: 'Switzer', sans-serif !important;
+}
+
+/* Cinematic Blur-to-Sharp Reveal Utilities */
+.blur-reveal-init {
+  filter: blur(14px);
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: filter, opacity, transform;
+}
+
+.blur-reveal-sharp {
+  filter: blur(0px);
+  opacity: 1;
+  transform: translateY(0);
+  transition: filter 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Light Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.8);
+}
+
+/* Glassmorphism Styles (Heavy Premium Light Theme) */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 1px 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 36px -10px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(226, 232, 240, 0.6);
+}
+
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 24px 50px -12px rgba(37, 99, 235, 0.12), 0 0 25px 0 rgba(147, 197, 253, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Deep Glassmorphism System - Physical Optical Depth Mechanics */
+@layer utilities {
+  /* Standard Deep Glass Panel (Light Mode / Content Surfaces) */
+  .glass-panel,
+  .deep-glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(240, 246, 255, 0.55) 100%);
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 
+      inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 1px 0 rgba(255, 255, 255, 0.25),
+      0 20px 40px -15px rgba(1, 69, 242, 0.07),
+      0 10px 20px -5px rgba(15, 23, 42, 0.03);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-panel:hover,
+  .deep-glass:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(245, 249, 255, 0.7) 100%);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 
+      inset 0 2px 1.5px 0 rgba(255, 255, 255, 1),
+      inset 0 -1px 1px 0 rgba(255, 255, 255, 0.35),
+      0 30px 60px -15px rgba(1, 69, 242, 0.12),
+      0 15px 25px -5px rgba(15, 23, 42, 0.05);
+  }
+
+  /* Deep Crystal Glass Navbar Container (Advanced High-Blur Low-Alpha Glassmorphism) */
+  .deep-glass-navbar {
+    background: linear-gradient(
+      135deg, 
+      rgba(255, 255, 255, 0.15) 0%, 
+      rgba(240, 246, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.12) 100%
+    ) !important;
+    backdrop-filter: blur(28px) saturate(210%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(210%) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.75) !important;
+    box-shadow: 
+      inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 1px 0 rgba(255, 255, 255, 0.25),
+      0 20px 45px -10px rgba(1, 69, 242, 0.12),
+      0 8px 20px rgba(15, 23, 42, 0.05) !important;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .deep-glass-navbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.3), 
+      transparent
+    );
+    transition: left 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .deep-glass-navbar:hover::after {
+    left: 120%;
+  }
+
+  .deep-glass-navbar:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 
+      inset 0 2px 2px 0 rgba(255, 255, 255, 1),
+      0 25px 50px -10px rgba(1, 69, 242, 0.18),
+      0 12px 25px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  /* Deep Glass Nav Pill (Inside Navbar) */
+  .deep-glass-nav-pill {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(20px) saturate(190%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+    box-shadow: 
+      inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.9),
+      0 2px 8px rgba(1, 69, 242, 0.04) !important;
+  }
+
+  /* Glassmorphism CTA Button (High Blur + Low Alpha + Prominent Gradient Stroke) */
+  .glass-cta,
+  .deep-glass-cta {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(20px) saturate(190%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 
+      inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 1px 0 rgba(255, 255, 255, 0.2),
+      0 10px 30px rgba(0, 0, 0, 0.12) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-cta:hover,
+  .deep-glass-cta:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 
+      inset 0 2px 2px 0 rgba(255, 255, 255, 1),
+      0 15px 35px rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-1px);
+  }
+
+  /* Multi-Layering Sub-Card (Denser Inner Glass Layer for Parallax Depth) */
+  .deep-glass-inner {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+      0 4px 16px -2px rgba(1, 69, 242, 0.04);
+  }
+
+  /* Deep Glass Dark (for Dark Backdrops, Hero, Preloader) */
+  .deep-glass-dark {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 
+      inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.45),
+      inset 0 -1px 1px 0 rgba(255, 255, 255, 0.06),
+      0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .deep-glass-dark:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+      inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.6),
+      0 30px 60px -12px rgba(0, 0, 0, 0.6);
+  }
+
+  .liquid-glass-light {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(240, 246, 255, 0.55) 100%);
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 
+      inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 1px 0 rgba(255, 255, 255, 0.25),
+      0 15px 35px -10px rgba(1, 69, 242, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-glass-light::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.2px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.4) 30%,
+      rgba(203, 213, 225, 0.2) 50%,
+      rgba(255, 255, 255, 0.4) 70%,
+      rgba(255, 255, 255, 0.95) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .liquid-glass-strong {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.03) 100%);
+    backdrop-filter: blur(40px) saturate(190%);
+    -webkit-backdrop-filter: blur(40px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 
+      inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.5),
+      0 20px 40px -10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-pill {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(240, 246, 255, 0.4) 100%);
+    backdrop-filter: blur(20px) saturate(190%);
+    -webkit-backdrop-filter: blur(20px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.95), 0 4px 12px rgba(1, 69, 242, 0.04);
+    border-radius: 9999px;
+  }
+}
+
+/* Hyper-Saturated Ambient Background Engine */
+.hyper-ambient-engine {
+  background-color: #F1F5F9;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 194, 255, 0.22) 0px, transparent 45%),
+    radial-gradient(circle at 90% 15%, rgba(1, 69, 242, 0.20) 0px, transparent 45%),
+    radial-gradient(circle at 50% 60%, rgba(0, 229, 153, 0.16) 0px, transparent 40%),
+    radial-gradient(circle at 80% 85%, rgba(124, 58, 237, 0.16) 0px, transparent 45%),
+    radial-gradient(circle at 15% 90%, rgba(1, 69, 242, 0.18) 0px, transparent 45%);
+}
+
+/* Ambient Subtle Lighting for Light Theme */
+.light-mesh-bg {
+  background-color: #F8FAFC;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(224, 231, 255, 0.5) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(243, 232, 255, 0.5) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(238, 242, 255, 0.4) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(241, 245, 249, 0.7) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(224, 242, 254, 0.4) 0px, transparent 50%);
+}
+
+.light-hero-glow {
+  background: radial-gradient(circle at 50% 40%, rgba(199, 210, 254, 0.35) 0%, rgba(233, 213, 255, 0.25) 35%, rgba(248, 250, 252, 0) 70%);
+}
+
+.light-accent-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(147, 197, 253, 0.2) 0%, rgba(196, 181, 253, 0.15) 45%, transparent 75%);
+}
+
+/* Backward compatibility aliases */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 1px 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 36px -10px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(226, 232, 240, 0.6);
+}
+
+.btn-cta-electric {
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-cta-electric:hover {
+  background: linear-gradient(135deg, #0F172A 0%, #020617 100%);
+  box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-cta-secondary {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  color: #0F172A;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-cta-secondary:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(148, 163, 184, 1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+/* Horizontal Carousel Floating Animations */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 35s linear infinite;
+}
+
+.animate-scroll-left-fast {
+  animation: scrollLeft 24s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scrollRight 30s linear infinite;
+}
+
+.animate-scroll-left:hover,
+.animate-scroll-right:hover,
+.animate-scroll-left-fast:hover {
+  animation-play-state: paused;
+}
+
+/* Side fade mask for carousels */
+.mask-carousel-fade {
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes liquidGlassSheen {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  35% { transform: translateX(200%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+
