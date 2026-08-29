@@ -242,7 +242,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a 
-                  href="https://instagram.com" 
+                  href="https://www.instagram.com/vamvora_technologies/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="hover:text-white transition-all inline-flex items-center justify-between w-full group py-0.5"
@@ -270,7 +270,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a 
-                  href="https://x.com" 
+                  href="https://x.com/Vamvora_Tech" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="hover:text-white transition-all inline-flex items-center justify-between w-full group py-0.5"
@@ -284,7 +284,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a 
-                  href="https://youtube.com" 
+                  href="https://www.youtube.com/@Vamvora_Technologies" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="hover:text-white transition-all inline-flex items-center justify-between w-full group py-0.5"
