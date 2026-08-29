@@ -65,10 +65,6 @@ export const ContactSection: React.FC = () => {
                   <span className="text-sm font-bold text-[#0B132B] group-hover:text-emerald-700 transition-colors block">
                     +91 63821 14955
                   </span>
-                  <p className="text-[11px] text-emerald-600 font-medium mt-0.5 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    <span>Instant chat & consultation</span>
-                  </p>
                 </div>
               </a>
 

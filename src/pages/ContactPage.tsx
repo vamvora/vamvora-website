@@ -61,10 +61,6 @@ export const ContactPage: React.FC = () => {
                 <span className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-emerald-700 transition-colors block">
                   +91 63821 14955
                 </span>
-                <p className="text-xs text-emerald-600 font-medium mt-0.5 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  <span>Instant WhatsApp response</span>
-                </p>
               </div>
             </a>
 

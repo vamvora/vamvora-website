@@ -91,10 +91,12 @@ export const Footer: React.FC = () => {
                 className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105" 
               />
               <div>
-                <span className="font-heading font-black text-xl tracking-tight text-white block">
-                  VAM <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#0145F2]">VORA</span>
+                <span className="font-heading font-black text-xl tracking-tight block">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#0145F2]">
+                    VAM VORA
+                  </span>
                 </span>
-                <span className="text-[10px] font-mono tracking-widest text-slate-400 uppercase block">
+                <span className="text-[10px] font-mono font-bold tracking-widest text-[#00C2FF] uppercase block">
                   TECHNOLOGIES
                 </span>
               </div>
@@ -161,27 +163,18 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/services" className="hover:text-white hover:translate-x-1 transition-all inline-block">
-                  Services Directory
+                  Services Overview
                 </Link>
               </li>
               <li>
                 <Link to="/blog" className="hover:text-white hover:translate-x-1 transition-all inline-block">
-                  Insights & Research
+                  Insights & Perspectives
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-white hover:translate-x-1 transition-all inline-block">
                   Contact Us
                 </Link>
-              </li>
-              <li>
-                <button 
-                  type="button" 
-                  onClick={() => openConsultation()} 
-                  className="hover:text-[#0145F2] hover:translate-x-1 transition-all cursor-pointer text-left inline-block"
-                >
-                  Schedule Assessment
-                </button>
               </li>
             </ul>
           </div>
@@ -195,19 +188,6 @@ export const Footer: React.FC = () => {
               </h4>
             </div>
             <ul className="space-y-3 text-xs sm:text-sm text-slate-300 font-normal">
-              <li>
-                <a 
-                  href="https://wa.me/916382114955?text=Hello%20VAM%20VORA%20Technologies%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20enterprise%20IT%20services%20(Cloud%20Infrastructure%2C%20AI%20Solutions%2C%20Cybersecurity%2C%20and%20Modern%20Workplace).%20Please%20let%20me%20know%20how%20we%20can%20connect."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors inline-flex items-center gap-2 font-medium text-slate-200 group"
-                >
-                  <div className="w-6 h-6 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0 group-hover:scale-105 transition-transform">
-                    <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
-                  </div>
-                  <span>+91 63821 14955 (WhatsApp)</span>
-                </a>
-              </li>
               <li>
                 <a href="tel:+916382114955" className="hover:text-white transition-colors inline-flex items-center gap-2 font-medium text-slate-200 group">
                   <div className="w-6 h-6 rounded-lg bg-[#0145F2]/20 flex items-center justify-center text-[#0145F2] flex-shrink-0 group-hover:scale-105 transition-transform">
