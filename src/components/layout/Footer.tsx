@@ -84,22 +84,12 @@ export const Footer: React.FC = () => {
           
           {/* Brand Identity Column */}
           <div className="md:col-span-2 lg:col-span-4 space-y-4 pr-0 lg:pr-6">
-            <Link to="/" className="inline-flex items-center gap-3 group">
+            <Link to="/" className="inline-block group select-none">
               <img 
                 src={logoImg} 
                 alt="VAM VORA Technologies" 
-                className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105" 
+                className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105" 
               />
-              <div>
-                <span className="font-heading font-black text-xl tracking-tight block">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#0145F2]">
-                    VAM VORA
-                  </span>
-                </span>
-                <span className="text-[10px] font-mono font-bold tracking-widest text-[#00C2FF] uppercase block">
-                  TECHNOLOGIES
-                </span>
-              </div>
             </Link>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
               Architecting resilient cloud ecosystems, intelligent workplace suites, AI automations, and zero-trust cybersecurity for modern enterprises.
