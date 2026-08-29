@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { useConsultationModal } from '../../context/ModalContext';
 import type { ConsultationFormData } from '../../types';
+import { sendContactEmail } from '../../services/emailService';
 
 // Import custom uploaded service icons
 import cloudIcon from '../../assets/icons/cloud.png';
@@ -146,8 +147,31 @@ export const ConsultationModal: React.FC = () => {
     setStatus('submitting');
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 800));
-      setStatus('success');
+      const notes = [
+        `Service Requested: ${formData.service || 'General Consulting'}`,
+        `Industry: ${formData.industry}`,
+        `Company Size: ${formData.companySize}`,
+        `Requirement: ${formData.requirement || 'Not specified'}`,
+        `Preferred Contact Method: ${formData.preferredContact}`,
+        `Preferred Date/Time: ${formData.preferredDate || 'Flexible'} (${formData.preferredTime})`,
+        `Additional Notes: ${formData.additionalNotes || 'None'}`
+      ].join('\n');
+
+      const result = await sendContactEmail({
+        name: formData.fullName,
+        email: formData.workEmail,
+        phone: formData.phone,
+        company: formData.companyName,
+        subject: `Consultation Booking: ${formData.service || 'Technology Advisory'}`,
+        message: notes,
+      });
+
+      if (result.success) {
+        setStatus('success');
+      } else {
+        console.error('Consultation booking error:', result.error);
+        setStatus('failure');
+      }
     } catch (_err) {
       setStatus('failure');
     }

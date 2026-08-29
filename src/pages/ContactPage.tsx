@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, Sparkles, Loader2, AlertCircle } from 'lucide-react';
 import { WhatsAppIcon } from '../components/common/WhatsAppButton';
+import { sendContactEmail } from '../services/emailService';
 
 export const ContactPage: React.FC = () => {
   const [form, setForm] = useState({
@@ -12,11 +13,23 @@ export const ContactPage: React.FC = () => {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMsg(null);
+
+    const result = await sendContactEmail(form);
+
+    setIsSubmitting(false);
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setErrorMsg(result.error || 'Failed to send your message. Please try again or reach us on WhatsApp.');
+    }
   };
 
   return (
@@ -267,12 +280,31 @@ export const ContactPage: React.FC = () => {
                     />
                   </div>
 
+                  {errorMsg && (
+                    <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2.5">
+                      <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-600" />
+                      <span>{errorMsg}</span>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full text-white font-bold py-4 px-6 rounded-full transition-all shadow-lg flex items-center justify-center gap-2.5 cursor-pointer bg-[#0145F2] hover:bg-[#0038D1] hover:shadow-[0_10px_30px_rgba(1,69,242,0.4)] hover:scale-[1.01] active:scale-[0.99]"
+                    disabled={isSubmitting}
+                    className={`w-full text-white font-bold py-4 px-6 rounded-full transition-all shadow-lg flex items-center justify-center gap-2.5 cursor-pointer bg-[#0145F2] hover:bg-[#0038D1] hover:shadow-[0_10px_30px_rgba(1,69,242,0.4)] hover:scale-[1.01] active:scale-[0.99] ${
+                      isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                    }`}
                   >
-                    <span>Send Message</span>
-                    <Send className="w-4 h-4 text-white" />
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 text-white animate-spin" />
+                        <span>Transmitting Message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Message</span>
+                        <Send className="w-4 h-4 text-white" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}
