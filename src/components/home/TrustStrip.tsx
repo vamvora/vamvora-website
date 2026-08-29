@@ -66,8 +66,8 @@ const row1Items = [...techItems, ...techItems, ...techItems, ...techItems];
 export const TrustStrip: React.FC = () => {
   return (
     <section className="py-14 sm:py-16 bg-[#F1F5F9] relative overflow-hidden z-20 border-b border-slate-200/70">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[#0EA5E9]/15 rounded-full blur-[140px] pointer-events-none -z-10" />
+      {/* Background ambient lighting via native GPU radial gradient */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.15)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
 
       <BlurReveal className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16 mb-10 text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-950 tracking-tight leading-tight max-w-3xl mx-auto text-center">
@@ -86,15 +86,15 @@ export const TrustStrip: React.FC = () => {
         <div className="absolute inset-y-0 right-0 w-28 sm:w-48 bg-gradient-to-l from-[#F1F5F9] via-[#F1F5F9]/80 to-transparent z-10 pointer-events-none" />
 
         {/* Carousel Row 1 (Floating Left) */}
-        <div className="flex gap-6 w-max animate-scroll-left">
+        <div className="flex gap-6 w-max animate-scroll-left transform-gpu">
           {row1Items.map((item, idx) => (
             <Link
               key={`r1-${item.id}-${idx}`}
               to={item.link}
-              className="flex items-center gap-4 px-6 py-4 rounded-2xl deep-glass hover:bg-white transition-all shadow-xs hover:shadow-xl hover:scale-[1.03] flex-shrink-0 group cursor-pointer"
+              className="flex items-center gap-4 px-6 py-4 rounded-2xl carousel-glass-card hover:scale-[1.02] active:scale-[0.98] flex-shrink-0 group cursor-pointer transform-gpu"
             >
               <div className="w-11 h-11 rounded-xl bg-white p-2 shadow-2xs border border-slate-200/80 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <img src={item.icon} alt={item.name} className="w-full h-full object-contain" />
+                <img src={item.icon} alt={item.name} loading="lazy" decoding="async" className="w-full h-full object-contain" />
               </div>
               <div className="text-left font-body">
                 <span className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0145F2] transition-colors block">

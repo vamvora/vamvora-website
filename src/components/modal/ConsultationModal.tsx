@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { 
   X, 
   Check, 
@@ -67,6 +67,15 @@ export const ConsultationModal: React.FC = () => {
     }
   }, [preselectedService]);
 
+  const handleClose = useCallback(() => {
+    closeConsultation();
+    if (status === 'success') {
+      setStatus('idle');
+      setStep(1);
+      setFormData(initialFormData);
+    }
+  }, [closeConsultation, status]);
+
   // Lock body scroll when modal is open
   useEffect(() => {
     if (isConsultationOpen) {
@@ -88,18 +97,9 @@ export const ConsultationModal: React.FC = () => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isConsultationOpen]);
+  }, [isConsultationOpen, handleClose]);
 
   if (!isConsultationOpen) return null;
-
-  const handleClose = () => {
-    closeConsultation();
-    if (status === 'success') {
-      setStatus('idle');
-      setStep(1);
-      setFormData(initialFormData);
-    }
-  };
 
   const validateStep1 = () => {
     const errs: Record<string, string> = {};
@@ -148,21 +148,21 @@ export const ConsultationModal: React.FC = () => {
     try {
       await new Promise(resolve => setTimeout(resolve, 800));
       setStatus('success');
-    } catch (err) {
+    } catch (_err) {
       setStatus('failure');
     }
   };
 
   return (
     <div 
-      className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/65 backdrop-blur-xl flex items-center justify-center p-3 sm:p-4 md:p-6 animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 md:p-6 animate-in fade-in duration-150"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
     >
       <div 
         ref={modalRef}
-        className="relative deep-glass rounded-3xl shadow-[0_30px_70px_rgba(1,69,242,0.18)] w-full max-w-2xl overflow-hidden my-auto text-slate-900 font-body border-white"
+        className="relative deep-glass rounded-3xl shadow-[0_20px_50px_rgba(1,69,242,0.15)] w-full max-w-2xl overflow-hidden my-auto text-slate-900 font-body border-white transform-gpu"
       >
         {/* Modal Top Header */}
         <div className="deep-glass-inner px-7 py-5 flex items-center justify-between border-b border-slate-200/80">

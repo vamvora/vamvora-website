@@ -31,8 +31,8 @@ export const WhyVamVora: React.FC = () => {
 
   return (
     <section className="py-20 lg:py-28 bg-[#0B132B] text-white relative overflow-hidden">
-      {/* Background radial highlight */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background radial highlight via native GPU radial gradient */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.12)_0%,transparent_70%)] pointer-events-none transform-gpu" />
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

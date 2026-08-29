@@ -84,12 +84,12 @@ export const Navbar: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none transition-all duration-300 flex flex-col items-center">
       {/* Full-Width Transparent Glassmorphism Promotional Bar */}
       <div 
-        className={`w-full py-1.5 sm:py-2 px-4 border-b pointer-events-auto flex items-center justify-center transition-all duration-300 relative overflow-hidden group backdrop-blur-2xl ${
+        className={`w-full py-1.5 sm:py-2 px-4 border-b pointer-events-auto flex items-center justify-center transition-all duration-300 relative overflow-hidden group backdrop-blur-md transform-gpu ${
           isHeroNav
-            ? 'bg-slate-950/20 hover:bg-slate-950/30 border-white/15 text-white shadow-[0_4px_25px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.2)]'
+            ? 'bg-slate-950/30 hover:bg-slate-950/40 border-white/15 text-white shadow-[0_4px_25px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.2)]'
             : isScrolled
-              ? 'bg-white/45 hover:bg-white/55 border-white/60 text-slate-800 shadow-[0_4px_20px_rgba(1,69,242,0.06),inset_0_1px_1px_rgba(255,255,255,0.8)]'
-              : 'bg-white/35 hover:bg-white/45 border-white/50 text-slate-800 shadow-[0_4px_20px_rgba(1,69,242,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)]'
+              ? 'bg-white/60 hover:bg-white/70 border-white/60 text-slate-800 shadow-[0_4px_20px_rgba(1,69,242,0.06),inset_0_1px_1px_rgba(255,255,255,0.8)]'
+              : 'bg-white/50 hover:bg-white/60 border-white/50 text-slate-800 shadow-[0_4px_20px_rgba(1,69,242,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)]'
         }`}
       >
         {/* Subtle Ambient Specular Lighting & Tint Overlay */}
@@ -131,13 +131,13 @@ export const Navbar: React.FC = () => {
       {/* Floating Navbar with Generous Space Below Full Bar */}
       <div className="w-full pt-3 sm:pt-4 px-3 sm:px-6 flex justify-center">
         <div 
-          className={`w-full max-w-[1240px] pointer-events-auto transition-all duration-300 rounded-full px-4 sm:px-7 py-2 sm:py-2.5 flex items-center justify-between relative ${
+          className={`w-full max-w-[1240px] pointer-events-auto transition-all duration-300 rounded-full px-4 sm:px-7 py-2 sm:py-2.5 flex items-center justify-between relative transform-gpu ${
           isHeroNav
             ? isScrolled
-              ? 'shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-white/25 bg-slate-950/40 backdrop-blur-2xl'
-              : 'shadow-[0_12px_35px_rgba(0,0,0,0.25)] border border-white/20 bg-white/10 backdrop-blur-xl'
+              ? 'shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-white/25 bg-slate-950/60 backdrop-blur-md'
+              : 'shadow-[0_12px_35px_rgba(0,0,0,0.25)] border border-white/20 bg-white/15 backdrop-blur-md'
             : isScrolled
-              ? 'shadow-[0_20px_50px_rgba(1,69,242,0.16)] border-white/70 bg-white/40 deep-glass-navbar'
+              ? 'shadow-[0_20px_50px_rgba(1,69,242,0.16)] border-white/70 bg-white/50 deep-glass-navbar'
               : 'shadow-[0_12px_35px_rgba(1,69,242,0.08)] deep-glass-navbar'
         }`}
       >
@@ -227,7 +227,7 @@ export const Navbar: React.FC = () => {
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <div 
-            className="w-full max-w-md ml-auto h-full bg-white/90 backdrop-blur-3xl border-l border-white/60 p-6 pt-20 flex flex-col justify-between shadow-2xl overflow-y-auto"
+            className="w-full max-w-md ml-auto h-full bg-white/95 backdrop-blur-md border-l border-white/60 p-6 pt-20 flex flex-col justify-between shadow-2xl overflow-y-auto transform-gpu"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Close Header */}

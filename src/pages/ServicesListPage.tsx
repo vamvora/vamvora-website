@@ -120,10 +120,10 @@ export const ServicesListPage: React.FC = () => {
 
   return (
     <div className="pt-40 sm:pt-44 lg:pt-48 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden">
-      {/* Hyper-Saturated Ambient Background Engine */}
-      <div className="absolute top-10 left-10 w-[700px] h-[700px] bg-[#00C2FF]/20 rounded-full blur-[160px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[700px] h-[700px] bg-[#0145F2]/20 rounded-full blur-[170px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-1/4 w-[600px] h-[600px] bg-[#00E599]/18 rounded-full blur-[150px] pointer-events-none -z-10" />
+      {/* Hyper-Saturated Ambient Background Glow via native GPU radial gradients */}
+      <div className="absolute top-10 left-10 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.15)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
+      <div className="absolute top-1/3 right-10 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(1,69,242,0.14)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
+      <div className="absolute bottom-10 left-1/4 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(0,229,153,0.12)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
 
       {/* 12-Column Responsive Container */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16">

@@ -26,23 +26,47 @@ export const Hero: React.FC = () => {
     video.muted = true;
     video.playsInline = true;
 
+    let hlsInstance: Hls | null = null;
     const src = "https://stream.mux.com/kimF2ha9zLrX64H00UgLGPflCzNtl1T0215MlAmeOztv8.m3u8";
 
     if (Hls.isSupported()) {
-      const hls = new Hls({
+      hlsInstance = new Hls({
         enableWorker: true,
         lowLatencyMode: true,
+        capLevelToPlayerSize: true, // Optimizes video resolution to player size
       });
-      hls.loadSource(src);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      hlsInstance.loadSource(src);
+      hlsInstance.attachMedia(video);
+      hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
         video.play().catch(() => {});
       });
-      return () => hls.destroy();
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = src;
       video.play().catch(() => {});
     }
+
+    // IntersectionObserver to pause video when user scrolls past Hero
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.05 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+      if (hlsInstance) hlsInstance.destroy();
+    };
   }, []);
 
   return (
@@ -52,62 +76,56 @@ export const Hero: React.FC = () => {
       className="relative min-h-screen flex flex-col items-center justify-center pt-40 pb-20 sm:pt-48 sm:pb-24 lg:pt-52 px-6 md:px-16 lg:px-24 text-center overflow-hidden bg-slate-950 font-sans"
     >
       {/* 1. Background Cinematic HLS Video Animation with Parallax */}
-      <motion.div style={{ y: videoY }} className="absolute inset-0 w-full h-[120%] -top-[10%] z-0 pointer-events-none">
+      <motion.div style={{ y: videoY }} className="absolute inset-0 w-full h-[120%] -top-[10%] z-0 pointer-events-none transform-gpu">
         <video
           ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
           className="w-full h-full object-cover opacity-85 transition-opacity duration-1000"
         />
       </motion.div>
 
-      {/* 2. Cybernetic Ambient Glowing Motion Orbs */}
+      {/* 2. Cybernetic Ambient Glow Gradient (Hardware-Accelerated, Zero Gaussian Blur passes) */}
       <div className="absolute inset-0 bg-slate-950/60 z-[1] pointer-events-none" />
       
-      {/* Animated Glowing Light Orbs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.15, 1],
-          opacity: [0.3, 0.45, 0.3],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] bg-gradient-to-r from-[#00C2FF]/25 via-[#0145F2]/30 to-[#00E599]/20 rounded-full blur-[140px] pointer-events-none z-[2]"
-      />
+      {/* Ambient Lighting via native GPU Radial Gradient */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.22)_0%,rgba(1,69,242,0.18)_40%,transparent_70%)] pointer-events-none z-[2] transform-gpu" />
 
       {/* 3. Centralized Unframed Content with Kinetic Motion */}
       <motion.div 
         style={{ y: contentY, opacity }} 
-        className="relative z-10 max-w-4xl mx-auto flex flex-col items-center justify-center text-center mt-6 sm:mt-10 my-auto"
+        className="relative z-10 max-w-4xl mx-auto flex flex-col items-center justify-center text-center mt-6 sm:mt-10 my-auto transform-gpu"
       >
         
-        {/* Hero Headline with Kinetic Blur-to-Sharp Reveal */}
+        {/* Hero Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 30, filter: 'blur(14px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight leading-[1.1] max-w-4xl mx-auto mb-6 drop-shadow-lg text-center"
         >
           <span className="block">Technology That Helps Your</span>
           <span className="block font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-200 to-emerald-300">Business Move Forward.</span>
         </motion.h1>
 
-        {/* Supporting Lead Description with Kinetic Reveal */}
+        {/* Supporting Lead Description */}
         <motion.p
-          initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.85, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-slate-200/90 font-body font-normal text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 text-balance"
         >
           Secure cloud, modern workplace, intelligent AI automations and zero-trust cybersecurity solutions designed to help modern enterprises work smarter, operate securely and scale.
         </motion.p>
 
-        {/* Hero CTA Buttons with Staggered Entrance */}
+        {/* Hero CTA Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto mb-14"
         >
           <button
@@ -128,11 +146,11 @@ export const Hero: React.FC = () => {
           </a>
         </motion.div>
 
-        {/* Minimal Glass Trust Badges Strip with Subtle Pulse */}
+        {/* Minimal Glass Trust Badges Strip */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 pt-6 border-t border-white/15 text-xs sm:text-sm font-body text-slate-200/80"
         >
           <div className="flex items-center gap-2">

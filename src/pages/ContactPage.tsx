@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Send, CheckCircle2, Clock, Sparkles, ArrowUpRight } from 'lucide-react';
 import { useConsultationModal } from '../context/ModalContext';
+import { WhatsAppIcon } from '../components/common/WhatsAppButton';
 
 export const ContactPage: React.FC = () => {
   const { openConsultation } = useConsultationModal();
@@ -22,51 +23,81 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-36 sm:pt-40 lg:pt-44 pb-28 bg-[#F8FAFC]">
-      
-      {/* Header */}
-      <section className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16 mb-12 sm:mb-14 text-center">
-        <div className="max-w-3xl mx-auto space-y-4 flex flex-col items-center justify-center">
+    <div className="pt-40 sm:pt-44 lg:pt-48 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden font-sans">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
+        
+        {/* Header with BlurReveal */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-mono font-bold tracking-wider uppercase mb-2">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>GLOBAL ENGAGEMENT DESK</span>
+          </div>
+          
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-slate-950 tracking-tight leading-[1.1] text-center mx-auto">
-            <span className="block">Let's Discuss Your</span>
-            <span className="block">Technology Goals.</span>
+            <span className="block">Get In Touch With Our</span>
+            <span className="block">Engineering Specialists.</span>
           </h1>
-          <p className="text-base sm:text-lg font-body font-normal text-slate-600 leading-relaxed max-w-2xl mx-auto text-center">
-            Whether you have a general inquiry, need urgent technical assistance, or want to explore an enterprise project, our team is here to assist.
+          <p className="text-base sm:text-lg font-body text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            Have a project in mind or need expert advice on cloud infrastructure, AI solutions, or cybersecurity? We are ready to assist.
           </p>
         </div>
-      </section>
 
-      {/* Main Grid */}
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        {/* 12-Column Responsive Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* Left Column: Contact Channels & Consultation Trigger (5 cols) */}
-          <div className="lg:col-span-5 space-y-8 font-body">
+          {/* Left Column: Direct Contact & Strategy Call Option (5 cols) */}
+          <div className="lg:col-span-5 space-y-6">
             
-            {/* Consultation Callout Box */}
-            <div className="p-8 rounded-3xl bg-slate-950 text-white space-y-5 shadow-xl">
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-blue-400" />
-                <h3 className="text-xl font-heading italic font-bold text-white">
-                  Looking For A Custom Proposal?
-                </h3>
+            {/* Strategy Call Feature Card */}
+            <div className="deep-glass rounded-3xl p-8 sm:p-10 shadow-lg border border-white space-y-6">
+              <div className="space-y-3">
+                <span className="text-xs font-mono font-bold text-[#0145F2] tracking-wider uppercase block">
+                  RECOMMENDED
+                </span>
+                <h2 className="text-2xl font-heading font-bold text-slate-950 leading-tight">
+                  Book a Dedicated Consultation Call
+                </h2>
+                <p className="text-sm font-body text-slate-600 leading-relaxed">
+                  Skip email threads. Schedule a direct 30-minute discovery session with a certified technology specialist.
+                </p>
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
-                For cloud migrations, workplace modernization, AI automations, and cybersecurity audits, book a direct consultation with our Lead Architects.
-              </p>
+
               <button
                 type="button"
                 onClick={() => openConsultation()}
-                className="liquid-glass-light w-full bg-white/90 hover:bg-white text-slate-950 text-xs sm:text-sm font-semibold py-3.5 px-6 rounded-full transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+                className="w-full bg-[#0145F2] hover:bg-[#0038D1] text-white font-body font-semibold px-6 py-4 rounded-full shadow-[0_8px_25px_rgba(1,69,242,0.35)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Launch Consultation Request</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Direct Channels */}
-            <div className="space-y-4">
+            {/* Direct Contact Cards */}
+            <div className="space-y-4 font-body">
+              {/* WhatsApp Instant Chat Card */}
+              <a
+                href="https://wa.me/916382114955?text=Hello%20VAM%20VORA%20Technologies,%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 p-6 rounded-3xl liquid-glass-light shadow-xs hover:border-emerald-300/80 hover:bg-emerald-50/20 transition-all group cursor-pointer"
+              >
+                <div className="w-11 h-11 rounded-2xl bg-emerald-500 text-white shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                  <WhatsAppIcon className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider block">
+                    WhatsApp Chat
+                  </span>
+                  <span className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-emerald-700 transition-colors block">
+                    +91 63821 14955
+                  </span>
+                  <p className="text-xs text-emerald-600 font-medium mt-0.5 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>Instant WhatsApp response</span>
+                  </p>
+                </div>
+              </a>
+
               <div className="flex items-start gap-4 p-6 rounded-3xl liquid-glass-light shadow-xs">
                 <div className="w-11 h-11 rounded-2xl bg-white text-blue-600 shadow-sm flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5" />
@@ -88,10 +119,10 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
-                    Client Hotline
+                    Telephone Hotline
                   </span>
                   <a href="tel:+916382114955" className="text-sm sm:text-base font-bold text-slate-900 hover:text-blue-600 transition-colors">
-                    +91 63821-14955
+                    +91 63821 14955
                   </a>
                   <p className="text-xs text-slate-500 mt-0.5">Mon–Fri 8:00 AM – 7:00 PM IST</p>
                 </div>
@@ -234,14 +265,13 @@ export const ContactPage: React.FC = () => {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 mb-2">
-                      Your Message <span className="text-red-500">*</span>
+                      Your Message <span className="text-slate-400 font-normal text-xs">(Optional)</span>
                     </label>
                     <textarea
                       rows={5}
-                      required
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      placeholder="Please describe your question or message in detail..."
+                      placeholder="Please describe your question or requirements (optional)..."
                       className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200/90 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"
                     />
                   </div>

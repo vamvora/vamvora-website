@@ -91,10 +91,10 @@ export const AboutPage: React.FC = () => {
 
   return (
     <div className="pt-40 sm:pt-44 lg:pt-48 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden font-sans">
-      {/* Hyper-Saturated Ambient Background Glow */}
-      <div className="absolute top-10 left-10 w-[700px] h-[700px] bg-[#00C2FF]/20 rounded-full blur-[160px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[700px] h-[700px] bg-[#0145F2]/20 rounded-full blur-[170px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-1/4 w-[600px] h-[600px] bg-[#00E599]/18 rounded-full blur-[150px] pointer-events-none -z-10" />
+      {/* Hyper-Saturated Ambient Background Glow via native GPU radial gradients */}
+      <div className="absolute top-10 left-10 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.15)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
+      <div className="absolute top-1/3 right-10 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(1,69,242,0.14)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
+      <div className="absolute bottom-10 left-1/4 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(0,229,153,0.12)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
 
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
         
@@ -260,9 +260,9 @@ export const AboutPage: React.FC = () => {
           </BlurReveal>
 
           <BlurReveal className="deep-glass rounded-3xl p-6 sm:p-10 lg:p-14 shadow-xl border border-white relative overflow-hidden">
-            {/* Ambient Accent Orbs */}
-            <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#0145F2]/15 rounded-full blur-3xl pointer-events-none -z-10" />
-            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#00C2FF]/15 rounded-full blur-3xl pointer-events-none -z-10" />
+            {/* Ambient Accent Orbs via GPU radial gradients */}
+            <div className="absolute -top-24 -left-24 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(1,69,242,0.12)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(0,194,255,0.12)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
               

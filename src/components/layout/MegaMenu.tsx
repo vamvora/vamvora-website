@@ -30,9 +30,9 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ onClose }) => {
       aria-label="Services Menu"
     >
       <div className="deep-glass rounded-3xl p-6 lg:p-7 relative overflow-hidden shadow-[0_25px_60px_rgba(1,69,242,0.12)]">
-        {/* Hyper-Saturated Ambient Background Glow */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#00C2FF]/20 rounded-full blur-[100px] pointer-events-none -z-10" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#0145F2]/15 rounded-full blur-[100px] pointer-events-none -z-10" />
+        {/* Ambient Background Glow via native GPU radial gradients */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(circle_at_center,rgba(0,194,255,0.15)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[radial-gradient(circle_at_center,rgba(1,69,242,0.12)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
 
         {/* 5 Service Columns - Clean Deep Glass Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">

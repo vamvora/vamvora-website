@@ -39,11 +39,11 @@ export const BlogPreview: React.FC = () => {
         <div className="absolute inset-y-0 right-0 w-28 sm:w-48 bg-gradient-to-l from-[#F1F5F9] via-[#F1F5F9]/80 to-transparent z-10 pointer-events-none" />
 
         {/* Floating Track */}
-        <div className="flex gap-6 w-max animate-scroll-left">
+        <div className="flex gap-6 w-max animate-scroll-left transform-gpu">
           {floatingPosts.map((post, idx) => (
             <article
               key={`${post.id}-${idx}`}
-              className="w-[340px] sm:w-[380px] deep-glass rounded-3xl overflow-hidden flex flex-col justify-between group relative transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:bg-white flex-shrink-0"
+              className="w-[340px] sm:w-[380px] carousel-glass-card rounded-3xl overflow-hidden flex flex-col justify-between group relative transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:bg-white flex-shrink-0 transform-gpu"
             >
               <div className="p-7 space-y-4">
                 {/* Meta info & Category */}
@@ -71,7 +71,7 @@ export const BlogPreview: React.FC = () => {
               </div>
 
               {/* Card Footer */}
-              <div className="px-7 py-4 deep-glass-inner border-t border-slate-200/70 flex items-center justify-between text-xs font-body">
+              <div className="px-7 py-4 bg-slate-50/60 border-t border-slate-200/70 flex items-center justify-between text-xs font-body">
                 <span className="text-slate-500 font-medium">
                   {post.date}
                 </span>

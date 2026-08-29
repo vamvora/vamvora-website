@@ -155,8 +155,8 @@ export const CorporateLogoReveal: React.FC<CorporateLogoRevealProps> = ({
       {/* Pristine Clean White Background */}
       <div className="absolute inset-0 bg-[#FFFFFF]" />
 
-      {/* Ambient Blue Fluid Glow on White Canvas */}
-      <div className="absolute w-[680px] h-[680px] bg-[#00C2FF]/[0.035] rounded-full blur-[140px] pointer-events-none -z-10" />
+      {/* Ambient Blue Fluid Glow via GPU radial gradient */}
+      <div className="absolute w-[680px] h-[680px] bg-[radial-gradient(circle_at_center,rgba(0,194,255,0.06)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
 
       {/* ---------------------------------------------------- */}
       {/* CENTERED STATIONARY LOGO CONTAINER (Zero camera movement) */}

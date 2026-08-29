@@ -14,10 +14,10 @@ export const FeaturedServices: React.FC = () => {
 
   return (
     <section id="services-section" className="py-14 sm:py-16 lg:py-20 bg-[#F1F5F9] relative overflow-hidden">
-      {/* Hyper-Saturated Analogous Ambient Engine behind frosted glass */}
-      <div className="absolute top-10 left-10 w-[600px] h-[600px] bg-[#00C2FF]/20 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-[#0145F2]/20 rounded-full blur-[150px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-1/3 w-[500px] h-[500px] bg-[#00E599]/18 rounded-full blur-[130px] pointer-events-none -z-10" />
+      {/* Hyper-Saturated Analogous Ambient Engine via native GPU radial gradients */}
+      <div className="absolute top-10 left-10 w-[650px] h-[650px] bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.15)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
+      <div className="absolute top-1/2 right-10 w-[650px] h-[650px] bg-[radial-gradient(ellipse_at_center,rgba(1,69,242,0.14)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
+      <div className="absolute bottom-10 left-1/3 w-[550px] h-[550px] bg-[radial-gradient(ellipse_at_center,rgba(0,229,153,0.12)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
 
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
         

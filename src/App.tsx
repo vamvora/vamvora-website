@@ -5,6 +5,7 @@ import { ScrollToTop } from './components/layout/ScrollToTop';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Preloader } from './components/common/Preloader';
+import { WhatsAppButton } from './components/common/WhatsAppButton';
 import { ConsultationModal } from './components/modal/ConsultationModal';
 
 import { HomePage } from './pages/HomePage';
@@ -47,6 +48,9 @@ export function App() {
 
           {/* Global Multi-Step Consultation Modal */}
           <ConsultationModal />
+
+          {/* Floating WhatsApp Action Button */}
+          <WhatsAppButton />
         </div>
       </BrowserRouter>
     </ModalProvider>

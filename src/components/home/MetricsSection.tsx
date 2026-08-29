@@ -50,9 +50,9 @@ import { BlurReveal } from '../common/BlurReveal';
 export const MetricsSection: React.FC = () => {
   return (
     <section className="py-14 sm:py-16 lg:py-20 bg-[#F1F5F9] relative overflow-hidden border-b border-slate-200/70">
-      {/* Hyper-Saturated Ambient Background Glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[350px] bg-[#00C2FF]/18 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[350px] bg-[#0145F2]/16 rounded-full blur-[150px] pointer-events-none -z-10" />
+      {/* Hyper-Saturated Ambient Background Glow via native GPU radial gradients */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[650px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.14)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(1,69,242,0.12)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
 
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
         
