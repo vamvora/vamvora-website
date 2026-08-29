@@ -102,20 +102,26 @@ export const ContactSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
+              <a
+                href="https://www.google.com/maps/@11.3456197,77.7097794,21z?authuser=0&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-blue-300 transition-all group cursor-pointer"
+                title="View on Google Maps"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 group-hover:bg-[#0145F2] group-hover:text-white transition-all">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
-                    Technology Hubs
+                    Office Location
                   </span>
-                  <p className="text-sm font-bold text-[#0B132B]">
-                    Global Cloud Architecture Operations
+                  <p className="text-sm font-bold text-[#0B132B] group-hover:text-blue-600 transition-colors leading-snug">
+                    19/1, Kongu Nagar second street, Municipal Colony Main Rd, near Anna theatre, Erode, Tamil Nadu 638004
                   </p>
-                  <p className="text-[11px] text-slate-500 mt-0.5">Remote-first enterprise engineering</p>
+                  <p className="text-[11px] text-blue-600 font-medium mt-1">Click to view on Google Maps →</p>
                 </div>
-              </div>
+              </a>
             </div>
 
             {/* SLA Commitment */}

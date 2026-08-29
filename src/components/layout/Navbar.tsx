@@ -66,8 +66,8 @@ export const Navbar: React.FC = () => {
 
     return `text-xs font-body font-semibold transition-all py-2 px-4 rounded-full inline-flex items-center gap-1 relative ${
       isActive
-        ? 'text-[#0145F2] bg-white/90 shadow-xs border border-white font-bold backdrop-blur-md'
-        : 'text-slate-800 hover:text-[#0145F2] hover:bg-white/50'
+        ? 'text-white bg-[#0145F2] shadow-[0_4px_14px_rgba(1,69,242,0.4)] border border-blue-400/40 font-bold backdrop-blur-md'
+        : 'text-slate-800 hover:text-[#0145F2] hover:bg-blue-50/80'
     }`;
   };
 
@@ -82,71 +82,71 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none transition-all duration-300 flex flex-col items-center">
-      {/* Full-Width Transparent Glassmorphism Promotional Bar */}
-      <div 
-        className={`w-full py-1.5 sm:py-2 px-4 border-b pointer-events-auto flex items-center justify-center transition-all duration-300 relative overflow-hidden group backdrop-blur-md transform-gpu ${
-          isHeroNav
-            ? 'bg-slate-950/30 hover:bg-slate-950/40 border-white/15 text-white shadow-[0_4px_25px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.2)]'
-            : isScrolled
-              ? 'bg-white/60 hover:bg-white/70 border-white/60 text-slate-800 shadow-[0_4px_20px_rgba(1,69,242,0.06),inset_0_1px_1px_rgba(255,255,255,0.8)]'
-              : 'bg-white/50 hover:bg-white/60 border-white/50 text-slate-800 shadow-[0_4px_20px_rgba(1,69,242,0.04),inset_0_1px_1px_rgba(255,255,255,0.7)]'
-        }`}
-      >
-        {/* Subtle Ambient Specular Lighting & Tint Overlay */}
+      {/* Full-Width Transparent Glassmorphism Promotional Bar (Homepage Only) */}
+      {isHome && (
         <div 
-          className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
+          className={`w-full py-1.5 sm:py-2 px-4 border-b pointer-events-auto flex items-center justify-center transition-all duration-300 relative overflow-hidden group backdrop-blur-md transform-gpu ${
             isHeroNav
-              ? 'bg-gradient-to-r from-[#0145F2]/20 via-white/[0.04] to-[#0145F2]/20 opacity-80'
-              : 'bg-gradient-to-r from-[#0145F2]/08 via-transparent to-[#0145F2]/08'
+              ? 'bg-slate-950/30 hover:bg-slate-950/40 border-white/15 text-white shadow-[0_4px_25px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.2)]'
+              : isScrolled
+                ? 'bg-blue-900/10 hover:bg-blue-900/15 border-blue-200/60 text-slate-800 shadow-[0_4px_20px_rgba(1,69,242,0.08),inset_0_1px_1px_rgba(255,255,255,0.8)]'
+                : 'bg-blue-900/05 hover:bg-blue-900/10 border-blue-200/50 text-slate-800 shadow-[0_4px_20px_rgba(1,69,242,0.06),inset_0_1px_1px_rgba(255,255,255,0.7)]'
           }`}
-        />
+        >
+          {/* Subtle Ambient Specular Lighting & Tint Overlay */}
+          <div 
+            className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
+              isHeroNav
+                ? 'bg-gradient-to-r from-[#0145F2]/20 via-white/[0.04] to-[#0145F2]/20 opacity-80'
+                : 'bg-gradient-to-r from-[#0145F2]/12 via-white/20 to-[#00C2FF]/12'
+            }`}
+          />
 
-        {/* Specular Radial Glow at Top Edge */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.2)_0%,_transparent_70%)] pointer-events-none" />
+          {/* Specular Radial Glow at Top Edge */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.25)_0%,_transparent_70%)] pointer-events-none" />
 
-        <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2.5 text-[11px] sm:text-xs font-medium tracking-tight text-center max-w-5xl mx-auto">
-          <span className={`font-semibold ${isHeroNav ? 'text-white/95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]' : 'text-slate-800'}`}>
-            Free on orders over $150
-          </span>
-          <span className={`hidden sm:inline text-xs ${isHeroNav ? 'opacity-50 text-white' : 'opacity-40 text-slate-500'}`}>•</span>
-          <div className="inline-flex items-center gap-1.5">
-            <span className={isHeroNav ? 'text-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]' : 'text-slate-600'}>
-              Use Code:
+          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2.5 text-[11px] sm:text-xs font-medium tracking-tight text-center max-w-5xl mx-auto">
+            <span className={`font-semibold ${isHeroNav ? 'text-white/95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]' : 'text-slate-800'}`}>
+              Free on orders over $150
             </span>
-            <button
-              type="button"
-              onClick={handleCopyCode}
-              title="Click to copy code"
-              className="font-bold bg-[#0145F2] hover:bg-[#0038D1] text-white px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] tracking-wider shadow-[0_2px_10px_rgba(1,69,242,0.4),inset_0_1px_1px_rgba(255,255,255,0.4)] border border-white/30 transition-all active:scale-95 cursor-pointer inline-flex items-center gap-1"
-            >
-              <span>{codeCopied ? 'COPIED!' : 'FIRST15'}</span>
-            </button>
-            <span className={isHeroNav ? 'text-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]' : 'text-slate-600'}>
-              for 15% off
-            </span>
+            <span className={`hidden sm:inline text-xs ${isHeroNav ? 'opacity-50 text-white' : 'opacity-40 text-slate-500'}`}>•</span>
+            <div className="inline-flex items-center gap-1.5">
+              <span className={isHeroNav ? 'text-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]' : 'text-slate-600'}>
+                Use Code:
+              </span>
+              <button
+                type="button"
+                onClick={handleCopyCode}
+                title="Click to copy code"
+                className="font-bold bg-[#0145F2] hover:bg-[#0038D1] text-white px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] tracking-wider shadow-[0_2px_10px_rgba(1,69,242,0.4),inset_0_1px_1px_rgba(255,255,255,0.4)] border border-white/30 transition-all active:scale-95 cursor-pointer inline-flex items-center gap-1"
+              >
+                <span>{codeCopied ? 'COPIED!' : 'FIRST15'}</span>
+              </button>
+              <span className={isHeroNav ? 'text-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]' : 'text-slate-600'}>
+                for 15% off
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      {/* Floating Navbar with Generous Space Below Full Bar */}
-      <div className="w-full pt-3 sm:pt-4 px-3 sm:px-6 flex justify-center">
+      {/* Floating Navbar Container */}
+      <div className={`w-full ${isHome ? 'pt-3 sm:pt-4' : 'pt-4 sm:pt-5'} px-3 sm:px-6 flex justify-center`}>
         <div 
           className={`w-full max-w-[1240px] pointer-events-auto transition-all duration-300 rounded-full px-4 sm:px-7 py-2 sm:py-2.5 flex items-center justify-between relative transform-gpu ${
           isHeroNav
             ? isScrolled
               ? 'shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-white/25 bg-slate-950/60 backdrop-blur-md'
               : 'shadow-[0_12px_35px_rgba(0,0,0,0.25)] border border-white/20 bg-white/15 backdrop-blur-md'
-            : isScrolled
-              ? 'shadow-[0_20px_50px_rgba(1,69,242,0.16)] border-white/70 bg-white/50 deep-glass-navbar'
-              : 'shadow-[0_12px_35px_rgba(1,69,242,0.08)] deep-glass-navbar'
+            : 'deep-glass-navbar'
         }`}
       >
-        {/* Subtle specular ambient lighting overlay */}
+        {/* Subtle specular blue ambient lighting overlay */}
         <div 
           className={`absolute inset-0 rounded-full pointer-events-none -z-10 transition-opacity duration-300 ${
             isHeroNav 
               ? 'bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-60' 
-              : 'bg-gradient-to-r from-white/50 via-white/10 to-white/50'
+              : 'bg-gradient-to-r from-[#00C2FF]/15 via-white/50 to-[#0145F2]/15'
           }`} 
         />
 

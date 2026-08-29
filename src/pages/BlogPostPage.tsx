@@ -18,7 +18,7 @@ export const BlogPostPage: React.FC = () => {
   const relatedPosts = blogData.filter((p) => p.id !== post.id).slice(0, 2);
 
   return (
-    <div className="pt-36 sm:pt-40 lg:pt-44 pb-28 bg-[#F8FAFC]">
+    <div className="pt-28 sm:pt-32 lg:pt-36 pb-28 bg-[#F8FAFC]">
       <article className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
         
         {/* Top Back Link */}

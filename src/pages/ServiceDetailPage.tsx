@@ -44,7 +44,7 @@ export const ServiceDetailPage: React.FC = () => {
   const currentIcon = serviceIconsMap[service.id] || cloudIcon;
 
   return (
-    <div className="pt-36 sm:pt-40 lg:pt-44 pb-16 min-h-screen bg-[#F1F5F9] relative overflow-hidden">
+    <div className="pt-28 sm:pt-32 lg:pt-36 pb-16 min-h-screen bg-[#F1F5F9] relative overflow-hidden">
       
       {/* 1. SERVICE HERO */}
       <section className="relative pb-12 lg:pb-16 overflow-hidden">

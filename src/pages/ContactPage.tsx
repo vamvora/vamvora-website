@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Send, CheckCircle2, Clock, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, Sparkles, ArrowUpRight } from 'lucide-react';
 import { useConsultationModal } from '../context/ModalContext';
 import { WhatsAppIcon } from '../components/common/WhatsAppButton';
 
@@ -23,7 +23,7 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-40 sm:pt-44 lg:pt-48 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden font-sans">
+    <div className="pt-32 sm:pt-36 lg:pt-40 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden font-sans">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
         
         {/* Header with BlurReveal */}
@@ -142,6 +142,27 @@ export const ContactPage: React.FC = () => {
                   <p className="text-xs text-slate-500 mt-0.5">For active SLA clients</p>
                 </div>
               </div>
+
+              <a
+                href="https://www.google.com/maps/@11.3456197,77.7097794,21z?authuser=0&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 p-6 rounded-3xl liquid-glass-light shadow-xs hover:border-blue-300 transition-all group cursor-pointer"
+                title="View on Google Maps"
+              >
+                <div className="w-11 h-11 rounded-2xl bg-white text-blue-600 shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-105 group-hover:bg-[#0145F2] group-hover:text-white transition-all">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
+                    Office Location
+                  </span>
+                  <p className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                    19/1, Kongu Nagar second street, Municipal Colony Main Rd, near Anna theatre, Erode, Tamil Nadu 638004
+                  </p>
+                  <p className="text-xs text-blue-600 font-medium mt-1">Click to view on Google Maps →</p>
+                </div>
+              </a>
             </div>
 
           </div>

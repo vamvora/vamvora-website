@@ -26,7 +26,7 @@ export const BlogListPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-36 sm:pt-40 lg:pt-44 pb-28 bg-[#F8FAFC]">
+    <div className="pt-28 sm:pt-32 lg:pt-36 pb-28 bg-[#F8FAFC]">
       
       {/* Header */}
       <section className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16 mb-12 sm:mb-14 text-center">

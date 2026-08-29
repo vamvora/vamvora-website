@@ -90,7 +90,7 @@ export const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-40 sm:pt-44 lg:pt-48 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden font-sans">
+    <div className="pt-32 sm:pt-36 lg:pt-40 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden font-sans">
       {/* Hyper-Saturated Ambient Background Glow via native GPU radial gradients */}
       <div className="absolute top-10 left-10 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.15)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
       <div className="absolute top-1/3 right-10 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(1,69,242,0.14)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />

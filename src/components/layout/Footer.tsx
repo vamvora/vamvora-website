@@ -231,12 +231,18 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-2 text-xs text-slate-400 leading-relaxed pt-0.5">
-                  <div className="w-6 h-6 rounded-lg bg-[#0145F2]/20 flex items-center justify-center text-[#0145F2] flex-shrink-0 mt-0.5">
+                <a
+                  href="https://www.google.com/maps/@11.3456197,77.7097794,21z?authuser=0&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-xs text-slate-400 hover:text-white transition-colors leading-relaxed pt-0.5 group"
+                  title="View on Google Maps"
+                >
+                  <div className="w-6 h-6 rounded-lg bg-[#0145F2]/20 flex items-center justify-center text-[#0145F2] flex-shrink-0 mt-0.5 group-hover:scale-105 group-hover:bg-[#0145F2] group-hover:text-white transition-all">
                     <MapPin className="w-3.5 h-3.5" />
                   </div>
-                  <span>Periya valasu nalu road, Veerapan Chattiram, Erode-638004</span>
-                </div>
+                  <span className="group-hover:underline">19/1, Kongu Nagar second street, Municipal Colony Main Rd, near Anna theatre, Erode, Tamil Nadu 638004</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -341,10 +347,10 @@ export const Footer: React.FC = () => {
 
         {/* Tier 3: Utility / SLA Bar (Aligned Centrally) */}
         <div className="pt-6 pb-2 flex flex-col sm:flex-row items-center justify-center text-xs text-slate-400 font-mono gap-3 sm:gap-6 md:gap-8 border-b border-white/5 text-center flex-wrap">
-          <div className="flex items-center gap-2">
+          <a href="https://www.vamvoratech.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
             <span className="w-2 h-2 bg-[#0145F2] rounded-xs" />
-            <span className="text-slate-300 font-medium">vamvoratech.com</span>
-          </div>
+            <span className="text-slate-300 font-medium hover:underline">www.vamvoratech.com</span>
+          </a>
 
           <span className="hidden sm:inline-block text-slate-600">•</span>
 
