@@ -14,18 +14,26 @@ export const Navbar: React.FC = () => {
   const isHome = location.pathname === '/';
   const isHeroNav = isHome && !isPastHero;
 
-  // Scroll listener for hero section boundary and glassmorphism elevation
+  // Scroll listener for hero section boundary with requestAnimationFrame throttling for ultra-smooth performance
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 20);
+    let ticking = false;
 
-      if (isHome) {
-        const heroEl = document.getElementById('hero');
-        const heroThreshold = heroEl ? heroEl.offsetHeight - 90 : window.innerHeight - 90;
-        setIsPastHero(scrollY >= heroThreshold);
-      } else {
-        setIsPastHero(true);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          setIsScrolled(scrollY > 20);
+
+          if (isHome) {
+            const heroEl = document.getElementById('hero');
+            const heroThreshold = heroEl ? heroEl.offsetHeight - 90 : window.innerHeight - 90;
+            setIsPastHero(scrollY >= heroThreshold);
+          } else {
+            setIsPastHero(true);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
@@ -59,15 +67,15 @@ export const Navbar: React.FC = () => {
     if (isHeroNav) {
       return `text-xs font-body font-semibold transition-all py-2 px-4 rounded-full inline-flex items-center gap-1 relative ${
         isActive
-          ? 'text-white bg-white/20 shadow-xs border border-white/40 font-bold backdrop-blur-md'
+          ? 'text-white bg-white/25 shadow-xs border border-white/40 font-bold backdrop-blur-md'
           : 'text-white/85 hover:text-white hover:bg-white/15'
       }`;
     }
 
     return `text-xs font-body font-semibold transition-all py-2 px-4 rounded-full inline-flex items-center gap-1 relative ${
       isActive
-        ? 'text-white bg-[#0145F2] shadow-[0_4px_14px_rgba(1,69,242,0.4)] border border-blue-400/40 font-bold backdrop-blur-md'
-        : 'text-slate-800 hover:text-[#0145F2] hover:bg-blue-50/80'
+        ? 'text-white bg-[#0145F2] shadow-xs font-bold'
+        : 'text-slate-700 hover:text-[#0145F2] hover:bg-slate-200/60'
     }`;
   };
 
@@ -81,75 +89,48 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none transition-all duration-300 flex flex-col items-center">
-      {/* Full-Width Transparent Glassmorphism Promotional Bar (Homepage Only) */}
-      {isHome && (
-        <div 
-          className={`w-full py-1.5 sm:py-2 px-4 border-b pointer-events-auto flex items-center justify-center transition-all duration-300 relative overflow-hidden group backdrop-blur-md transform-gpu ${
-            isHeroNav
-              ? 'bg-slate-950/30 hover:bg-slate-950/40 border-white/15 text-white shadow-[0_4px_25px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.2)]'
-              : isScrolled
-                ? 'bg-blue-900/10 hover:bg-blue-900/15 border-blue-200/60 text-slate-800 shadow-[0_4px_20px_rgba(1,69,242,0.08),inset_0_1px_1px_rgba(255,255,255,0.8)]'
-                : 'bg-blue-900/05 hover:bg-blue-900/10 border-blue-200/50 text-slate-800 shadow-[0_4px_20px_rgba(1,69,242,0.06),inset_0_1px_1px_rgba(255,255,255,0.7)]'
-          }`}
-        >
-          {/* Subtle Ambient Specular Lighting & Tint Overlay */}
-          <div 
-            className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
-              isHeroNav
-                ? 'bg-gradient-to-r from-[#0145F2]/20 via-white/[0.04] to-[#0145F2]/20 opacity-80'
-                : 'bg-gradient-to-r from-[#0145F2]/12 via-white/20 to-[#00C2FF]/12'
-            }`}
-          />
-
-          {/* Specular Radial Glow at Top Edge */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.25)_0%,_transparent_70%)] pointer-events-none" />
-
-          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2.5 text-[11px] sm:text-xs font-medium tracking-tight text-center max-w-5xl mx-auto">
-            <span className={`font-semibold ${isHeroNav ? 'text-white/95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]' : 'text-slate-800'}`}>
-              Free on orders over $150
-            </span>
-            <span className={`hidden sm:inline text-xs ${isHeroNav ? 'opacity-50 text-white' : 'opacity-40 text-slate-500'}`}>•</span>
-            <div className="inline-flex items-center gap-1.5">
-              <span className={isHeroNav ? 'text-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]' : 'text-slate-600'}>
-                Use Code:
-              </span>
-              <button
-                type="button"
-                onClick={handleCopyCode}
-                title="Click to copy code"
-                className="font-bold bg-[#0145F2] hover:bg-[#0038D1] text-white px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] tracking-wider shadow-[0_2px_10px_rgba(1,69,242,0.4),inset_0_1px_1px_rgba(255,255,255,0.4)] border border-white/30 transition-all active:scale-95 cursor-pointer inline-flex items-center gap-1"
-              >
-                <span>{codeCopied ? 'COPIED!' : 'FIRST15'}</span>
-              </button>
-              <span className={isHeroNav ? 'text-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]' : 'text-slate-600'}>
-                for 15% off
-              </span>
-            </div>
-          </div>
+    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none transition-all duration-200 flex flex-col items-center">
+      {/* Full-Width Top Promotional Bar (Present on ALL Pages, Strictly Single Line on Mobile) */}
+      <div 
+        className={`w-full py-1.5 px-2 sm:px-4 border-b pointer-events-auto flex items-center justify-center transition-all duration-200 relative overflow-hidden group ${
+          isHeroNav
+            ? 'bg-slate-950/70 border-white/15 text-white shadow-xs backdrop-blur-md'
+            : 'bg-white/95 border-slate-200/90 text-slate-800 shadow-xs'
+        }`}
+      >
+        <div className="relative z-10 flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 text-[10px] sm:text-xs font-medium tracking-tight text-center max-w-5xl mx-auto whitespace-nowrap overflow-hidden">
+          <span className={`font-semibold ${isHeroNav ? 'text-white/95' : 'text-slate-800'}`}>
+            Free on orders over $150
+          </span>
+          <span className={`opacity-40 ${isHeroNav ? 'text-white' : 'text-slate-400'}`}>•</span>
+          <span className={isHeroNav ? 'text-white/90' : 'text-slate-600'}>
+            Code:
+          </span>
+          <button
+            type="button"
+            onClick={handleCopyCode}
+            title="Click to copy code"
+            className="font-bold bg-[#0145F2] hover:bg-[#0038D1] text-white px-2 py-0.5 rounded-full text-[9.5px] sm:text-[11px] tracking-wider shadow-xs border border-white/30 transition-all active:scale-95 cursor-pointer inline-flex items-center flex-shrink-0"
+          >
+            <span>{codeCopied ? 'COPIED!' : 'FIRST15'}</span>
+          </button>
+          <span className={isHeroNav ? 'text-white/90' : 'text-slate-600'}>
+            for 15% off
+          </span>
         </div>
-      )}
+      </div>
 
-      {/* Floating Navbar Container */}
-      <div className={`w-full ${isHome ? 'pt-3 sm:pt-4' : 'pt-4 sm:pt-5'} px-3 sm:px-6 flex justify-center`}>
+      {/* Clean High-Opacity Floating Navbar Container */}
+      <div className="w-full pt-2.5 sm:pt-3.5 px-3 sm:px-6 flex justify-center">
         <div 
-          className={`w-full max-w-[1240px] pointer-events-auto transition-all duration-300 rounded-full px-4 sm:px-7 py-2 sm:py-2.5 flex items-center justify-between relative transform-gpu ${
+          className={`w-full max-w-[1240px] pointer-events-auto transition-all duration-200 rounded-full px-4 sm:px-7 py-2 sm:py-2.5 flex items-center justify-between relative transform-gpu ${
           isHeroNav
             ? isScrolled
-              ? 'shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-white/25 bg-slate-950/60 backdrop-blur-md'
-              : 'shadow-[0_12px_35px_rgba(0,0,0,0.25)] border border-white/20 bg-white/15 backdrop-blur-md'
+              ? 'shadow-[0_16px_40px_rgba(0,0,0,0.35)] border border-white/25 bg-slate-950/80 backdrop-blur-md'
+              : 'shadow-[0_10px_30px_rgba(0,0,0,0.2)] border border-white/20 bg-slate-950/40 backdrop-blur-md'
             : 'deep-glass-navbar'
         }`}
       >
-        {/* Subtle specular blue ambient lighting overlay */}
-        <div 
-          className={`absolute inset-0 rounded-full pointer-events-none -z-10 transition-opacity duration-300 ${
-            isHeroNav 
-              ? 'bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-60' 
-              : 'bg-gradient-to-r from-[#00C2FF]/15 via-white/50 to-[#0145F2]/15'
-          }`} 
-        />
-
         {/* Brand Logo */}
         <div className="flex-shrink-0 z-10">
           <Logo variant={isHeroNav ? 'light' : 'dark'} />
@@ -157,7 +138,7 @@ export const Navbar: React.FC = () => {
 
         {/* Centered Desktop & Tablet Navigation */}
         <nav 
-          className={`hidden lg:flex items-center gap-1 p-1 rounded-full shadow-2xs transition-all duration-300 ${
+          className={`hidden lg:flex items-center gap-1 p-1 rounded-full shadow-2xs transition-all duration-200 ${
             isHeroNav 
               ? 'bg-white/10 border border-white/20 backdrop-blur-md' 
               : 'deep-glass-nav-pill'
@@ -197,15 +178,15 @@ export const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Toggle Button (Book Call removed on mobile near burger as requested) */}
+        {/* Mobile Toggle Button */}
         <div className="flex items-center lg:hidden z-10">
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-xl transition-all shadow-xs active:scale-95 cursor-pointer ${
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-xs active:scale-95 cursor-pointer ${
               isHeroNav
                 ? 'bg-white/15 hover:bg-white/25 border border-white/30 text-white'
-                : 'bg-white/40 hover:bg-white/70 border border-white/60 text-slate-800'
+                : 'bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800'
             }`}
             aria-label="Toggle navigation menu"
             aria-expanded={isMobileMenuOpen}

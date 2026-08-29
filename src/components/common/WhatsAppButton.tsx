@@ -19,7 +19,7 @@ export const WhatsAppButton: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const phoneNumber = '916382114955';
   const defaultMessage = encodeURIComponent(
-    'Hello VAM VORA Technologies, I would like to inquire about your services.'
+    'Hello VAM VORA Technologies Team, I would like to inquire about your enterprise IT services (Cloud Infrastructure, AI Solutions, Cybersecurity, and Modern Workplace). Please let me know how we can connect.'
   );
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${defaultMessage}`;
 
@@ -33,11 +33,11 @@ export const WhatsAppButton: React.FC = () => {
             : 'opacity-0 translate-x-3 scale-95 pointer-events-none'
         }`}
       >
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+        <span className="w-2 h-2 rounded-full bg-emerald-500" />
         <span>Chat with us on WhatsApp</span>
       </div>
 
-      {/* Floating Green WhatsApp Button */}
+      {/* Sleek Floating WhatsApp Button (No Blinking) */}
       <a
         href={whatsappUrl}
         target="_blank"
@@ -45,11 +45,8 @@ export const WhatsAppButton: React.FC = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         aria-label="Chat with VAM VORA Technologies on WhatsApp at +91 63821 14955"
-        className="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(37,211,102,0.45),0_2px_8px_rgba(0,0,0,0.12)] border border-white/40 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group transform-gpu"
+        className="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(37,211,102,0.4),0_2px_8px_rgba(0,0,0,0.12)] border border-white/40 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group transform-gpu"
       >
-        {/* Soft Ambient Radial Pulse Ring */}
-        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-30 group-hover:opacity-60 animate-ping pointer-events-none" />
-
         {/* WhatsApp Vector Icon */}
         <WhatsAppIcon className="w-7 h-7 sm:w-7.5 sm:h-7.5 text-white relative z-10 transition-transform duration-300 group-hover:scale-105" />
       </a>

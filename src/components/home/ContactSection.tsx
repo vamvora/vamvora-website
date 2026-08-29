@@ -50,7 +50,7 @@ export const ContactSection: React.FC = () => {
             <div className="space-y-4">
               {/* WhatsApp Instant Chat */}
               <a
-                href="https://wa.me/916382114955?text=Hello%20VAM%20VORA%20Technologies,%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                href="https://wa.me/916382114955?text=Hello%20VAM%20VORA%20Technologies%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20enterprise%20IT%20services%20(Cloud%20Infrastructure%2C%20AI%20Solutions%2C%20Cybersecurity%2C%20and%20Modern%20Workplace).%20Please%20let%20me%20know%20how%20we%20can%20connect."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-emerald-200/80 hover:border-emerald-400 hover:bg-emerald-50/20 shadow-xs transition-all group cursor-pointer"
@@ -66,7 +66,7 @@ export const ContactSection: React.FC = () => {
                     +91 63821 14955
                   </span>
                   <p className="text-[11px] text-emerald-600 font-medium mt-0.5 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                     <span>Instant chat & consultation</span>
                   </p>
                 </div>
@@ -80,7 +80,13 @@ export const ContactSection: React.FC = () => {
                   <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
                     Direct Email
                   </span>
-                  <a href="mailto:sales@vamvoratech.com" className="text-sm font-bold text-[#0B132B] hover:text-blue-600 transition-colors">
+                  <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@vamvoratech.com&su=Inquiry%20from%20VAM%20VORA%20Website" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-bold text-[#0B132B] hover:text-blue-600 transition-colors block"
+                    title="Compose via Gmail"
+                  >
                     sales@vamvoratech.com
                   </a>
                   <p className="text-[11px] text-slate-500 mt-0.5">Average response within 2 hours</p>

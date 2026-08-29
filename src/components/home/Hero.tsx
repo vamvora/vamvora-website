@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowUpRight, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import Hls from 'hls.js';
 import { useConsultationModal } from '../../context/ModalContext';
 
@@ -8,15 +8,6 @@ export const Hero: React.FC = () => {
   const { openConsultation } = useConsultationModal();
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const videoY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -75,8 +66,8 @@ export const Hero: React.FC = () => {
       ref={containerRef} 
       className="relative min-h-screen flex flex-col items-center justify-center pt-40 pb-20 sm:pt-48 sm:pb-24 lg:pt-52 px-6 md:px-16 lg:px-24 text-center overflow-hidden bg-slate-950 font-sans"
     >
-      {/* 1. Background Cinematic HLS Video Animation with Parallax */}
-      <motion.div style={{ y: videoY }} className="absolute inset-0 w-full h-[120%] -top-[10%] z-0 pointer-events-none transform-gpu">
+      {/* 1. Background Cinematic HLS Video (Hardware-Accelerated Static Container) */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none transform-gpu overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
@@ -84,21 +75,17 @@ export const Hero: React.FC = () => {
           muted
           playsInline
           preload="metadata"
-          className="w-full h-full object-cover opacity-85 transition-opacity duration-1000"
+          className="w-full h-full object-cover opacity-85"
         />
-      </motion.div>
+      </div>
 
-      {/* 2. Cybernetic Ambient Glow Gradient (Hardware-Accelerated, Zero Gaussian Blur passes) */}
+      {/* 2. Ambient Lighting Gradient */}
       <div className="absolute inset-0 bg-slate-950/60 z-[1] pointer-events-none" />
       
-      {/* Ambient Lighting via native GPU Radial Gradient */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.22)_0%,rgba(1,69,242,0.18)_40%,transparent_70%)] pointer-events-none z-[2] transform-gpu" />
 
-      {/* 3. Centralized Unframed Content with Kinetic Motion */}
-      <motion.div 
-        style={{ y: contentY, opacity }} 
-        className="relative z-10 max-w-4xl mx-auto flex flex-col items-center justify-center text-center mt-6 sm:mt-10 my-auto transform-gpu"
-      >
+      {/* 3. Centralized Unframed Content */}
+      <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center justify-center text-center mt-6 sm:mt-10 my-auto transform-gpu">
         
         {/* Hero Headline */}
         <motion.h1
@@ -167,7 +154,7 @@ export const Hero: React.FC = () => {
           </div>
         </motion.div>
 
-      </motion.div>
+      </div>
     </section>
   );
 };
