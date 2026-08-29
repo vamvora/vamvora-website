@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, ShieldCheck, Home, Info, Layers, BookOpen, Mail } from 'lucide-react';
+import { X, ArrowRight, ShieldCheck, Home, Info, Layers, BookOpen, Mail } from 'lucide-react';
 import { Logo } from '../common/Logo';
 import { useConsultationModal } from '../../context/ModalContext';
 
@@ -178,12 +178,12 @@ export const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile Animated Burger Toggle Button */}
         <div className="flex items-center lg:hidden z-10">
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-xs active:scale-95 cursor-pointer ${
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 shadow-xs active:scale-90 cursor-pointer relative overflow-hidden ${
               isHeroNav
                 ? 'bg-white/15 hover:bg-white/25 border border-white/30 text-white'
                 : 'bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800'
@@ -191,138 +191,166 @@ export const Navbar: React.FC = () => {
             aria-label="Toggle navigation menu"
             aria-expanded={isMobileMenuOpen}
           >
-            {isMobileMenuOpen ? (
-              <X className={`w-5 h-5 ${isHeroNav ? 'text-white' : 'text-slate-900'}`} />
-            ) : (
-              <Menu className={`w-5 h-5 ${isHeroNav ? 'text-white' : 'text-slate-900'}`} />
-            )}
+            <div className="w-5 h-4 flex flex-col justify-between items-center relative pointer-events-none">
+              <span
+                className={`w-5 h-[2px] rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] transform origin-center ${
+                  isHeroNav ? 'bg-white' : 'bg-slate-900'
+                } ${
+                  isMobileMenuOpen
+                    ? 'rotate-45 translate-y-[7px]'
+                    : 'rotate-0 translate-y-0'
+                }`}
+              />
+              <span
+                className={`w-5 h-[2px] rounded-full transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  isHeroNav ? 'bg-white' : 'bg-slate-900'
+                } ${
+                  isMobileMenuOpen
+                    ? 'opacity-0 scale-x-0'
+                    : 'opacity-100 scale-x-100'
+                }`}
+              />
+              <span
+                className={`w-5 h-[2px] rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] transform origin-center ${
+                  isHeroNav ? 'bg-white' : 'bg-slate-900'
+                } ${
+                  isMobileMenuOpen
+                    ? '-rotate-45 -translate-y-[7px]'
+                    : 'rotate-0 translate-y-0'
+                }`}
+              />
+            </div>
           </button>
         </div>
       </div>
       </div>
 
-      {/* Advanced Glassmorphism Mobile Drawer Menu */}
-      {isMobileMenuOpen && (
+      {/* Advanced Glassmorphism Mobile Drawer Menu with Fluid Slide/Fade Transitions */}
+      <div 
+        className={`lg:hidden fixed inset-0 top-0 bg-slate-950/50 backdrop-blur-md z-40 flex flex-col justify-between pointer-events-auto transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isMobileMenuOpen 
+            ? 'opacity-100 pointer-events-auto visible' 
+            : 'opacity-0 pointer-events-none invisible'
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      >
         <div 
-          className="lg:hidden fixed inset-0 top-0 bg-slate-950/40 backdrop-blur-xl z-40 flex flex-col justify-between pointer-events-auto animate-in fade-in duration-200"
-          onClick={() => setIsMobileMenuOpen(false)}
+          className={`w-full max-w-md ml-auto h-full bg-white/98 backdrop-blur-xl border-l border-slate-200/80 p-6 pt-20 flex flex-col justify-between shadow-2xl overflow-y-auto transform-gpu transition-transform duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+          onClick={(e) => e.stopPropagation()}
         >
-          <div 
-            className="w-full max-w-md ml-auto h-full bg-white/95 backdrop-blur-md border-l border-white/60 p-6 pt-20 flex flex-col justify-between shadow-2xl overflow-y-auto transform-gpu"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Top Close Header */}
-            <div className="space-y-4 font-body">
-              <div className="flex items-center justify-between pb-4 border-b border-slate-200/80 mb-2">
-                <span className="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase">
-                  NAVIGATION
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all cursor-pointer"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
-
-              <NavLink
-                to="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
-                    isActive
-                      ? 'bg-[#0145F2] text-white shadow-md'
-                      : 'text-slate-800 hover:bg-slate-100/80'
-                  }`
-                }
-              >
-                <Home className="w-4 h-4" />
-                <span>Home</span>
-              </NavLink>
-
-              <NavLink
-                to="/about"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
-                    isActive
-                      ? 'bg-[#0145F2] text-white shadow-md'
-                      : 'text-slate-800 hover:bg-slate-100/80'
-                  }`
-                }
-              >
-                <Info className="w-4 h-4" />
-                <span>About Us</span>
-              </NavLink>
-
-              <NavLink
-                to="/services"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
-                    isActive
-                      ? 'bg-[#0145F2] text-white shadow-md'
-                      : 'text-slate-800 hover:bg-slate-100/80'
-                  }`
-                }
-              >
-                <Layers className="w-4 h-4" />
-                <span>Services</span>
-              </NavLink>
-
-              <NavLink
-                to="/blog"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
-                    isActive
-                      ? 'bg-[#0145F2] text-white shadow-md'
-                      : 'text-slate-800 hover:bg-slate-100/80'
-                  }`
-                }
-              >
-                <BookOpen className="w-4 h-4" />
-                <span>Insights & Blog</span>
-              </NavLink>
-
-              <NavLink
-                to="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
-                    isActive
-                      ? 'bg-[#0145F2] text-white shadow-md'
-                      : 'text-slate-800 hover:bg-slate-100/80'
-                  }`
-                }
-              >
-                <Mail className="w-4 h-4" />
-                <span>Contact Us</span>
-              </NavLink>
-            </div>
-
-            {/* Bottom Modal CTA in Drawer */}
-            <div className="pt-6 border-t border-slate-200/80 mt-6 space-y-3">
+          {/* Top Close Header */}
+          <div className="space-y-4 font-body">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200/80 mb-2">
+              <span className="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase">
+                NAVIGATION
+              </span>
               <button
                 type="button"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  openConsultation();
-                }}
-                className="w-full bg-[#0145F2] hover:bg-[#0038D1] text-white font-body font-bold py-3.5 px-4 rounded-full text-center flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(1,69,242,0.35)] cursor-pointer active:scale-98 transition-all"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all cursor-pointer active:scale-95"
               >
-                <span>Book a Consultation Call</span>
-                <ArrowRight className="w-4 h-4" />
+                <X className="w-4 h-4" />
               </button>
-              <div className="flex items-center justify-center gap-2 text-xs text-slate-500 pt-1 font-body">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span>Zero-obligation technology assessment</span>
-              </div>
+            </div>
+
+            <NavLink
+              to="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                  isActive
+                    ? 'bg-[#0145F2] text-white shadow-md'
+                    : 'text-slate-800 hover:bg-slate-100/80 active:scale-[0.99]'
+                }`
+              }
+            >
+              <Home className="w-4 h-4" />
+              <span>Home</span>
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                  isActive
+                    ? 'bg-[#0145F2] text-white shadow-md'
+                    : 'text-slate-800 hover:bg-slate-100/80 active:scale-[0.99]'
+                }`
+              }
+            >
+              <Info className="w-4 h-4" />
+              <span>About Us</span>
+            </NavLink>
+
+            <NavLink
+              to="/services"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                  isActive
+                    ? 'bg-[#0145F2] text-white shadow-md'
+                    : 'text-slate-800 hover:bg-slate-100/80 active:scale-[0.99]'
+                }`
+              }
+            >
+              <Layers className="w-4 h-4" />
+              <span>Services</span>
+            </NavLink>
+
+            <NavLink
+              to="/blog"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                  isActive
+                    ? 'bg-[#0145F2] text-white shadow-md'
+                    : 'text-slate-800 hover:bg-slate-100/80 active:scale-[0.99]'
+                }`
+              }
+            >
+              <BookOpen className="w-4 h-4" />
+              <span>Insights & Blog</span>
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                  isActive
+                    ? 'bg-[#0145F2] text-white shadow-md'
+                    : 'text-slate-800 hover:bg-slate-100/80 active:scale-[0.99]'
+                }`
+              }
+            >
+              <Mail className="w-4 h-4" />
+              <span>Contact Us</span>
+            </NavLink>
+          </div>
+
+          {/* Bottom Modal CTA in Drawer */}
+          <div className="pt-6 border-t border-slate-200/80 mt-6 space-y-3">
+            <button
+              type="button"
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                openConsultation();
+              }}
+              className="w-full bg-[#0145F2] hover:bg-[#0038D1] text-white font-body font-bold py-3.5 px-4 rounded-full text-center flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(1,69,242,0.35)] cursor-pointer active:scale-98 transition-all"
+            >
+              <span>Book a Consultation Call</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+            <div className="flex items-center justify-center gap-2 text-xs text-slate-500 pt-1 font-body">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <span>Zero-obligation technology assessment</span>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
