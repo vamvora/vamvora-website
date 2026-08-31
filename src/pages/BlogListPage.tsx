@@ -67,7 +67,7 @@ export const BlogListPage: React.FC = () => {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCat(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-body font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-sm font-body font-semibold whitespace-nowrap transition-all cursor-pointer ${
                   isSelected
                     ? 'bg-slate-900 text-white shadow-md'
                     : 'bg-white text-slate-600 border border-slate-200/80 hover:border-slate-300 hover:bg-slate-50'
@@ -116,7 +116,7 @@ export const BlogListPage: React.FC = () => {
 
                 <Link
                   to={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-900 group-hover:text-blue-600 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors"
                 >
                   <span>Read Article</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

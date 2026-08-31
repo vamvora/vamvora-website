@@ -65,14 +65,14 @@ export const Navbar: React.FC = () => {
 
   const navLinkClasses = ({ isActive }: { isActive: boolean }) => {
     if (isHeroNav) {
-      return `text-xs font-body font-semibold transition-all py-2 px-4 rounded-full inline-flex items-center gap-1 relative ${
+      return `text-sm font-body font-semibold transition-all py-2 px-4 rounded-full inline-flex items-center gap-1 relative ${
         isActive
           ? 'text-white bg-white/25 shadow-xs border border-white/40 font-bold backdrop-blur-md'
           : 'text-white/85 hover:text-white hover:bg-white/15'
       }`;
     }
 
-    return `text-xs font-body font-semibold transition-all py-2 px-4 rounded-full inline-flex items-center gap-1 relative ${
+    return `text-sm font-body font-semibold transition-all py-2 px-4 rounded-full inline-flex items-center gap-1 relative ${
       isActive
         ? 'text-white bg-[#0145F2] shadow-xs font-bold'
         : 'text-slate-700 hover:text-[#0145F2] hover:bg-slate-200/60'
@@ -98,7 +98,7 @@ export const Navbar: React.FC = () => {
             : 'bg-white/95 border-slate-200/90 text-slate-800 shadow-xs'
         }`}
       >
-        <div className="relative z-10 flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 text-[10px] sm:text-xs font-medium tracking-tight text-center max-w-5xl mx-auto whitespace-nowrap overflow-hidden">
+        <div className="relative z-10 flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 text-xs sm:text-sm font-medium tracking-tight text-center max-w-5xl mx-auto whitespace-nowrap overflow-hidden">
           <span className={`font-semibold ${isHeroNav ? 'text-white/95' : 'text-slate-800'}`}>
             Free on orders over $150
           </span>
@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
             type="button"
             onClick={handleCopyCode}
             title="Click to copy code"
-            className="font-bold bg-[#0145F2] hover:bg-[#0038D1] text-white px-2 py-0.5 rounded-full text-[9.5px] sm:text-[11px] tracking-wider shadow-xs border border-white/30 transition-all active:scale-95 cursor-pointer inline-flex items-center flex-shrink-0"
+            className="font-bold bg-[#0145F2] hover:bg-[#0038D1] text-white px-2 py-0.5 rounded-full text-[11.5px] sm:text-[13px] tracking-wider shadow-xs border border-white/30 transition-all active:scale-95 cursor-pointer inline-flex items-center flex-shrink-0"
           >
             <span>{codeCopied ? 'COPIED!' : 'FIRST15'}</span>
           </button>
@@ -171,7 +171,7 @@ export const Navbar: React.FC = () => {
           <button
             type="button"
             onClick={() => openConsultation()}
-            className="text-white text-xs font-body font-semibold px-5 py-2.5 rounded-full shadow-md transition-all inline-flex items-center justify-center gap-2 cursor-pointer group bg-[#0145F2] hover:bg-[#0038D1] border-[1.5px] border-white/60 shadow-[0_4px_16px_rgba(1,69,242,0.35),inset_0_1.5px_1px_rgba(255,255,255,0.7)] hover:shadow-[0_6px_22px_rgba(1,69,242,0.5)] active:scale-[0.98]"
+            className="text-white text-sm font-body font-semibold px-5 py-2.5 rounded-full shadow-md transition-all inline-flex items-center justify-center gap-2 cursor-pointer group bg-[#0145F2] hover:bg-[#0038D1] border-[1.5px] border-white/60 shadow-[0_4px_16px_rgba(1,69,242,0.35),inset_0_1.5px_1px_rgba(255,255,255,0.7)] hover:shadow-[0_6px_22px_rgba(1,69,242,0.5)] active:scale-[0.98]"
           >
             <span>Book a Consultation Call</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -259,7 +259,7 @@ export const Navbar: React.FC = () => {
               to="/"
               onClick={() => setIsMobileMenuOpen(false)}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                `flex items-center gap-3 px-4 py-3 rounded-2xl text-base font-bold transition-all ${
                   isActive
                     ? 'bg-[#0145F2] text-white shadow-md'
                     : 'text-slate-800 hover:bg-slate-100/80 active:scale-[0.99]'
@@ -274,7 +274,7 @@ export const Navbar: React.FC = () => {
               to="/about"
               onClick={() => setIsMobileMenuOpen(false)}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                `flex items-center gap-3 px-4 py-3 rounded-2xl text-base font-bold transition-all ${
                   isActive
                     ? 'bg-[#0145F2] text-white shadow-md'
                     : 'text-slate-800 hover:bg-slate-100/80 active:scale-[0.99]'
@@ -289,7 +289,7 @@ export const Navbar: React.FC = () => {
               to="/services"
               onClick={() => setIsMobileMenuOpen(false)}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                `flex items-center gap-3 px-4 py-3 rounded-2xl text-base font-bold transition-all ${
                   isActive
                     ? 'bg-[#0145F2] text-white shadow-md'
                     : 'text-slate-800 hover:bg-slate-100/80 active:scale-[0.99]'
@@ -304,7 +304,7 @@ export const Navbar: React.FC = () => {
               to="/blog"
               onClick={() => setIsMobileMenuOpen(false)}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                `flex items-center gap-3 px-4 py-3 rounded-2xl text-base font-bold transition-all ${
                   isActive
                     ? 'bg-[#0145F2] text-white shadow-md'
                     : 'text-slate-800 hover:bg-slate-100/80 active:scale-[0.99]'
@@ -319,7 +319,7 @@ export const Navbar: React.FC = () => {
               to="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                `flex items-center gap-3 px-4 py-3 rounded-2xl text-base font-bold transition-all ${
                   isActive
                     ? 'bg-[#0145F2] text-white shadow-md'
                     : 'text-slate-800 hover:bg-slate-100/80 active:scale-[0.99]'
@@ -339,7 +339,7 @@ export const Navbar: React.FC = () => {
                 setIsMobileMenuOpen(false);
                 openConsultation();
               }}
-              className="w-full bg-[#0145F2] hover:bg-[#0038D1] text-white font-body font-bold py-3.5 px-4 rounded-full text-center flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(1,69,242,0.35)] cursor-pointer active:scale-98 transition-all"
+              className="w-full bg-[#0145F2] hover:bg-[#0038D1] text-white font-body font-bold text-base py-3.5 px-4 rounded-full text-center flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(1,69,242,0.35)] cursor-pointer active:scale-98 transition-all"
             >
               <span>Book a Consultation Call</span>
               <ArrowRight className="w-4 h-4" />

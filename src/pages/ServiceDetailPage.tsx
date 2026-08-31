@@ -378,13 +378,13 @@ export const ServiceDetailPage: React.FC = () => {
             <button
               type="button"
               onClick={() => openConsultation(service.title)}
-              className="liquid-glass-light w-full sm:w-auto bg-white/90 hover:bg-white text-slate-950 font-body font-semibold px-8 py-4 rounded-full shadow-xl transition-all cursor-pointer"
+              className="liquid-glass-light w-full sm:w-auto bg-white/90 hover:bg-white text-slate-950 text-base sm:text-lg font-body font-semibold px-8 py-4 rounded-full shadow-xl transition-all cursor-pointer"
             >
               Book {service.title} Call
             </button>
             <Link
               to="/contact"
-              className="liquid-glass-strong w-full sm:w-auto text-white font-body font-medium px-8 py-4 rounded-full hover:bg-white/10 transition-all text-center"
+              className="liquid-glass-strong w-full sm:w-auto text-white text-base sm:text-lg font-body font-medium px-8 py-4 rounded-full hover:bg-white/10 transition-all text-center"
             >
               Contact Us
             </Link>

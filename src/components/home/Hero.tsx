@@ -118,7 +118,7 @@ export const Hero: React.FC = () => {
           <button
             type="button"
             onClick={() => openConsultation()}
-            className="w-full sm:w-auto rounded-full px-8 py-4 text-sm sm:text-base font-semibold text-white bg-[#0145F2] hover:bg-[#0038D1] border-[1.5px] border-white/60 shadow-[0_10px_30px_rgba(1,69,242,0.45),inset_0_1.5px_1.5px_rgba(255,255,255,0.7)] hover:shadow-[0_15px_35px_rgba(1,69,242,0.6)] flex items-center justify-center gap-2.5 transition-all font-body cursor-pointer group hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full sm:w-auto rounded-full px-8 py-4 text-base sm:text-lg font-semibold text-white bg-[#0145F2] hover:bg-[#0038D1] border-[1.5px] border-white/60 shadow-[0_10px_30px_rgba(1,69,242,0.45),inset_0_1.5px_1.5px_rgba(255,255,255,0.7)] hover:shadow-[0_15px_35px_rgba(1,69,242,0.6)] flex items-center justify-center gap-2.5 transition-all font-body cursor-pointer group hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>Book a Consultation Call</span>
             <ArrowUpRight className="h-5 w-5 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -126,7 +126,7 @@ export const Hero: React.FC = () => {
           
           <a
             href="#services-section"
-            className="glass-cta w-full sm:w-auto rounded-full px-8 py-4 text-sm sm:text-base font-semibold text-white hover:text-white flex items-center justify-center gap-2 transition-all font-body group hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            className="glass-cta w-full sm:w-auto rounded-full px-8 py-4 text-base sm:text-lg font-semibold text-white hover:text-white flex items-center justify-center gap-2 transition-all font-body group hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
           >
             <span>Explore Services</span>
             <ArrowRight className="h-4 w-4 text-white group-hover:translate-x-0.5 transition-transform" />

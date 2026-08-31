@@ -71,7 +71,7 @@ export const HomepageFAQ: React.FC = () => {
         <BlurReveal delay={0.2} className="text-center mt-10">
           <Link
             to="/contact"
-            className="deep-glass-inner inline-flex items-center gap-2 text-xs sm:text-sm font-body font-semibold px-8 py-4 rounded-full text-slate-900 hover:bg-white shadow-sm transition-all"
+            className="deep-glass-inner inline-flex items-center gap-2 text-sm sm:text-base font-body font-semibold px-8 py-4 rounded-full text-slate-900 hover:bg-white shadow-sm transition-all"
           >
             <span>Have More Questions? Contact Us</span>
             <ArrowRight className="w-4 h-4" />

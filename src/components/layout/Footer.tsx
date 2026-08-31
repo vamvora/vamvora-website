@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
             <button
               type="button"
               onClick={() => openConsultation()}
-              className="px-7 py-3.5 rounded-full bg-[#0145F2] hover:bg-[#0038D1] border-[1.5px] border-white/50 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2.5 shadow-[0_8px_25px_rgba(1,69,242,0.4),inset_0_1.5px_1px_rgba(255,255,255,0.7)] hover:shadow-[0_12px_35px_rgba(1,69,242,0.6)] hover:scale-[1.02] transition-all cursor-pointer"
+              className="px-7 py-3.5 rounded-full bg-[#0145F2] hover:bg-[#0038D1] border-[1.5px] border-white/50 text-white text-sm sm:text-base font-semibold inline-flex items-center gap-2.5 shadow-[0_8px_25px_rgba(1,69,242,0.4),inset_0_1.5px_1px_rgba(255,255,255,0.7)] hover:shadow-[0_12px_35px_rgba(1,69,242,0.6)] hover:scale-[1.02] transition-all cursor-pointer"
             >
               <span>Book a Consultation Call</span>
               <ArrowRight className="w-4 h-4" />
@@ -82,21 +82,40 @@ export const Footer: React.FC = () => {
         {/* Tier 2: Enterprise Directory with Brand Identity */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 py-10 sm:py-12 border-b border-white/10">
           
-          {/* Brand Identity Column */}
-          <div className="md:col-span-2 lg:col-span-4 space-y-4 pr-0 lg:pr-6">
-            <Link to="/" className="inline-block group select-none">
-              <img 
-                src={logoImg} 
-                alt="VAM VORA Technologies" 
-                className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105" 
-              />
-            </Link>
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-              Architecting resilient cloud ecosystems, intelligent workplace suites, AI automations, and zero-trust cybersecurity for modern enterprises.
-            </p>
-            <div className="inline-flex items-center gap-2 text-xs text-slate-400 font-mono">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Enterprise Engineering • Verified Partner</span>
+          {/* Brand Identity Column with Video Background Animation */}
+          <div className="md:col-span-2 lg:col-span-4 relative rounded-3xl p-6 sm:p-7 overflow-hidden bg-[#1e4fc0] shadow-[0_12px_40px_rgba(21,76,189,0.25)] border border-white/20 flex flex-col justify-between gap-5 group">
+            {/* Background Video Animation */}
+            <video
+              className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            >
+              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260503_104800_bc43ae09-f494-43e3-97d7-2f8c1692cfd7.mp4" type="video/mp4" />
+            </video>
+
+            {/* Subtle Contrast Backdrop */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/35 pointer-events-none z-[1]" />
+
+            {/* Card Content Inside Animation */}
+            <div className="relative z-10 space-y-4">
+              <Link to="/" className="inline-block group/logo select-none">
+                <img 
+                  src={logoImg} 
+                  alt="VAM VORA Technologies" 
+                  className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover/logo:scale-105 brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]" 
+                />
+              </Link>
+              <p className="text-xs sm:text-sm text-white/90 leading-relaxed max-w-sm drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)] font-medium">
+                Architecting resilient cloud ecosystems, intelligent workplace suites, AI automations, and zero-trust cybersecurity for modern enterprises.
+              </p>
+            </div>
+
+            <div className="relative z-10 inline-flex items-center gap-2 text-xs text-white/90 font-mono drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)] pt-1">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+              <span className="font-semibold text-white/95">Enterprise Engineering • Verified Partner</span>
             </div>
           </div>
 

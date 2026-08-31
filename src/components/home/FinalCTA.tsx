@@ -25,7 +25,7 @@ export const FinalCTA: React.FC = () => {
             <button
               type="button"
               onClick={() => openConsultation()}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#2563EB] hover:bg-blue-600 active:bg-blue-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/30 transition-all cursor-pointer group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#2563EB] hover:bg-blue-600 active:bg-blue-700 text-white text-lg font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/30 transition-all cursor-pointer group"
             >
               <span>Book Consultation</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -33,7 +33,7 @@ export const FinalCTA: React.FC = () => {
 
             <a
               href="#contact-section"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/90 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold px-7 py-4 rounded-xl border border-slate-700 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/90 hover:bg-slate-700 text-slate-200 hover:text-white text-lg font-semibold px-7 py-4 rounded-xl border border-slate-700 transition-all"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Contact Us</span>

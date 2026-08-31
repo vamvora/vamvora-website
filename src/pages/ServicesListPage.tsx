@@ -201,14 +201,14 @@ export const ServicesListPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => openConsultation(service.title)}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white text-xs sm:text-sm font-body font-semibold px-6 py-3.5 rounded-full shadow-md transition-all group/btn bg-[#0145F2] hover:bg-[#0038D1] cursor-pointer hover:shadow-[0_8px_20px_rgba(1,69,242,0.4)]"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white text-sm sm:text-base font-body font-semibold px-6 py-3.5 rounded-full shadow-md transition-all group/btn bg-[#0145F2] hover:bg-[#0038D1] cursor-pointer hover:shadow-[0_8px_20px_rgba(1,69,242,0.4)]"
                   >
                     <span>Get Started Now</span>
                     <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                   </button>
                   <Link
                     to={`/services/${service.slug}`}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-body font-semibold text-slate-800 hover:text-[#0145F2] px-5 py-3.5 rounded-full transition-all text-center deep-glass-inner hover:bg-white hover:border-[#0145F2]/40 hover:shadow-[0_8px_22px_rgba(1,69,242,0.18)] hover:scale-[1.03] active:scale-[0.98] group/arch cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base font-body font-semibold text-slate-800 hover:text-[#0145F2] px-5 py-3.5 rounded-full transition-all text-center deep-glass-inner hover:bg-white hover:border-[#0145F2]/40 hover:shadow-[0_8px_22px_rgba(1,69,242,0.18)] hover:scale-[1.03] active:scale-[0.98] group/arch cursor-pointer"
                   >
                     <span>Technical Architecture</span>
                     <ArrowRight className="w-3.5 h-3.5 text-slate-600 group-hover/arch:text-[#0145F2] group-hover/arch:translate-x-1 transition-all" />
@@ -232,7 +232,7 @@ export const ServicesListPage: React.FC = () => {
             <button
               type="button"
               onClick={() => openConsultation()}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm sm:text-base font-body font-semibold text-white bg-[#0145F2] hover:bg-[#0038D1] shadow-lg hover:shadow-xl transition-all cursor-pointer hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base sm:text-lg font-body font-semibold text-white bg-[#0145F2] hover:bg-[#0038D1] shadow-lg hover:shadow-xl transition-all cursor-pointer hover:scale-[1.02]"
             >
               <span>Book a Consultation Call</span>
               <ArrowUpRight className="w-5 h-5" />

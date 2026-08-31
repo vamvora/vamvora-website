@@ -168,7 +168,7 @@ export const ContactSection: React.FC = () => {
                       setSubmitted(false);
                       setForm({ name: '', company: '', email: '', phone: '', subject: 'General Inquiry', message: '' });
                     }}
-                    className="text-xs font-bold text-blue-600 hover:underline pt-4 block mx-auto"
+                    className="text-sm font-bold text-blue-600 hover:underline pt-4 block mx-auto cursor-pointer"
                   >
                     Send another message
                   </button>
@@ -278,7 +278,7 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full bg-[#2563EB] hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 cursor-pointer ${
+                    className={`w-full bg-[#2563EB] hover:bg-blue-700 active:bg-blue-800 text-white text-base font-bold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 cursor-pointer ${
                       isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
                     }`}
                   >

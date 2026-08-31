@@ -113,7 +113,7 @@ export const AboutPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => openConsultation()}
-                className="px-8 py-4 rounded-full bg-[#0145F2] hover:bg-[#0038D1] border-[1.5px] border-white/50 text-white text-sm sm:text-base font-semibold inline-flex items-center gap-2 shadow-[0_10px_30px_rgba(1,69,242,0.4),inset_0_1.5px_1px_rgba(255,255,255,0.7)] hover:scale-[1.02] transition-all cursor-pointer"
+                className="px-8 py-4 rounded-full bg-[#0145F2] hover:bg-[#0038D1] border-[1.5px] border-white/50 text-white text-base sm:text-lg font-semibold inline-flex items-center gap-2 shadow-[0_10px_30px_rgba(1,69,242,0.4),inset_0_1.5px_1px_rgba(255,255,255,0.7)] hover:scale-[1.02] transition-all cursor-pointer"
               >
                 <span>Book a Consultation Call</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -374,7 +374,7 @@ export const AboutPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => openConsultation()}
-                className="px-8 py-4 rounded-full bg-[#0145F2] hover:bg-[#0038D1] text-white text-sm sm:text-base font-semibold inline-flex items-center gap-2 shadow-[0_10px_30px_rgba(1,69,242,0.4)] hover:scale-[1.02] transition-all cursor-pointer"
+                className="px-8 py-4 rounded-full bg-[#0145F2] hover:bg-[#0038D1] text-white text-base sm:text-lg font-semibold inline-flex items-center gap-2 shadow-[0_10px_30px_rgba(1,69,242,0.4)] hover:scale-[1.02] transition-all cursor-pointer"
               >
                 <span>Book a Consultation Call</span>
                 <ArrowUpRight className="w-4 h-4" />

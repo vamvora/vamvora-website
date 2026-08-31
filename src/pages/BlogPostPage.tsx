@@ -100,7 +100,7 @@ export const BlogPostPage: React.FC = () => {
             <button
               type="button"
               onClick={() => openConsultation(post.category)}
-              className="liquid-glass-light bg-white/90 hover:bg-white text-slate-950 text-xs sm:text-sm font-semibold px-7 py-3.5 rounded-full transition-all shadow-md flex-shrink-0 cursor-pointer"
+              className="liquid-glass-light bg-white/90 hover:bg-white text-slate-950 text-sm sm:text-base font-semibold px-7 py-3.5 rounded-full transition-all shadow-md flex-shrink-0 cursor-pointer"
             >
               Book Consultation
             </button>

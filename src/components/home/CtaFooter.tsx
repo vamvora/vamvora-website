@@ -51,14 +51,14 @@ export const CtaFooter = () => {
           <button 
             type="button"
             onClick={() => openConsultation()}
-            className="liquid-glass-strong w-full sm:w-auto rounded-full px-8 py-4 text-sm sm:text-base font-semibold text-white flex items-center justify-center gap-2 hover:bg-white/20 transition-all font-body cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.5)] group"
+            className="liquid-glass-strong w-full sm:w-auto rounded-full px-8 py-4 text-base sm:text-lg font-semibold text-white flex items-center justify-center gap-2 hover:bg-white/20 transition-all font-body cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.5)] group"
           >
             <span>Book a Call</span>
             <ArrowUpRight className="h-5 w-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
           <Link
             to="/contact"
-            className="liquid-glass-light w-full sm:w-auto rounded-full px-8 py-4 text-sm sm:text-base font-semibold text-slate-900 flex items-center justify-center gap-2 hover:bg-white/80 transition-all font-body shadow-[0_10px_30px_rgba(255,255,255,0.1)] group bg-white/70 backdrop-blur-xl"
+            className="liquid-glass-light w-full sm:w-auto rounded-full px-8 py-4 text-base sm:text-lg font-semibold text-slate-900 flex items-center justify-center gap-2 hover:bg-white/80 transition-all font-body shadow-[0_10px_30px_rgba(255,255,255,0.1)] group bg-white/70 backdrop-blur-xl"
           >
             <span>View Pricing</span>
             <ArrowUpRight className="h-4 w-4 text-slate-900 group-hover:translate-x-0.5 transition-transform" />

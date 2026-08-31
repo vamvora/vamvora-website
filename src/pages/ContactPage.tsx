@@ -171,7 +171,7 @@ export const ContactPage: React.FC = () => {
                       setSubmitted(false);
                       setForm({ name: '', company: '', email: '', phone: '', subject: 'General Inquiry', message: '' });
                     }}
-                    className="text-xs font-bold text-blue-600 hover:underline pt-4 block mx-auto cursor-pointer"
+                    className="text-sm font-bold text-blue-600 hover:underline pt-4 block mx-auto cursor-pointer"
                   >
                     Send another inquiry
                   </button>
@@ -290,7 +290,7 @@ export const ContactPage: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full text-white font-bold py-4 px-6 rounded-full transition-all shadow-lg flex items-center justify-center gap-2.5 cursor-pointer bg-[#0145F2] hover:bg-[#0038D1] hover:shadow-[0_10px_30px_rgba(1,69,242,0.4)] hover:scale-[1.01] active:scale-[0.99] ${
+                    className={`w-full text-white text-base font-bold py-4 px-6 rounded-full transition-all shadow-lg flex items-center justify-center gap-2.5 cursor-pointer bg-[#0145F2] hover:bg-[#0038D1] hover:shadow-[0_10px_30px_rgba(1,69,242,0.4)] hover:scale-[1.01] active:scale-[0.99] ${
                       isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
                     }`}
                   >

@@ -88,14 +88,14 @@ export const FeaturedServices: React.FC = () => {
               <button
                 type="button"
                 onClick={() => openConsultation('Google Workspace')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white text-xs sm:text-sm font-body font-semibold px-6 py-3.5 rounded-full shadow-md transition-all group/btn bg-[#0145F2] hover:bg-[#0038D1] cursor-pointer hover:shadow-[0_8px_20px_rgba(1,69,242,0.4)]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white text-sm sm:text-base font-body font-semibold px-6 py-3.5 rounded-full shadow-md transition-all group/btn bg-[#0145F2] hover:bg-[#0038D1] cursor-pointer hover:shadow-[0_8px_20px_rgba(1,69,242,0.4)]"
               >
                 <span>Get Started Now</span>
                 <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </button>
               <Link
                 to="/services/google-workspace"
-                className="deep-glass-inner w-full sm:w-auto text-xs sm:text-sm font-body font-semibold text-slate-800 hover:text-[#0145F2] px-5 py-3.5 rounded-full transition-all text-center cursor-pointer hover:bg-white hover:border-[#0145F2]/40 hover:shadow-[0_8px_22px_rgba(1,69,242,0.18)] hover:scale-[1.03] active:scale-[0.98] inline-flex items-center justify-center gap-2 group/arch"
+                className="deep-glass-inner w-full sm:w-auto text-sm sm:text-base font-body font-semibold text-slate-800 hover:text-[#0145F2] px-5 py-3.5 rounded-full transition-all text-center cursor-pointer hover:bg-white hover:border-[#0145F2]/40 hover:shadow-[0_8px_22px_rgba(1,69,242,0.18)] hover:scale-[1.03] active:scale-[0.98] inline-flex items-center justify-center gap-2 group/arch"
               >
                 <span>Technical Architecture</span>
                 <ArrowRight className="w-3.5 h-3.5 text-slate-600 group-hover/arch:text-[#0145F2] group-hover/arch:translate-x-1 transition-all" />
@@ -156,14 +156,14 @@ export const FeaturedServices: React.FC = () => {
               <button
                 type="button"
                 onClick={() => openConsultation('Microsoft 365')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white text-xs sm:text-sm font-body font-semibold px-6 py-3.5 rounded-full shadow-md transition-all group/btn bg-[#0145F2] hover:bg-[#0038D1] cursor-pointer hover:shadow-[0_8px_20px_rgba(1,69,242,0.4)]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white text-sm sm:text-base font-body font-semibold px-6 py-3.5 rounded-full shadow-md transition-all group/btn bg-[#0145F2] hover:bg-[#0038D1] cursor-pointer hover:shadow-[0_8px_20px_rgba(1,69,242,0.4)]"
               >
                 <span>Get Started Now</span>
                 <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </button>
               <Link
                 to="/services/microsoft-365"
-                className="deep-glass-inner w-full sm:w-auto text-xs sm:text-sm font-body font-semibold text-slate-800 hover:text-[#0145F2] px-5 py-3.5 rounded-full transition-all text-center cursor-pointer hover:bg-white hover:border-[#0145F2]/40 hover:shadow-[0_8px_22px_rgba(1,69,242,0.18)] hover:scale-[1.03] active:scale-[0.98] inline-flex items-center justify-center gap-2 group/arch"
+                className="deep-glass-inner w-full sm:w-auto text-sm sm:text-base font-body font-semibold text-slate-800 hover:text-[#0145F2] px-5 py-3.5 rounded-full transition-all text-center cursor-pointer hover:bg-white hover:border-[#0145F2]/40 hover:shadow-[0_8px_22px_rgba(1,69,242,0.18)] hover:scale-[1.03] active:scale-[0.98] inline-flex items-center justify-center gap-2 group/arch"
               >
                 <span>Technical Architecture</span>
                 <ArrowRight className="w-3.5 h-3.5 text-slate-600 group-hover/arch:text-[#0145F2] group-hover/arch:translate-x-1 transition-all" />
@@ -177,7 +177,7 @@ export const FeaturedServices: React.FC = () => {
         <BlurReveal delay={0.25} className="flex justify-center pt-2">
           <Link
             to="/services"
-            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-sm sm:text-base font-body font-semibold text-white bg-[#0145F2] hover:bg-[#0038D1] shadow-lg hover:shadow-[0_12px_30px_rgba(1,69,242,0.4)] transition-all cursor-pointer hover:scale-[1.02] group"
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-base sm:text-lg font-body font-semibold text-white bg-[#0145F2] hover:bg-[#0038D1] shadow-lg hover:shadow-[0_12px_30px_rgba(1,69,242,0.4)] transition-all cursor-pointer hover:scale-[1.02] group"
           >
             <span>All Services</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
