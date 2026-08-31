@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Phone, MapPin, Mail, ArrowUpRight } from 'lucide-react';
 import { useConsultationModal } from '../../context/ModalContext';
 import { WhatsAppIcon } from '../common/WhatsAppButton';
-import logoImg from '../../assets/vam-logo.png';
+import logoImg from '../../assets/logo.png';
 
 // Clean SVG Icons for Social Networks
 const InstagramIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
@@ -82,11 +82,11 @@ export const Footer: React.FC = () => {
         {/* Tier 2: Enterprise Directory with Brand Identity */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 py-10 sm:py-12 border-b border-white/10">
           
-          {/* Brand Identity Column with Video Background Animation */}
-          <div className="md:col-span-2 lg:col-span-4 relative rounded-3xl p-6 sm:p-7 overflow-hidden bg-[#1e4fc0] shadow-[0_12px_40px_rgba(21,76,189,0.25)] border border-white/20 flex flex-col justify-between gap-5 group">
+          {/* Brand Identity Column with Dynamic Color-Changing Video & Lighting Animation */}
+          <div className="md:col-span-2 lg:col-span-4 relative rounded-3xl p-6 sm:p-7 overflow-hidden bg-[#0a1b4a] shadow-[0_12px_45px_rgba(1,69,242,0.35)] border border-white/20 flex flex-col justify-between gap-5 group">
             {/* Background Video Animation */}
             <video
-              className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+              className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-85"
               autoPlay
               muted
               loop
@@ -96,26 +96,45 @@ export const Footer: React.FC = () => {
               <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260503_104800_bc43ae09-f494-43e3-97d7-2f8c1692cfd7.mp4" type="video/mp4" />
             </video>
 
-            {/* Subtle Contrast Backdrop */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/35 pointer-events-none z-[1]" />
+            {/* Dynamic Color-Changing Aurora Lighting Overlay that Lights the Card & Logo */}
+            <div 
+              className="absolute inset-0 pointer-events-none z-[1] mix-blend-screen opacity-90 animate-[footerAuraChange_8s_ease-in-out_infinite]"
+            />
+
+            {/* Contrast Backdrop to Guarantee Readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/60 pointer-events-none z-[2]" />
 
             {/* Card Content Inside Animation */}
             <div className="relative z-10 space-y-4">
-              <Link to="/" className="inline-block group/logo select-none">
-                <img 
-                  src={logoImg} 
-                  alt="VAM VORA Technologies" 
-                  className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover/logo:scale-105 brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]" 
+              {/* Backlit Stage for Original Brand Logo with Active Color-Changing Lighting */}
+              <Link to="/" className="inline-block group/logo select-none relative">
+                {/* Dynamic Color-Shifting Ambient Light Flare / Aura behind Logo */}
+                <div 
+                  className="absolute -inset-2.5 rounded-3xl bg-gradient-to-r from-[#00E5FF] via-[#0145F2] to-[#8B5CF6] opacity-75 blur-md group-hover:opacity-100 group-hover:blur-xl transition-all duration-500 animate-[logoAura_5s_ease-in-out_infinite]" 
                 />
+
+                {/* Backlit Luminous Glass Stage for Original Logo */}
+                <div className="relative px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-white/90 shadow-[0_8px_30px_rgba(0,0,0,0.35),0_0_20px_rgba(255,255,255,0.7)] group-hover:shadow-[0_12px_40px_rgba(0,229,255,0.5),0_0_30px_rgba(255,255,255,0.9)] group-hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
+                  <img 
+                    src={logoImg} 
+                    alt="VAM VORA Technologies" 
+                    className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover/logo:scale-105" 
+                  />
+                </div>
               </Link>
-              <p className="text-xs sm:text-sm text-white/90 leading-relaxed max-w-sm drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)] font-medium">
-                Architecting resilient cloud ecosystems, intelligent workplace suites, AI automations, and zero-trust cybersecurity for modern enterprises.
-              </p>
+
+              {/* Crystal Clear High-Contrast Description */}
+              <div className="p-3.5 sm:p-4 rounded-2xl bg-black/45 backdrop-blur-md border border-white/15 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                <p className="text-xs sm:text-[13.5px] text-white font-medium leading-relaxed drop-shadow-sm antialiased">
+                  Architecting resilient cloud ecosystems, intelligent workplace suites, AI automations, and zero-trust cybersecurity for modern enterprises.
+                </p>
+              </div>
             </div>
 
-            <div className="relative z-10 inline-flex items-center gap-2 text-xs text-white/90 font-mono drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)] pt-1">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-              <span className="font-semibold text-white/95">Enterprise Engineering • Verified Partner</span>
+            {/* Enterprise Verified Partner Pill */}
+            <div className="relative z-10 inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/15 text-xs text-white/95 font-mono shadow-xs self-start">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
+              <span className="font-semibold text-white tracking-wide">Enterprise Engineering • Verified Partner</span>
             </div>
           </div>
 
@@ -354,6 +373,41 @@ export const Footer: React.FC = () => {
         </div>
 
       </div>
+
+      {/* Dynamic Lighting & Color-Changing Keyframe Animations */}
+      <style>{`
+        @keyframes footerAuraChange {
+          0% {
+            background: radial-gradient(circle at 25% 25%, rgba(0, 229, 255, 0.45) 0%, rgba(1, 69, 242, 0.30) 50%, transparent 80%);
+            filter: hue-rotate(0deg);
+          }
+          33% {
+            background: radial-gradient(circle at 75% 30%, rgba(99, 102, 241, 0.50) 0%, rgba(14, 165, 233, 0.35) 50%, transparent 80%);
+            filter: hue-rotate(60deg);
+          }
+          66% {
+            background: radial-gradient(circle at 45% 75%, rgba(6, 182, 212, 0.50) 0%, rgba(139, 92, 246, 0.35) 50%, transparent 80%);
+            filter: hue-rotate(120deg);
+          }
+          100% {
+            background: radial-gradient(circle at 25% 25%, rgba(0, 229, 255, 0.45) 0%, rgba(1, 69, 242, 0.30) 50%, transparent 80%);
+            filter: hue-rotate(0deg);
+          }
+        }
+
+        @keyframes logoAura {
+          0%, 100% {
+            filter: hue-rotate(0deg) brightness(1.1);
+            transform: scale(0.98);
+            opacity: 0.75;
+          }
+          50% {
+            filter: hue-rotate(100deg) brightness(1.4);
+            transform: scale(1.05);
+            opacity: 0.95;
+          }
+        }
+      `}</style>
     </footer>
   );
 };
