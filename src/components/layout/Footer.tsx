@@ -106,15 +106,10 @@ export const Footer: React.FC = () => {
 
             {/* Card Content Inside Animation */}
             <div className="relative z-10 space-y-4">
-              {/* Backlit Stage for Original Brand Logo with Active Color-Changing Lighting */}
+              {/* Stage for Original Brand Logo */}
               <Link to="/" className="inline-block group/logo select-none relative">
-                {/* Dynamic Color-Shifting Ambient Light Flare / Aura behind Logo */}
-                <div 
-                  className="absolute -inset-2.5 rounded-3xl bg-gradient-to-r from-[#00E5FF] via-[#0145F2] to-[#8B5CF6] opacity-75 blur-md group-hover:opacity-100 group-hover:blur-xl transition-all duration-500 animate-[logoAura_5s_ease-in-out_infinite]" 
-                />
-
-                {/* Backlit Luminous Glass Stage for Original Logo */}
-                <div className="relative px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-white/90 shadow-[0_8px_30px_rgba(0,0,0,0.35),0_0_20px_rgba(255,255,255,0.7)] group-hover:shadow-[0_12px_40px_rgba(0,229,255,0.5),0_0_30px_rgba(255,255,255,0.9)] group-hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
+                {/* Luminous Glass Stage for Original Logo without gradient flare */}
+                <div className="relative px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-white/90 shadow-[0_8px_30px_rgba(0,0,0,0.35)] group-hover:shadow-[0_12px_35px_rgba(0,0,0,0.45)] group-hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
                   <img 
                     src={logoImg} 
                     alt="VAM VORA Technologies" 
@@ -392,19 +387,6 @@ export const Footer: React.FC = () => {
           100% {
             background: radial-gradient(circle at 25% 25%, rgba(0, 229, 255, 0.45) 0%, rgba(1, 69, 242, 0.30) 50%, transparent 80%);
             filter: hue-rotate(0deg);
-          }
-        }
-
-        @keyframes logoAura {
-          0%, 100% {
-            filter: hue-rotate(0deg) brightness(1.1);
-            transform: scale(0.98);
-            opacity: 0.75;
-          }
-          50% {
-            filter: hue-rotate(100deg) brightness(1.4);
-            transform: scale(1.05);
-            opacity: 0.95;
           }
         }
       `}</style>
