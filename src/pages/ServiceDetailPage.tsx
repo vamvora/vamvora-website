@@ -10,6 +10,7 @@ import {
   Building2, 
   Server
 } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 // Import custom uploaded service icons
 import cloudIcon from '../assets/icons/cloud.png';
@@ -43,8 +44,58 @@ export const ServiceDetailPage: React.FC = () => {
 
   const currentIcon = serviceIconsMap[service.id] || cloudIcon;
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        '@id': `https://vamvoratech.com/services/${service.slug}#service`,
+        name: service.title,
+        description: service.seoDescription || service.shortDescription,
+        provider: {
+          '@type': 'Organization',
+          name: 'VAM VORA Technologies',
+          url: 'https://vamvoratech.com/',
+          logo: 'https://vamvoratech.com/logo.png',
+        },
+        url: `https://vamvoratech.com/services/${service.slug}`,
+        serviceType: service.title,
+        areaServed: 'Worldwide',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://vamvoratech.com/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Services',
+            item: 'https://vamvoratech.com/services',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: service.title,
+            item: `https://vamvoratech.com/services/${service.slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="pt-28 sm:pt-32 lg:pt-36 pb-16 min-h-screen bg-[#F1F5F9] relative overflow-hidden">
+      <SEO
+        title={service.seoTitle || `${service.title} | VAM VORA Technologies`}
+        description={service.seoDescription || service.shortDescription}
+        canonicalUrl={`https://vamvoratech.com/services/${service.slug}`}
+        schemaJson={serviceSchema}
+      />
       
       {/* 1. SERVICE HERO */}
       <section className="relative pb-12 lg:pb-16 overflow-hidden">
@@ -64,13 +115,17 @@ export const ServiceDetailPage: React.FC = () => {
 
           <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-center space-y-6">
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white p-3 shadow-md border border-white flex items-center justify-center mb-1">
-              <img src={currentIcon} alt={service.title} className="w-full h-full object-contain" />
+              <img src={currentIcon} alt={`${service.title} icon`} className="w-full h-full object-contain" />
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-slate-950 tracking-tight leading-[1.1] max-w-4xl mx-auto text-center">
-              {service.heroHeadline.split('\n').map((line, idx) => (
-                <span key={idx} className="block">{line}</span>
-              ))}
+              {service.h1Title ? (
+                <span>{service.h1Title}</span>
+              ) : (
+                service.heroHeadline.split('\n').map((line, idx) => (
+                  <span key={idx} className="block">{line}</span>
+                ))
+              )}
             </h1>
 
             <p className="text-base sm:text-lg font-body text-slate-600 leading-relaxed max-w-2xl mx-auto">

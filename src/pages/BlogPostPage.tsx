@@ -2,7 +2,8 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { blogData } from '../data/blogData';
 import { useConsultationModal } from '../context/ModalContext';
-import { ArrowLeft, Clock, Calendar, User } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, User, ArrowRight } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 export const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -17,8 +18,97 @@ export const BlogPostPage: React.FC = () => {
   // Related articles
   const relatedPosts = blogData.filter((p) => p.id !== post.id).slice(0, 2);
 
+  const categoryToServiceMap: Record<string, { name: string; url: string; label: string }> = {
+    'AI': {
+      name: 'AI Solutions & Automation',
+      url: '/services/ai-solutions',
+      label: 'Explore VAM VORA AI Solutions & Business Automation'
+    },
+    'Cloud': {
+      name: 'Cloud Solutions & Infrastructure',
+      url: '/services/cloud-solutions',
+      label: 'Explore VAM VORA Cloud Solutions & Migration Services'
+    },
+    'Cybersecurity': {
+      name: 'Cybersecurity & Zero-Trust Defense',
+      url: '/services/cybersecurity',
+      label: 'Explore VAM VORA Cybersecurity Services for Businesses'
+    },
+    'Microsoft 365': {
+      name: 'Microsoft 365 Services',
+      url: '/services/microsoft-365',
+      label: 'Explore VAM VORA Microsoft 365 Services for Businesses'
+    },
+    'Google Workspace': {
+      name: 'Google Workspace Services',
+      url: '/services/google-workspace',
+      label: 'Explore VAM VORA Google Workspace Services for Businesses'
+    }
+  };
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        '@id': `https://vamvoratech.com/blog/${post.slug}#article`,
+        headline: post.title,
+        description: post.seoDescription || post.excerpt,
+        datePublished: '2026-01-15',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `https://vamvoratech.com/blog/${post.slug}`
+        },
+        author: {
+          '@type': 'Person',
+          name: post.author.name,
+          jobTitle: post.author.role
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'VAM VORA Technologies',
+          url: 'https://vamvoratech.com/',
+          logo: 'https://vamvoratech.com/logo.png'
+        },
+        image: 'https://vamvoratech.com/logo.png'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://vamvoratech.com/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://vamvoratech.com/blog'
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: post.title,
+            item: `https://vamvoratech.com/blog/${post.slug}`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="pt-28 sm:pt-32 lg:pt-36 pb-28 bg-[#F8FAFC]">
+      <SEO
+        title={post.seoTitle || `${post.title} | VAM VORA Technologies`}
+        description={post.seoDescription || post.excerpt}
+        canonicalUrl={`https://vamvoratech.com/blog/${post.slug}`}
+        ogType="article"
+        authorName={post.author.name}
+        publishedTime={post.date}
+        schemaJson={articleSchema}
+      />
       <article className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
         
         {/* Top Back Link */}
@@ -87,8 +177,29 @@ export const BlogPostPage: React.FC = () => {
             ))}
           </div>
 
+          {/* Contextual Internal Link to Related Service Pillar */}
+          {categoryToServiceMap[post.category] && (
+            <div className="mt-8 p-6 rounded-2xl bg-blue-50/80 border border-blue-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="space-y-1">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-700 block">
+                  Related Enterprise IT Solution
+                </span>
+                <p className="text-sm font-semibold text-slate-900">
+                  Ready to deploy these capabilities in your enterprise environment?
+                </p>
+              </div>
+              <Link
+                to={categoryToServiceMap[post.category].url}
+                className="px-5 py-2.5 rounded-full bg-[#0145F2] hover:bg-[#0038D1] text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-2 flex-shrink-0 transition-all shadow-sm"
+              >
+                <span>{categoryToServiceMap[post.category].name}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          )}
+
           {/* Consultation Interstitial Card */}
-          <div className="mt-12 p-8 sm:p-10 rounded-3xl bg-slate-950 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="mt-10 p-8 sm:p-10 rounded-3xl bg-slate-950 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
             <div className="space-y-2 text-center sm:text-left">
               <h3 className="text-2xl font-heading italic font-bold text-white">
                 Need Guidance Applying This To Your Company?

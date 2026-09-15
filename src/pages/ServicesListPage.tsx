@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { useConsultationModal } from '../context/ModalContext';
 import { BlurReveal } from '../components/common/BlurReveal';
+import { SEO } from '../components/common/SEO';
 
 import cloudIcon from '../assets/icons/cloud.png';
 import aiIcon from '../assets/icons/ai-brain.png';
@@ -118,8 +119,33 @@ const allServices: ServiceCardItem[] = [
 export const ServicesListPage: React.FC = () => {
   const { openConsultation } = useConsultationModal();
 
+  const servicesBreadcrumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://vamvoratech.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Services',
+        item: 'https://vamvoratech.com/services',
+      },
+    ],
+  };
+
   return (
     <div className="pt-32 sm:pt-36 lg:pt-40 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden">
+      <SEO
+        title="IT Services & Solutions | VAM VORA Technologies"
+        description="Explore enterprise IT services and business technology solutions by VAM VORA Technologies, including cloud infrastructure, Google Workspace, Microsoft 365, AI automation, and cybersecurity."
+        canonicalUrl="https://vamvoratech.com/services"
+        schemaJson={servicesBreadcrumbs}
+      />
       {/* Hyper-Saturated Ambient Background Glow via native GPU radial gradients */}
       <div className="absolute top-10 left-10 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.15)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
       <div className="absolute top-1/3 right-10 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(1,69,242,0.14)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
@@ -131,8 +157,8 @@ export const ServicesListPage: React.FC = () => {
         {/* Page Header with BlurReveal */}
         <BlurReveal className="max-w-3xl mx-auto text-center mb-12 sm:mb-14 space-y-3">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#0F172A] tracking-tight leading-[1.1] text-center mx-auto">
-            <span className="block">Comprehensive IT Services</span>
-            <span className="block">Built For Resilience & Scale.</span>
+            <span className="block">IT Services & Solutions</span>
+            <span className="block">For Modern Businesses.</span>
           </h1>
           <p className="text-base sm:text-lg font-body font-normal text-[#475569] leading-relaxed max-w-2xl mx-auto pt-1">
             Explore our certified cloud, workspace, AI automation, and cybersecurity practices designed for modern high-growth businesses.

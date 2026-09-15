@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, Sparkles, Loader2, AlertCircle } from 'lucide-react';
 import { WhatsAppIcon } from '../components/common/WhatsAppButton';
 import { sendContactEmail } from '../services/emailService';
+import { SEO } from '../components/common/SEO';
 
 export const ContactPage: React.FC = () => {
   const [form, setForm] = useState({
@@ -32,8 +33,58 @@ export const ContactPage: React.FC = () => {
     }
   };
 
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ContactPage',
+        '@id': 'https://vamvoratech.com/contact#webpage',
+        url: 'https://vamvoratech.com/contact',
+        name: 'Contact VAM VORA Technologies',
+        description: 'Contact VAM VORA Technologies for enterprise IT solutions, cloud migrations, AI automation, cybersecurity consultations, and Google Workspace or Microsoft 365 deployments.',
+        mainEntity: {
+          '@type': 'LocalBusiness',
+          name: 'VAM VORA Technologies',
+          telephone: '+91-63821-14955',
+          email: 'sales@vamvoratech.com',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: '19/1, Kongu Nagar second street, Municipal Colony Main Rd, near Anna theatre',
+            addressLocality: 'Erode',
+            addressRegion: 'Tamil Nadu',
+            postalCode: '638004',
+            addressCountry: 'IN'
+          }
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://vamvoratech.com/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Contact',
+            item: 'https://vamvoratech.com/contact'
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="pt-32 sm:pt-36 lg:pt-40 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden font-sans">
+      <SEO
+        title="Contact VAM VORA Technologies | IT Solutions & Services"
+        description="Contact VAM VORA Technologies for enterprise IT solutions, cloud migrations, AI automation, cybersecurity consultations, and Google Workspace or Microsoft 365 deployments."
+        canonicalUrl="https://vamvoratech.com/contact"
+        schemaJson={contactSchema}
+      />
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
         
         {/* Header */}

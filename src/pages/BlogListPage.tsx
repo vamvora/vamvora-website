@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { blogData } from '../data/blogData';
 import { Clock, ArrowUpRight, Search } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 const blogCategories = ['All Topics', 'Cloud', 'AI', 'Cybersecurity', 'Microsoft 365', 'Google Workspace'];
 
@@ -25,9 +26,33 @@ export const BlogListPage: React.FC = () => {
     'Google Workspace': 'bg-amber-50 text-amber-700 border-amber-200',
   };
 
+  const blogListBreadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://vamvoratech.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: 'https://vamvoratech.com/blog',
+      },
+    ],
+  };
+
   return (
     <div className="pt-28 sm:pt-32 lg:pt-36 pb-28 bg-[#F8FAFC]">
-      
+      <SEO
+        title="Enterprise Technology Insights & Blog | VAM VORA Technologies"
+        description="Read practical articles and expert insights on cloud cost governance, zero-trust ransomware defense, AI workflow automation, and workplace productivity."
+        canonicalUrl="https://vamvoratech.com/blog"
+        schemaJson={blogListBreadcrumb}
+      />
       {/* Header */}
       <section className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16 mb-12 sm:mb-14 text-center">
         <div className="max-w-3xl mx-auto space-y-4 flex flex-col items-center justify-center">

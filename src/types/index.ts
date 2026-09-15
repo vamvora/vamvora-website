@@ -8,6 +8,9 @@ export interface ServiceDetail {
   id: string;
   slug: string;
   title: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  h1Title?: string;
   shortDescription: string;
   heroHeadline: string;
   heroSubheadline: string;
@@ -69,6 +72,8 @@ export interface BlogPost {
   id: string;
   slug: string;
   title: string;
+  seoTitle?: string;
+  seoDescription?: string;
   excerpt: string;
   content: string[];
   category: 'Cloud' | 'AI' | 'Cybersecurity' | 'Microsoft 365' | 'Google Workspace';

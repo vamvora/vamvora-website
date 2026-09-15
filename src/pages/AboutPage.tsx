@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { useConsultationModal } from '../context/ModalContext';
 import { BlurReveal } from '../components/common/BlurReveal';
+import { SEO } from '../components/common/SEO';
 import balajiImg from '../assets/balaji-iyer.jpg';
 
 export const AboutPage: React.FC = () => {
@@ -89,8 +90,49 @@ export const AboutPage: React.FC = () => {
     }
   ];
 
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'AboutPage',
+        '@id': 'https://vamvoratech.com/about#webpage',
+        url: 'https://vamvoratech.com/about',
+        name: 'About VAM VORA Technologies',
+        description: 'Learn about VAM VORA Technologies, our engineering principles, certified cloud and AI architects, zero-trust security focus, and commitment to enterprise digital transformation.',
+        publisher: {
+          '@type': 'Organization',
+          name: 'VAM VORA Technologies',
+          url: 'https://vamvoratech.com/'
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://vamvoratech.com/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'About Us',
+            item: 'https://vamvoratech.com/about'
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="pt-32 sm:pt-36 lg:pt-40 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden font-sans">
+      <SEO
+        title="About VAM VORA Technologies | IT Solutions & Services"
+        description="Learn about VAM VORA Technologies, our engineering principles, certified cloud and AI architects, zero-trust security focus, and commitment to enterprise digital transformation."
+        canonicalUrl="https://vamvoratech.com/about"
+        schemaJson={aboutSchema}
+      />
       {/* Hyper-Saturated Ambient Background Glow via native GPU radial gradients */}
       <div className="absolute top-10 left-10 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.15)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
       <div className="absolute top-1/3 right-10 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(1,69,242,0.14)_0%,transparent_70%)] pointer-events-none -z-10 transform-gpu" />
