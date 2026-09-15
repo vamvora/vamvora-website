@@ -199,6 +199,11 @@ export const Footer: React.FC = () => {
                   Contact Us
                 </Link>
               </li>
+              <li>
+                <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:translate-x-1 transition-all inline-block">
+                  Sitemap
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -347,6 +352,12 @@ export const Footer: React.FC = () => {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>99.99% Availability SLA • Global Support</span>
           </div>
+
+          <span className="hidden sm:inline-block text-slate-600">•</span>
+
+          <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            Sitemap
+          </a>
 
           <span className="hidden sm:inline-block text-slate-600">•</span>
 

@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /logo-reveal
+
+# Sitemap location
+Sitemap: https://vamvoratech.com/sitemap.xml
