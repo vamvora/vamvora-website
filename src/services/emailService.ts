@@ -72,7 +72,7 @@ export const sendContactEmail = async (data: ContactFormData): Promise<{ success
 
     // Destination parameter variants
     to_email: EMAILJS_CONFIG.RECIPIENT_EMAIL,
-    to_name: 'VAM VORA Technologies',
+    to_name: 'Vamvora Tech',
     recipient: EMAILJS_CONFIG.RECIPIENT_EMAIL,
     sent_at: timestamp,
     date: timestamp,

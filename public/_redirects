@@ -1,1 +1,7 @@
+# Permanent 301 redirects for clean service URLs
+/services/google-workspace   /google-workspace   301
+/services/microsoft-365      /microsoft-365      301
+/services/zoho               /zoho               301
+
+# SPA fallback
 /*    /index.html   200

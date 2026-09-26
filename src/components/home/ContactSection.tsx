@@ -231,7 +231,7 @@ export const ContactSection: React.FC = () => {
                         type="tel"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+91 63821 14955"
                         className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
                       />
                     </div>
@@ -247,8 +247,10 @@ export const ContactSection: React.FC = () => {
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-1 focus:ring-blue-600 bg-white"
                     >
                       <option>General Inquiry</option>
+                      <option>Google Workspace Setup</option>
+                      <option>Microsoft 365 Deployment</option>
+                      <option>Zoho Workplace & CRM</option>
                       <option>Cloud Infrastructure Question</option>
-                      <option>Workplace Deployment Question</option>
                       <option>AI Solutions Question</option>
                       <option>Cybersecurity & Compliance</option>
                       <option>Billing & Account Support</option>

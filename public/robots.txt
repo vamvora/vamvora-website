@@ -4,4 +4,4 @@ Allow: /
 Disallow: /logo-reveal
 
 # Sitemap location
-Sitemap: https://vamvoratech.com/sitemap.xml
+Sitemap: https://www.vamvoratech.com/sitemap.xml

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { ModalProvider } from './context/ModalContext';
 import { ScrollToTop } from './components/layout/ScrollToTop';
@@ -12,6 +12,8 @@ import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesListPage } from './pages/ServicesListPage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
+import { SupportPage } from './pages/SupportPage';
+import { PricingPage } from './pages/PricingPage';
 import { ContactPage } from './pages/ContactPage';
 import { BlogListPage } from './pages/BlogListPage';
 import { BlogPostPage } from './pages/BlogPostPage';
@@ -34,6 +36,22 @@ export function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/services" element={<ServicesListPage />} />
+
+              {/* Clean Canonical URLs for Primary Partner Services */}
+              <Route path="/google-workspace" element={<ServiceDetailPage customSlug="google-workspace" />} />
+              <Route path="/microsoft-365" element={<ServiceDetailPage customSlug="microsoft-365" />} />
+              <Route path="/zoho" element={<ServiceDetailPage customSlug="zoho" />} />
+
+              {/* Dedicated Support & Pricing Hubs */}
+              <Route path="/support" element={<SupportPage />} />
+              <Route path="/pricing" element={<PricingPage />} />
+
+              {/* 301 Client-Side Redirects from old service URLs to clean canonical URLs */}
+              <Route path="/services/google-workspace" element={<Navigate to="/google-workspace" replace />} />
+              <Route path="/services/microsoft-365" element={<Navigate to="/microsoft-365" replace />} />
+              <Route path="/services/zoho" element={<Navigate to="/zoho" replace />} />
+
+              {/* Dynamic Service Detail View */}
               <Route path="/services/:slug" element={<ServiceDetailPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/blog" element={<BlogListPage />} />

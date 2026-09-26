@@ -4,7 +4,7 @@ import { blogData } from '../data/blogData';
 import { Clock, ArrowUpRight, Search } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
 
-const blogCategories = ['All Topics', 'Cloud', 'AI', 'Cybersecurity', 'Microsoft 365', 'Google Workspace'];
+const blogCategories = ['All Topics', 'Google Workspace', 'Microsoft 365', 'Zoho', 'Cloud', 'AI', 'Cybersecurity'];
 
 export const BlogListPage: React.FC = () => {
   const [selectedCat, setSelectedCat] = useState('All Topics');
@@ -19,11 +19,12 @@ export const BlogListPage: React.FC = () => {
   }, [selectedCat, query]);
 
   const categoryBadgeColors: Record<string, string> = {
+    'Google Workspace': 'bg-amber-50 text-amber-700 border-amber-200',
+    'Microsoft 365': 'bg-blue-50 text-blue-700 border-blue-200',
+    'Zoho': 'bg-orange-50 text-orange-700 border-orange-200',
     'Cloud': 'bg-blue-50 text-blue-700 border-blue-200',
     'AI': 'bg-purple-50 text-purple-700 border-purple-200',
     'Cybersecurity': 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    'Microsoft 365': 'bg-blue-50 text-blue-700 border-blue-200',
-    'Google Workspace': 'bg-amber-50 text-amber-700 border-amber-200',
   };
 
   const blogListBreadcrumb = {
@@ -34,13 +35,13 @@ export const BlogListPage: React.FC = () => {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://vamvoratech.com/',
+        item: 'https://www.vamvoratech.com/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: 'https://vamvoratech.com/blog',
+        item: 'https://www.vamvoratech.com/blog',
       },
     ],
   };
@@ -48,9 +49,9 @@ export const BlogListPage: React.FC = () => {
   return (
     <div className="pt-28 sm:pt-32 lg:pt-36 pb-28 bg-[#F8FAFC]">
       <SEO
-        title="Enterprise Technology Insights & Blog | VAM VORA Technologies"
-        description="Read practical articles and expert insights on cloud cost governance, zero-trust ransomware defense, AI workflow automation, and workplace productivity."
-        canonicalUrl="https://vamvoratech.com/blog"
+        title="Enterprise Technology Insights & Blog | Vamvora Tech"
+        description="Read practical articles and expert insights on Google Workspace, Microsoft 365, Zoho migration, cloud cost governance, and cybersecurity from Vamvora Tech."
+        canonicalUrl="https://www.vamvoratech.com/blog"
         schemaJson={blogListBreadcrumb}
       />
       {/* Header */}

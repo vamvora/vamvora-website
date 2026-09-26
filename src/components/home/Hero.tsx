@@ -105,7 +105,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.75, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-slate-200/90 font-body font-normal text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 text-balance"
         >
-          Secure cloud, modern workplace, intelligent AI automations and zero-trust cybersecurity solutions designed to help modern enterprises work smarter, operate securely and scale.
+          Google Workspace, Microsoft 365, Zoho, and business cloud solutions in Erode designed to help modern organizations work smarter, operate securely, and scale.
         </motion.p>
 
         {/* Hero CTA Buttons */}
@@ -150,7 +150,7 @@ export const Hero: React.FC = () => {
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-300" />
-            <span>24/7 SLA Backed Operations</span>
+            <span>Reliable Ongoing Support & SLAs</span>
           </div>
         </motion.div>
 

@@ -43,7 +43,7 @@ export const FeaturedServices: React.FC = () => {
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3.5">
                   <div className="w-14 h-14 rounded-2xl bg-white p-2.5 shadow-md border border-white flex items-center justify-center group-hover:scale-105 transition-transform">
-                    <img src={googleIcon} alt="Google Workspace" className="w-full h-full object-contain" />
+                    <img src={googleIcon} alt="Google Workspace Implementation & Support in Erode" className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <span className="text-xs font-body font-semibold uppercase tracking-wider text-[#0145F2] block">
@@ -94,7 +94,7 @@ export const FeaturedServices: React.FC = () => {
                 <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </button>
               <Link
-                to="/services/google-workspace"
+                to="/google-workspace"
                 className="deep-glass-inner w-full sm:w-auto text-sm sm:text-base font-body font-semibold text-slate-800 hover:text-[#0145F2] px-5 py-3.5 rounded-full transition-all text-center cursor-pointer hover:bg-white hover:border-[#0145F2]/40 hover:shadow-[0_8px_22px_rgba(1,69,242,0.18)] hover:scale-[1.03] active:scale-[0.98] inline-flex items-center justify-center gap-2 group/arch"
               >
                 <span>Technical Architecture</span>
@@ -111,7 +111,7 @@ export const FeaturedServices: React.FC = () => {
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3.5">
                   <div className="w-14 h-14 rounded-2xl bg-white p-2.5 shadow-md border border-white flex items-center justify-center group-hover:scale-105 transition-transform">
-                    <img src={msIcon} alt="Microsoft 365" className="w-full h-full object-contain" />
+                    <img src={msIcon} alt="Microsoft 365 Deployment & Migration in Erode" className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <span className="text-xs font-body font-semibold uppercase tracking-wider text-blue-600 block">
@@ -162,7 +162,7 @@ export const FeaturedServices: React.FC = () => {
                 <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </button>
               <Link
-                to="/services/microsoft-365"
+                to="/microsoft-365"
                 className="deep-glass-inner w-full sm:w-auto text-sm sm:text-base font-body font-semibold text-slate-800 hover:text-[#0145F2] px-5 py-3.5 rounded-full transition-all text-center cursor-pointer hover:bg-white hover:border-[#0145F2]/40 hover:shadow-[0_8px_22px_rgba(1,69,242,0.18)] hover:scale-[1.03] active:scale-[0.98] inline-flex items-center justify-center gap-2 group/arch"
               >
                 <span>Technical Architecture</span>

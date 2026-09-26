@@ -10,6 +10,7 @@ import aiIcon from '../assets/icons/ai-brain.png';
 import googleIcon from '../assets/icons/google.png';
 import msIcon from '../assets/icons/microsoft.png';
 import cyberIcon from '../assets/icons/cybersecurity.png';
+import zohoIcon from '../assets/icons/zoho.svg';
 
 interface ServiceCardItem {
   id: string;
@@ -25,12 +26,66 @@ interface ServiceCardItem {
 
 const allServices: ServiceCardItem[] = [
   {
+    id: 'google-workspace',
+    slug: 'google-workspace',
+    title: 'Google Workspace',
+    category: 'Workplace Productivity & Email',
+    icon: googleIcon,
+    badge: 'Google Partner & Reseller',
+    badgeColor: 'text-amber-600 bg-amber-50 border-amber-200',
+    description: 'Empower your teams with professional Gmail, Drive, Docs, Meet, and Calendar with seamless email migration and reliable support.',
+    capabilities: [
+      'Google Workspace Setup',
+      'Email Migration & DNS',
+      'User & License Management',
+      'Security & DLP Policies',
+      'Admin Technical Support',
+      'Staff Training & Consultation'
+    ]
+  },
+  {
+    id: 'microsoft-365',
+    slug: 'microsoft-365',
+    title: 'Microsoft 365',
+    category: 'Modern Workplace & Productivity',
+    icon: msIcon,
+    badge: 'Microsoft Partner & Reseller',
+    badgeColor: 'text-blue-600 bg-blue-50 border-blue-200',
+    description: 'Enhance teamwork with Microsoft 365’s secure collaboration, Exchange Online, Teams, and desktop Office apps with dependable business support.',
+    capabilities: [
+      'Microsoft 365 Deployment',
+      'Exchange Online Migration',
+      'Microsoft Teams & Telephony',
+      'SharePoint & OneDrive Setup',
+      'Dependable Technical Support',
+      'License Optimization'
+    ]
+  },
+  {
+    id: 'zoho',
+    slug: 'zoho',
+    title: 'Zoho',
+    category: 'Business Software Suite',
+    icon: zohoIcon,
+    badge: 'Zoho Partner & Reseller',
+    badgeColor: 'text-red-600 bg-red-50 border-red-200',
+    description: 'Streamline business operations with Zoho CRM, Zoho Workplace, Zoho Books, and Zoho One with expert implementation in Erode.',
+    capabilities: [
+      'Zoho CRM Implementation',
+      'Zoho Workplace & Mail',
+      'Zoho Books GST Invoicing',
+      'Zoho One Full-Suite Deploy',
+      'Data Migration & Setup',
+      'Dedicated Zoho Support'
+    ]
+  },
+  {
     id: 'cloud-solutions',
     slug: 'cloud-solutions',
     title: 'Cloud Solutions',
     category: 'Enterprise Infrastructure',
     icon: cloudIcon,
-    badge: '99.99% Availability',
+    badge: 'High Availability',
     badgeColor: 'text-blue-600 bg-blue-50 border-blue-200',
     description: 'We design, deploy, and manage cloud infrastructure that is secure, scalable, and cost-effective.',
     capabilities: [
@@ -39,43 +94,7 @@ const allServices: ServiceCardItem[] = [
       'Backup & Disaster Recovery',
       'Cloud Storage',
       'Virtual Servers',
-      'Virtual Cloud Management'
-    ]
-  },
-  {
-    id: 'google-workspace',
-    slug: 'google-workspace',
-    title: 'Google Workspace',
-    category: 'Workplace Productivity',
-    icon: googleIcon,
-    badge: 'Collaboration Suite',
-    badgeColor: 'text-blue-600 bg-blue-50 border-blue-200',
-    description: 'Enable your teams with Gmail, Drive, Docs, Meet, Calendar, and other Google Workspace applications.',
-    capabilities: [
-      'Google Workspace Setup',
-      'Email Migration',
-      'User Management',
-      'Security Configuration',
-      'Admin Support',
-      'Training & Consultation'
-    ]
-  },
-  {
-    id: 'microsoft-365',
-    slug: 'microsoft-365',
-    title: 'Microsoft 365',
-    category: 'Modern Workplace',
-    icon: msIcon,
-    badge: 'Enterprise Productivity',
-    badgeColor: 'text-blue-600 bg-blue-50 border-blue-200',
-    description: 'Enhance teamwork with Microsoft 365’s secure collaboration and productivity tools for efficient teamwork, and smarter business operations..',
-    capabilities: [
-      'Microsoft 365 Deployment',
-      'Exchange Online',
-      'Microsoft Teams',
-      'SharePoint & OneDrive',
-      'Technical Support',
-      'License Management'
+      'Cloud Management'
     ]
   },
   {
@@ -104,7 +123,7 @@ const allServices: ServiceCardItem[] = [
     icon: cyberIcon,
     badge: 'Continuous Protection',
     badgeColor: 'text-emerald-600 bg-emerald-50 border-emerald-200',
-    description: 'Our comprehensive cybersecurity solutions safeguard your data, infrastructure, and digital assets.',
+    description: 'Our comprehensive cybersecurity solutions safeguard your data, infrastructure, and digital assets against modern threats.',
     capabilities: [
       'Endpoint Security',
       'Email Security',
@@ -127,13 +146,13 @@ export const ServicesListPage: React.FC = () => {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://vamvoratech.com/',
+        item: 'https://www.vamvoratech.com/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Services',
-        item: 'https://vamvoratech.com/services',
+        item: 'https://www.vamvoratech.com/services',
       },
     ],
   };
@@ -141,9 +160,9 @@ export const ServicesListPage: React.FC = () => {
   return (
     <div className="pt-32 sm:pt-36 lg:pt-40 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden">
       <SEO
-        title="IT Services & Solutions | VAM VORA Technologies"
-        description="Explore enterprise IT services and business technology solutions by VAM VORA Technologies, including cloud infrastructure, Google Workspace, Microsoft 365, AI automation, and cybersecurity."
-        canonicalUrl="https://vamvoratech.com/services"
+        title="IT Services & Cloud Solutions in Erode | Vamvora Tech"
+        description="Explore business IT solutions and cloud services by Vamvora Tech in Erode, including Google Workspace, Microsoft 365, Zoho, cloud infrastructure, and cybersecurity."
+        canonicalUrl="https://www.vamvoratech.com/services"
         schemaJson={servicesBreadcrumbs}
       />
       {/* Hyper-Saturated Ambient Background Glow via native GPU radial gradients */}
@@ -184,7 +203,7 @@ export const ServicesListPage: React.FC = () => {
                   <div className="flex items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 rounded-2xl bg-white p-2.5 shadow-md border border-white flex items-center justify-center group-hover:scale-105 transition-transform flex-shrink-0">
-                        <img src={service.icon} alt={service.title} className="w-full h-full object-contain" />
+                        <img src={service.icon} alt={`${service.title} solutions in Erode by Vamvora Tech`} className="w-full h-full object-contain" />
                       </div>
                       <div>
                         <span className="text-xs font-body font-semibold uppercase tracking-wider text-slate-500 block">
@@ -233,7 +252,7 @@ export const ServicesListPage: React.FC = () => {
                     <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                   </button>
                   <Link
-                    to={`/services/${service.slug}`}
+                    to={['google-workspace', 'microsoft-365', 'zoho'].includes(service.slug) ? `/${service.slug}` : `/services/${service.slug}`}
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base font-body font-semibold text-slate-800 hover:text-[#0145F2] px-5 py-3.5 rounded-full transition-all text-center deep-glass-inner hover:bg-white hover:border-[#0145F2]/40 hover:shadow-[0_8px_22px_rgba(1,69,242,0.18)] hover:scale-[1.03] active:scale-[0.98] group/arch cursor-pointer"
                   >
                     <span>Technical Architecture</span>

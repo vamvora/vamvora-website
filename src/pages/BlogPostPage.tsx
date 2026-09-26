@@ -22,27 +22,32 @@ export const BlogPostPage: React.FC = () => {
     'AI': {
       name: 'AI Solutions & Automation',
       url: '/services/ai-solutions',
-      label: 'Explore VAM VORA AI Solutions & Business Automation'
+      label: 'Explore Vamvora Tech AI Solutions & Business Automation'
     },
     'Cloud': {
       name: 'Cloud Solutions & Infrastructure',
       url: '/services/cloud-solutions',
-      label: 'Explore VAM VORA Cloud Solutions & Migration Services'
+      label: 'Explore Vamvora Tech Cloud Solutions & Migration Services'
     },
     'Cybersecurity': {
       name: 'Cybersecurity & Zero-Trust Defense',
       url: '/services/cybersecurity',
-      label: 'Explore VAM VORA Cybersecurity Services for Businesses'
+      label: 'Explore Vamvora Tech Cybersecurity Services for Businesses'
     },
     'Microsoft 365': {
       name: 'Microsoft 365 Services',
-      url: '/services/microsoft-365',
-      label: 'Explore VAM VORA Microsoft 365 Services for Businesses'
+      url: '/microsoft-365',
+      label: 'Explore Vamvora Tech Microsoft 365 Services for Businesses'
     },
     'Google Workspace': {
       name: 'Google Workspace Services',
-      url: '/services/google-workspace',
-      label: 'Explore VAM VORA Google Workspace Services for Businesses'
+      url: '/google-workspace',
+      label: 'Explore Vamvora Tech Google Workspace Services for Businesses'
+    },
+    'Zoho': {
+      name: 'Zoho Workplace & CRM Services',
+      url: '/zoho',
+      label: 'Explore Vamvora Tech Zoho Services for Businesses'
     }
   };
 
@@ -51,13 +56,13 @@ export const BlogPostPage: React.FC = () => {
     '@graph': [
       {
         '@type': 'Article',
-        '@id': `https://vamvoratech.com/blog/${post.slug}#article`,
+        '@id': `https://www.vamvoratech.com/blog/${post.slug}#article`,
         headline: post.title,
         description: post.seoDescription || post.excerpt,
         datePublished: '2026-01-15',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `https://vamvoratech.com/blog/${post.slug}`
+          '@id': `https://www.vamvoratech.com/blog/${post.slug}`
         },
         author: {
           '@type': 'Person',
@@ -66,11 +71,11 @@ export const BlogPostPage: React.FC = () => {
         },
         publisher: {
           '@type': 'Organization',
-          name: 'VAM VORA Technologies',
-          url: 'https://vamvoratech.com/',
-          logo: 'https://vamvoratech.com/logo.png'
+          name: 'Vamvora Tech',
+          url: 'https://www.vamvoratech.com/',
+          logo: 'https://www.vamvoratech.com/logo.png'
         },
-        image: 'https://vamvoratech.com/logo.png'
+        image: 'https://www.vamvoratech.com/logo.png'
       },
       {
         '@type': 'BreadcrumbList',
@@ -79,19 +84,19 @@ export const BlogPostPage: React.FC = () => {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://vamvoratech.com/'
+            item: 'https://www.vamvoratech.com/'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Blog',
-            item: 'https://vamvoratech.com/blog'
+            item: 'https://www.vamvoratech.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: post.title,
-            item: `https://vamvoratech.com/blog/${post.slug}`
+            item: `https://www.vamvoratech.com/blog/${post.slug}`
           }
         ]
       }
@@ -101,9 +106,9 @@ export const BlogPostPage: React.FC = () => {
   return (
     <div className="pt-28 sm:pt-32 lg:pt-36 pb-28 bg-[#F8FAFC]">
       <SEO
-        title={post.seoTitle || `${post.title} | VAM VORA Technologies`}
+        title={post.seoTitle || `${post.title} | Vamvora Tech`}
         description={post.seoDescription || post.excerpt}
-        canonicalUrl={`https://vamvoratech.com/blog/${post.slug}`}
+        canonicalUrl={`https://www.vamvoratech.com/blog/${post.slug}`}
         ogType="article"
         authorName={post.author.name}
         publishedTime={post.date}

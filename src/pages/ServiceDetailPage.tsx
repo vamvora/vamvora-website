@@ -18,17 +18,24 @@ import aiIcon from '../assets/icons/ai-brain.png';
 import googleIcon from '../assets/icons/google.png';
 import msIcon from '../assets/icons/microsoft.png';
 import cyberIcon from '../assets/icons/cybersecurity.png';
+import zohoIcon from '../assets/icons/zoho.svg';
 
 const serviceIconsMap: Record<string, string> = {
   'cloud-solutions': cloudIcon,
   'google-workspace': googleIcon,
   'microsoft-365': msIcon,
+  'zoho': zohoIcon,
   'ai-solutions': aiIcon,
   'cybersecurity': cyberIcon
 };
 
-export const ServiceDetailPage: React.FC = () => {
-  const { slug } = useParams<{ slug: string }>();
+interface ServiceDetailPageProps {
+  customSlug?: string;
+}
+
+export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ customSlug }) => {
+  const { slug: paramSlug } = useParams<{ slug: string }>();
+  const slug = customSlug || paramSlug;
   const { openConsultation } = useConsultationModal();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
@@ -44,23 +51,41 @@ export const ServiceDetailPage: React.FC = () => {
 
   const currentIcon = serviceIconsMap[service.id] || cloudIcon;
 
+  const cleanServicePath = ['google-workspace', 'microsoft-365', 'zoho'].includes(service.slug)
+    ? `/${service.slug}`
+    : `/services/${service.slug}`;
+  const canonicalUrl = `https://www.vamvoratech.com${cleanServicePath}`;
+
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'Service',
-        '@id': `https://vamvoratech.com/services/${service.slug}#service`,
+        '@id': `${canonicalUrl}#service`,
         name: service.title,
         description: service.seoDescription || service.shortDescription,
         provider: {
-          '@type': 'Organization',
-          name: 'VAM VORA Technologies',
-          url: 'https://vamvoratech.com/',
-          logo: 'https://vamvoratech.com/logo.png',
+          '@type': 'LocalBusiness',
+          name: 'Vamvora Tech',
+          url: 'https://www.vamvoratech.com/',
+          logo: 'https://www.vamvoratech.com/logo.png',
+          telephone: '+91-63821-14955',
+          email: 'sales@vamvoratech.com',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: '19/1, Kongu Nagar second street, Municipal Colony Main Rd, near Anna theatre',
+            addressLocality: 'Erode',
+            addressRegion: 'Tamil Nadu',
+            postalCode: '638004',
+            addressCountry: 'IN'
+          }
         },
-        url: `https://vamvoratech.com/services/${service.slug}`,
+        url: canonicalUrl,
         serviceType: service.title,
-        areaServed: 'Worldwide',
+        areaServed: {
+          '@type': 'AdministrativeArea',
+          name: 'Tamil Nadu'
+        }
       },
       {
         '@type': 'BreadcrumbList',
@@ -69,31 +94,46 @@ export const ServiceDetailPage: React.FC = () => {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://vamvoratech.com/',
+            item: 'https://www.vamvoratech.com/'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Services',
-            item: 'https://vamvoratech.com/services',
+            item: 'https://www.vamvoratech.com/services'
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: service.title,
-            item: `https://vamvoratech.com/services/${service.slug}`,
-          },
-        ],
+            item: canonicalUrl
+          }
+        ]
       },
-    ],
+      ...(service.faqs && service.faqs.length > 0
+        ? [
+            {
+              '@type': 'FAQPage',
+              mainEntity: service.faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.answer
+                }
+              }))
+            }
+          ]
+        : [])
+    ]
   };
 
   return (
     <div className="pt-28 sm:pt-32 lg:pt-36 pb-16 min-h-screen bg-[#F1F5F9] relative overflow-hidden">
       <SEO
-        title={service.seoTitle || `${service.title} | VAM VORA Technologies`}
+        title={service.seoTitle || `${service.title} | Vamvora Tech`}
         description={service.seoDescription || service.shortDescription}
-        canonicalUrl={`https://vamvoratech.com/services/${service.slug}`}
+        canonicalUrl={canonicalUrl}
         schemaJson={serviceSchema}
       />
       
@@ -115,7 +155,7 @@ export const ServiceDetailPage: React.FC = () => {
 
           <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-center space-y-6">
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white p-3 shadow-md border border-white flex items-center justify-center mb-1">
-              <img src={currentIcon} alt={`${service.title} icon`} className="w-full h-full object-contain" />
+              <img src={currentIcon} alt={`${service.title} business solutions by Vamvora Tech in Erode`} className="w-full h-full object-contain" />
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-slate-950 tracking-tight leading-[1.1] max-w-4xl mx-auto text-center">
@@ -442,6 +482,21 @@ export const ServiceDetailPage: React.FC = () => {
               className="liquid-glass-strong w-full sm:w-auto text-white text-base sm:text-lg font-body font-medium px-8 py-4 rounded-full hover:bg-white/10 transition-all text-center"
             >
               Contact Us
+            </Link>
+          </div>
+
+          {/* Contextual SEO Internal Links */}
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-4 text-xs font-body text-slate-400">
+            <Link to="/support" className="hover:text-white transition-colors underline">
+              {service.title} Support in Erode
+            </Link>
+            <span>•</span>
+            <Link to="/pricing" className="hover:text-white transition-colors underline">
+              {service.title} Pricing & Plans
+            </Link>
+            <span>•</span>
+            <Link to="/contact" className="hover:text-white transition-colors underline">
+              Contact Vamvora Tech
             </Link>
           </div>
         </div>

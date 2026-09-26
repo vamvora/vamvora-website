@@ -16,7 +16,7 @@ export const SEO: React.FC<SEOProps> = ({
   description,
   canonicalUrl,
   ogType = 'website',
-  ogImage = 'https://vamvoratech.com/logo.png',
+  ogImage = 'https://www.vamvoratech.com/logo.png',
   schemaJson,
   publishedTime,
   authorName,
@@ -55,7 +55,7 @@ export const SEO: React.FC<SEOProps> = ({
     setMetaTag('property', 'og:url', canonicalUrl);
     setMetaTag('property', 'og:type', ogType);
     setMetaTag('property', 'og:image', ogImage);
-    setMetaTag('property', 'og:site_name', 'VAM VORA Technologies');
+    setMetaTag('property', 'og:site_name', 'Vamvora Tech');
 
     if (ogType === 'article') {
       if (publishedTime) {

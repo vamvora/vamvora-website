@@ -5,6 +5,7 @@ import aiIcon from '../../assets/icons/ai-brain.png';
 import googleIcon from '../../assets/icons/google.png';
 import msIcon from '../../assets/icons/microsoft.png';
 import cyberIcon from '../../assets/icons/cybersecurity.png';
+import zohoIcon from '../../assets/icons/zoho.svg';
 
 interface TechItem {
   id: string;
@@ -17,20 +18,36 @@ interface TechItem {
 
 const techItems: TechItem[] = [
   {
-    id: 'ms-365',
-    name: 'Microsoft 365',
-    category: 'Enterprise Productivity & Teams',
-    icon: msIcon,
-    link: '/services/microsoft-365',
-    badgeColor: 'border-blue-200/80 bg-blue-50/50'
-  },
-  {
     id: 'google-ws',
     name: 'Google Workspace',
     category: 'Cloud Collaboration & Gmail',
     icon: googleIcon,
-    link: '/services/google-workspace',
+    link: '/google-workspace',
+    badgeColor: 'border-amber-200/80 bg-amber-50/50'
+  },
+  {
+    id: 'ms-365',
+    name: 'Microsoft 365',
+    category: 'Enterprise Productivity & Teams',
+    icon: msIcon,
+    link: '/microsoft-365',
+    badgeColor: 'border-blue-200/80 bg-blue-50/50'
+  },
+  {
+    id: 'zoho-suite',
+    name: 'Zoho',
+    category: 'CRM, Books & Workplace Suite',
+    icon: zohoIcon,
+    link: '/zoho',
     badgeColor: 'border-red-200/80 bg-red-50/50'
+  },
+  {
+    id: 'cloud-services',
+    name: 'Cloud Solutions',
+    category: 'AWS, Azure & Cloud Infra',
+    icon: cloudIcon,
+    link: '/services/cloud-solutions',
+    badgeColor: 'border-blue-200/80 bg-blue-50/50'
   },
   {
     id: 'ai-solutions',
@@ -47,14 +64,6 @@ const techItems: TechItem[] = [
     icon: cyberIcon,
     link: '/services/cybersecurity',
     badgeColor: 'border-emerald-200/80 bg-emerald-50/50'
-  },
-  {
-    id: 'cloud-services',
-    name: 'Cloud Solutions',
-    category: 'AWS, Azure & Cloud Infra',
-    icon: cloudIcon,
-    link: '/services/cloud-solutions',
-    badgeColor: 'border-blue-200/80 bg-blue-50/50'
   }
 ];
 

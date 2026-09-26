@@ -35,7 +35,7 @@ export const HowItWorks: React.FC = () => {
       step: '05',
       title: 'Support',
       tagline: 'Continuous governance',
-      description: 'Continue helping your business thrive through 24/7 proactive monitoring, training, and SLA support.',
+      description: 'Continue helping your business thrive through reliable ongoing support, proactive monitoring, and SLA management.',
       icon: LifeBuoy
     }
   ];

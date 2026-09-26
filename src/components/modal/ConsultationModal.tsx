@@ -26,11 +26,13 @@ import aiIcon from '../../assets/icons/ai-brain.png';
 import googleIcon from '../../assets/icons/google.png';
 import msIcon from '../../assets/icons/microsoft.png';
 import cyberIcon from '../../assets/icons/cybersecurity.png';
+import zohoIcon from '../../assets/icons/zoho.svg';
 
 const serviceOptions = [
-  { id: 'Cloud Solutions', label: 'Cloud Solutions', desc: 'Migration, infrastructure, backups', iconImg: cloudIcon },
   { id: 'Google Workspace', label: 'Google Workspace', desc: 'Setup, email migration, DLP', iconImg: googleIcon },
   { id: 'Microsoft 365', label: 'Microsoft 365', desc: 'M365, Teams, SharePoint, Intune', iconImg: msIcon },
+  { id: 'Zoho', label: 'Zoho Workplace & CRM', desc: 'Zoho One, CRM, Books, Workplace', iconImg: zohoIcon },
+  { id: 'Cloud Solutions', label: 'Cloud Solutions', desc: 'Migration, infrastructure, backups', iconImg: cloudIcon },
   { id: 'AI Solutions', label: 'AI Solutions', desc: 'Custom AI chatbots, automations', iconImg: aiIcon },
   { id: 'Cybersecurity', label: 'Cybersecurity', desc: 'EDR, Zero-Trust, email defense', iconImg: cyberIcon },
   { id: 'Not Sure', label: 'Not Sure / Multiple', desc: 'Need holistic technology advice', iconImg: null },

@@ -31,7 +31,7 @@ export const servicesData: ServiceDetail[] = [
         'Zero-data-loss migration methodologies',
         'Automated disaster recovery and geo-redundancy',
         'Cost optimization and FinOps resource governance',
-        '24/7 proactive health monitoring and patching'
+        'Proactive health monitoring, automated backups, and patching'
       ]
     },
     capabilities: [
@@ -87,7 +87,7 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         name: 'Cloud Management',
-        summary: 'Continuous 24/7 telemetry, security enforcement, cost governance, and infrastructure maintenance.',
+        summary: 'Continuous telemetry, security enforcement, cost governance, and infrastructure maintenance.',
         details: [
           'Proactive telemetry alerting and anomaly detection',
           'Monthly FinOps billing analysis and waste reduction',
@@ -142,7 +142,7 @@ export const servicesData: ServiceDetail[] = [
       {
         step: '05',
         title: 'Ongoing Management',
-        description: 'Continuous 24/7 observability, automated backups, and monthly performance tuning.'
+        description: 'Continuous cloud observability, automated backups, and proactive performance tuning.'
       }
     ],
     useCases: [
@@ -186,33 +186,33 @@ export const servicesData: ServiceDetail[] = [
     id: 'google-workspace',
     slug: 'google-workspace',
     title: 'Google Workspace',
-    seoTitle: 'Google Workspace Services for Business | VAM VORA Technologies',
-    seoDescription: 'Comprehensive Google Workspace services for business: setup, email migration, user management, security hardening, Google Meet, Drive, and dedicated admin support.',
-    h1Title: 'Google Workspace Services for Businesses',
-    shortDescription: 'Empower seamless collaboration, enterprise productivity, and intelligent cloud office tools.',
-    heroHeadline: 'Modernize Your Workplace With\nIntelligent Google Workspace Deployment.',
-    heroSubheadline: 'Transition your workforce to a friction-free, secure collaboration ecosystem with expert deployment, seamless email migration, and comprehensive admin governance.',
-    badge: 'Workplace Productivity',
+    seoTitle: 'Google Workspace Partner & Reseller in Erode | Vamvora Tech',
+    seoDescription: 'Get Google Workspace solutions in Erode with setup, migration, licensing and reliable ongoing support from Vamvora Tech.',
+    h1Title: 'Google Workspace Partner & Reseller in Erode',
+    shortDescription: 'Certified Google Workspace partner in Erode providing setup, business email migration, licensing, and dependable support.',
+    heroHeadline: 'Google Workspace Partner &\nReseller In Erode.',
+    heroSubheadline: 'Empower your business with Google Workspace solutions in Erode. Vamvora Tech delivers professional domain setup, seamless email migration, competitive pricing, and reliable ongoing support.',
+    badge: 'Google Workspace Partner',
     icon: 'Layers',
     color: 'from-amber-500 to-red-600',
     problemStatement: {
-      title: 'Fragmented Communication Tools Lead To Lost Files, Security Gaps, And Frustrated Teams.',
-      description: 'Disjointed email systems, cumbersome file-sharing methods, and lack of mobile device controls slow down your staff and create serious data exposure risks.',
+      title: 'Fragmented Communication Tools & Unreliable Email Systems Slow Down Business Growth.',
+      description: 'Disjointed email systems, cumbersome file-sharing methods, and lack of mobile device controls create security risks and workflow bottlenecks for businesses in Erode and Tamil Nadu.',
       painPoints: [
-        'Messy email archives trapped in legacy IMAP/POP3 hosts',
-        'Duplicate file versions scattered across personal drives',
-        'Lack of granular administrative visibility over company documents',
-        'Employee resistance and confusion during software transitions'
+        'Messy email archives trapped in legacy IMAP, POP3, or unmanaged hosting',
+        'Duplicate file versions scattered across personal drives without centralized control',
+        'Lack of administrative governance over company documents and business email',
+        'Downtime and lost productivity during unguided cloud email migrations'
       ]
     },
     solutionOverview: {
-      title: 'A Unified, Real-Time Collaboration Hub Backed By Enterprise-Grade Governance.',
-      description: 'VAM VORA manages your entire Google Workspace lifecycle—from seamless domain setup and historical mailbox migration to advanced data loss prevention (DLP) and employee onboarding.',
+      title: 'Unified Business Cloud & Email Solutions With Dedicated Local Support in Erode.',
+      description: 'Vamvora Tech manages your complete Google Workspace lifecycle—from domain setup and historical mailbox migration to advanced data security, competitive licensing, and dependable ongoing support.',
       highlights: [
-        '100% mailbox and calendar migration with zero message loss',
-        'Centralized Google Admin console security configuration',
-        'Shared Drives structure tailored to your departmental hierarchy',
-        'Tailored team training sessions for immediate adoption'
+        '100% mailbox, contact, and calendar migration with zero message loss',
+        'Google Workspace business email setup with SPF, DKIM, and DMARC security',
+        'Competitive pricing on Google Workspace plans and subscriptions in Erode',
+        'Reliable ongoing technical support and after-sales service from local experts'
       ]
     },
     capabilities: [
@@ -294,9 +294,9 @@ export const servicesData: ServiceDetail[] = [
         metric: '100% Visibility'
       },
       {
-        title: 'Predictable Per-User Licensing',
-        description: 'Flexible monthly or annual billing with transparent tier recommendations.',
-        metric: 'Zero Waste'
+        title: 'Competitive Google Workspace Pricing',
+        description: 'Flexible monthly or annual billing with transparent plan guidance and zero wasted seat licenses.',
+        metric: 'Competitive Pricing'
       }
     ],
     process: [
@@ -318,30 +318,30 @@ export const servicesData: ServiceDetail[] = [
       {
         step: '04',
         title: 'DNS Cutover & Launch',
-        description: 'Smooth live switchover with live tech support to assist team members.'
+        description: 'Smooth live switchover with dedicated technical support to assist team members.'
       },
       {
         step: '05',
-        title: 'Training & Governance',
-        description: 'Staff training, Shared Drive organization, and continuous administrative support.'
+        title: 'Training & Ongoing Governance',
+        description: 'Staff training, Shared Drive organization, and reliable ongoing administrative support.'
       }
     ],
     useCases: [
       {
-        industry: 'Marketing & Digital Agency',
-        challenge: 'Staff struggling with bulky email attachments and slow collaborative pitch deck reviews.',
-        solution: 'Deployed Google Workspace Enterprise with Shared Drives, Google Meet rooms, and Gemini AI.',
+        industry: 'Manufacturing & Export Enterprise',
+        challenge: 'Staff struggling with bulky email attachments and slow collaborative pitch deck reviews across branches.',
+        solution: 'Deployed Google Workspace with business email, Shared Drives, and Google Meet integration by Vamvora Tech.',
         result: 'Client turnaround time decreased by 40% with zero lost project assets.'
       },
       {
         industry: 'Professional Services Firm',
         challenge: 'Phishing attacks impersonating leadership and exposing client correspondence.',
-        solution: 'Configured strict DMARC enforcement, 2SV security keys, and Google DLP rules.',
+        solution: 'Configured strict DMARC enforcement, 2-step verification, and Google DLP rules.',
         result: 'Zero phishing incidents recorded post-deployment with 100% compliant data retention.'
       }
     ],
     technologies: [
-      { name: 'Google Gmail & Calendar', category: 'Communication' },
+      { name: 'Google Gmail & Calendar', category: 'Business Email' },
       { name: 'Google Meet & Chat', category: 'Collaboration' },
       { name: 'Google Docs, Sheets, Slides', category: 'Productivity' },
       { name: 'Google Drive & Shared Drives', category: 'Cloud Storage' },
@@ -350,16 +350,20 @@ export const servicesData: ServiceDetail[] = [
     ],
     faqs: [
       {
-        question: 'Will our emails be lost during the transition to Google Workspace?',
-        answer: 'No. We perform verified migrations where all past emails, folders, contacts, and calendar events are synced in advance. The final DNS switchover happens smoothly with zero data loss.'
+        question: 'What is Google Workspace and how does Vamvora Tech assist businesses in Erode?',
+        answer: 'Google Workspace is a cloud productivity suite providing professional business email (Gmail with your domain), Google Drive cloud storage, Meet video meetings, and Docs collaboration. As a Google Workspace partner and reseller in Erode, Vamvora Tech provides local onboarding, domain verification, email setup, competitive pricing, and reliable ongoing technical support.'
       },
       {
-        question: 'Can we use our own custom domain name (e.g., name@yourcompany.com)?',
-        answer: 'Yes, Google Workspace operates completely on your company domain name with professional email addresses and customized branding.'
+        question: 'Do you provide Google Workspace migration support without data loss?',
+        answer: 'Yes. We perform structured, zero-downtime migrations transferring 100% of mailbox history, folders, contacts, and calendar schedules from cPanel, Exchange, IMAP, or Microsoft 365 into Google Workspace with complete data verification.'
       },
       {
-        question: 'Can we manage employee mobile devices accessing company email?',
-        answer: 'Yes. We enable Google Endpoint Management, allowing you to enforce screen locks, require encryption, and remotely wipe company data if an employee device is lost or stolen.'
+        question: 'What Google Workspace pricing plans and business subscriptions are available?',
+        answer: 'We provide competitive pricing across all official Google Workspace editions: Business Starter, Business Standard, Business Plus, and Enterprise tiers. We help small and growing businesses in Erode select the right subscription plan to optimize licensing costs.'
+      },
+      {
+        question: 'Do you provide ongoing technical support after Google Workspace setup?',
+        answer: 'Yes. Reliable after-sales support is a core advantage at Vamvora Tech. We provide dependable ongoing tenant management, user onboarding/offboarding, security reviews, and direct administrator assistance.'
       }
     ]
   },
@@ -367,33 +371,33 @@ export const servicesData: ServiceDetail[] = [
     id: 'microsoft-365',
     slug: 'microsoft-365',
     title: 'Microsoft 365',
-    seoTitle: 'Microsoft 365 Services for Business | VAM VORA Technologies',
-    seoDescription: 'Enterprise Microsoft 365 services for business: implementation, Exchange migration, Teams collaboration, Intune security, and ongoing technical support.',
-    h1Title: 'Microsoft 365 Services for Businesses',
-    shortDescription: 'Enterprise productivity, cloud communication, and device security powered by Microsoft.',
-    heroHeadline: 'Unlock The Full Power Of\nEnterprise Microsoft 365 Ecosystems.',
-    heroSubheadline: 'Modernize your organization with secure Microsoft 365 deployment, Exchange Online migrations, Microsoft Teams telephony, and automated SharePoint architecture.',
-    badge: 'Enterprise Ecosystem',
+    seoTitle: 'Microsoft 365 Partner & Reseller in Erode | Vamvora Tech',
+    seoDescription: 'Get Microsoft 365 solutions in Erode with licensing, setup, migration and dependable business support from Vamvora Tech.',
+    h1Title: 'Microsoft 365 Partner & Reseller in Erode',
+    shortDescription: 'Certified Microsoft 365 partner and reseller in Erode offering deployment, Exchange migration, Teams setup, and dependable business support.',
+    heroHeadline: 'Microsoft 365 Partner &\nReseller In Erode.',
+    heroSubheadline: 'Modernize your workplace with Microsoft 365 solutions in Erode. Vamvora Tech provides licensing, tenant deployment, Exchange Online email migration, and reliable after-sales support.',
+    badge: 'Microsoft 365 Partner',
     icon: 'Grid',
     color: 'from-blue-600 to-cyan-700',
     problemStatement: {
-      title: 'Misconfigured Microsoft Tenants Lead To Wasted Licenses, Security Gaps, And Cluttered Files.',
-      description: 'Many organizations pay for Microsoft 365 licenses without utilizing security tools, while unorganized SharePoint libraries and unmanaged Teams channels create confusion.',
+      title: 'Misconfigured Microsoft Tenants & Unmanaged Licenses Lead To Hidden Costs And Confusion.',
+      description: 'Many organizations pay for Microsoft 365 and Office 365 licenses without utilizing security tools, while unorganized SharePoint libraries and unmanaged Teams channels create operational friction for businesses in Erode.',
       painPoints: [
-        'Overpaying for redundant or unassigned M365 licenses',
+        'Overpaying for redundant or unassigned Microsoft 365 licenses',
         'Disorganized SharePoint folder structures causing file permission leaks',
-        'Complex hybrid Active Directory setups requiring modernization',
-        'Lack of Intune endpoint management for remote worker devices'
+        'Complex hybrid or legacy email setups requiring modernization',
+        'Lack of Intune device management and ongoing technical support'
       ]
     },
     solutionOverview: {
-      title: 'Engineered For Enterprise Security, Compliance, And Frictionless Teamwork.',
-      description: 'VAM VORA configures your Microsoft 365 tenant to Microsoft best practices—optimizing licensing costs, securing endpoints with Microsoft Defender and Intune, and designing structured SharePoint architecture.',
+      title: 'Enterprise Microsoft 365 Solutions Configured For Security, Scale, And Cost Efficiency.',
+      description: 'Vamvora Tech configures your Microsoft 365 tenant to industry best practices—optimizing licensing costs, securing endpoints with Microsoft Defender, and delivering reliable ongoing business support in Erode.',
       highlights: [
-        'Clean Exchange Online tenant-to-tenant and hybrid migrations',
-        'Enterprise SharePoint Intranet and OneDrive governance',
-        'Microsoft Teams calling, channels, and bot integrations',
-        'Microsoft Entra ID (Azure AD) Conditional Access policies'
+        'Clean Exchange Online cloud email migrations with zero downtime',
+        'Enterprise SharePoint Intranet and OneDrive cloud storage governance',
+        'Microsoft Teams setup, collaboration channels, and meeting integration',
+        'Competitive pricing on Microsoft 365 plans with dependable local support'
       ]
     },
     capabilities: [
@@ -470,14 +474,14 @@ export const servicesData: ServiceDetail[] = [
         metric: 'Endpoint Control'
       },
       {
-        title: '25-35% License Cost Optimization',
-        description: 'Right-size your user licenses across Business Premium, E3, and E5 tiers.',
-        metric: '30% Cost Saving'
+        title: 'Competitive Microsoft 365 Pricing',
+        description: 'Right-size your user licenses across Business Basic, Standard, Premium, and enterprise tiers with transparent pricing.',
+        metric: 'Competitive Pricing'
       },
       {
-        title: 'Seamless Copilot AI Readiness',
-        description: 'Structured permissions and clean data hierarchy preparing your company for Microsoft Copilot AI.',
-        metric: 'AI-Ready Tenant'
+        title: 'Dependable Support in Erode',
+        description: 'Certified local Microsoft specialists providing prompt troubleshooting and after-sales assistance.',
+        metric: 'Reliable Support'
       }
     ],
     process: [
@@ -504,43 +508,232 @@ export const servicesData: ServiceDetail[] = [
       {
         step: '05',
         title: 'Enterprise Rollout & Support',
-        description: 'Full organization go-live with responsive desk support and ongoing license governance.'
+        description: 'Full organization go-live with responsive support and ongoing license governance.'
       }
     ],
     useCases: [
       {
         industry: 'Manufacturing & Distribution',
         challenge: 'Scattered file servers across 4 regional warehouses causing version conflicts and delayed shipments.',
-        solution: 'Migrated 12TB of file servers to structured SharePoint Hubs with offline OneDrive sync on tablets.',
+        solution: 'Migrated 12TB of file servers to structured SharePoint Hubs with offline OneDrive sync on tablets by Vamvora Tech.',
         result: 'Eliminated regional VPN dependency and reduced order processing lag by 50%.'
       },
       {
         industry: 'Healthcare & Clinical Services',
-        challenge: 'Need strict HIPAA compliance, mobile device encryption, and secure patient communications.',
-        solution: 'Configured Microsoft 365 E5 with Microsoft Purview DLP, Intune MDM, and encrypted email.',
-        result: 'Passed external HIPAA audit with zero non-conformances.'
+        challenge: 'Need strict data compliance, mobile device encryption, and secure patient communications.',
+        solution: 'Configured Microsoft 365 with Defender email security, Intune MDM, and encrypted email.',
+        result: 'Passed external regulatory compliance audit with zero non-conformances.'
       }
     ],
     technologies: [
       { name: 'Microsoft 365 & Office Apps', category: 'Productivity' },
-      { name: 'Exchange Online', category: 'Cloud Email' },
-      { name: 'Microsoft Teams & Teams Phone', category: 'Unified Communications' },
-      { name: 'SharePoint Online & OneDrive', category: 'Content Management' },
+      { name: 'Exchange Online', category: 'Business Email' },
+      { name: 'Microsoft Teams & Teams Phone', category: 'Collaboration' },
+      { name: 'SharePoint Online & OneDrive', category: 'Cloud Storage' },
       { name: 'Microsoft Entra ID (Azure AD)', category: 'Identity & Access' },
       { name: 'Microsoft Intune & Defender', category: 'Endpoint Security' }
     ],
     faqs: [
       {
-        question: 'Can you help us migrate from Google Workspace or on-premise Exchange to Microsoft 365?',
-        answer: 'Yes. We specialize in cross-platform tenant migrations, including Google-to-M365 and on-premise Exchange migrations, ensuring all mail, calendars, contacts, and drive contents transfer seamlessly.'
+        question: 'Do you provide Microsoft 365 setup and migration in Erode?',
+        answer: 'Yes. As a Microsoft 365 partner and reseller in Erode, Vamvora Tech provides complete deployment, setup, and migration services. We seamlessly migrate mailboxes from Google Workspace, on-premise Exchange, or IMAP/cPanel hosts with zero data loss.'
       },
       {
-        question: 'How does Microsoft Intune protect our company data on personal employee phones?',
-        answer: 'With Mobile Application Management (MAM), Intune secures company data inside the Outlook and Teams apps without accessing or wiping the employee\'s personal photos, messages, or apps.'
+        question: 'What Microsoft 365 plans and business subscriptions are available through Vamvora Tech?',
+        answer: 'We provide competitive pricing on all official Microsoft 365 and Office 365 plans, including Microsoft 365 Business Basic, Business Standard, Business Premium, and enterprise tiers (E3/E5). We assist businesses in Erode in choosing the right licensing plan for their team size.'
       },
       {
-        question: 'How do you prevent our company from overpaying for unused Microsoft licenses?',
-        answer: 'We conduct regular license audits to reassign unallocated seats, downgrade users who don\'t need enterprise tiers, and ensure you only pay for active team members.'
+        question: 'How do you help our company optimize Microsoft 365 licensing costs?',
+        answer: 'We perform regular license audits to reassign unallocated seats, eliminate redundant add-ons, and right-size subscriptions so you only pay for active employees, keeping your overall cloud software cost competitive.'
+      },
+      {
+        question: 'Do you provide ongoing technical support after Microsoft 365 deployment?',
+        answer: 'Yes. Dependable after-sales service and ongoing support are core to our offerings. We provide prompt troubleshooting for Outlook sync, Teams calling, SharePoint permissions, user onboarding, and security tenant hardening.'
+      }
+    ]
+  },
+  {
+    id: 'zoho',
+    slug: 'zoho',
+    title: 'Zoho',
+    seoTitle: 'Zoho Partner & Business Solutions in Erode | Vamvora Tech',
+    seoDescription: 'Vamvora Tech provides Zoho solutions in Erode including implementation, setup, migration, support and business software services.',
+    h1Title: 'Zoho Partner & Business Solutions in Erode',
+    shortDescription: 'Certified Zoho partner and reseller in Erode providing Zoho CRM, Zoho Workplace, Zoho Books, Zoho One, implementation, and reliable support.',
+    heroHeadline: 'Zoho Partner & Business\nSolutions In Erode.',
+    heroSubheadline: 'Empower your business with comprehensive Zoho solutions in Erode. Vamvora Tech delivers professional Zoho implementation, custom CRM workflows, seamless migration, and dependable ongoing support.',
+    badge: 'Zoho Partner & Reseller',
+    icon: 'Briefcase',
+    color: 'from-amber-600 to-red-600',
+    problemStatement: {
+      title: 'Disconnected Business Software And Manual Recordkeeping Limit Business Efficiency.',
+      description: 'Managing sales leads, customer invoicing, accounting, and internal emails across separate, unintegrated apps leads to lost deals, billing errors, and lost visibility for businesses in Erode.',
+      painPoints: [
+        'Customer sales leads and follow-ups falling through the cracks',
+        'Disconnected accounting and invoicing slowing down cash flow',
+        'Fragmented business communication across scattered email tools',
+        'Lack of a certified local Zoho partner in Erode for setup and ongoing guidance'
+      ]
+    },
+    solutionOverview: {
+      title: 'Integrated Zoho Cloud Solutions Tailored For Growing Businesses in Erode.',
+      description: 'Vamvora Tech delivers end-to-end Zoho consulting, setup, migration, and training. We help companies implement Zoho CRM, Zoho Workplace, Zoho Books, and Zoho One with competitive pricing and dependable after-sales support.',
+      highlights: [
+        'End-to-end Zoho CRM implementation and sales automation',
+        'Zoho Books setup for invoicing, GST compliance, and accounting',
+        'Zoho Mail and Zoho Workplace migration with zero message loss',
+        'Competitive pricing on Zoho plans, subscriptions, and reliable ongoing support'
+      ]
+    },
+    capabilities: [
+      {
+        name: 'Zoho CRM Implementation',
+        summary: 'Custom sales pipelines, lead capture forms, automated follow-ups, and customer lifecycle management.',
+        details: [
+          'Lead scoring and pipeline stage customization for your industry',
+          'Automated email notifications, reminders, and WhatsApp communication',
+          'Deal forecasting, sales targets, and activity tracking dashboards',
+          'Role-based access permissions, audit trails, and data protection'
+        ]
+      },
+      {
+        name: 'Zoho Workplace & Mail',
+        summary: 'Professional business email, cloud document collaboration, team chat (Cliq), and meeting tools.',
+        details: [
+          'Custom business email domain verification and DNS configuration',
+          'Mailbox migration from legacy hosts with zero message loss',
+          'Zoho Writer, Sheet, and Show for real-time team collaboration',
+          'Zoho WorkDrive secure departmental folders with access controls'
+        ]
+      },
+      {
+        name: 'Zoho Books & Accounting',
+        summary: 'Streamlined invoicing, GST-compliant billing, expense tracking, and banking reconciliation.',
+        details: [
+          'Custom invoice templates and automated recurring billing schedules',
+          'GST filing integration and automated tax computation for India',
+          'Payment gateway integration for faster client payment collection',
+          'Real-time cash flow reporting, profit-and-loss, and balance sheets'
+        ]
+      },
+      {
+        name: 'Zoho One Deployment',
+        summary: 'The complete operating system for business—unifying sales, marketing, finance, HR, and operations in a single subscription.',
+        details: [
+          'Single Sign-On (SSO) across 45+ integrated business applications',
+          'Unified admin governance and cross-application permissions',
+          'Inter-departmental workflow automation and custom blueprinting',
+          'Consolidated subscription licensing with competitive pricing'
+        ]
+      },
+      {
+        name: 'Zoho Migration & Setup',
+        summary: 'Structured data migration from legacy accounting software, spreadsheets, and older CRM systems.',
+        details: [
+          'Clean customer contact, vendor, and transaction data extraction',
+          'Field mapping, data deduplication, and schema validation',
+          'Staged cutover with rigorous verification to ensure zero data loss',
+          'Hands-on staff onboarding and admin console configuration'
+        ]
+      },
+      {
+        name: 'Dedicated Zoho Support',
+        summary: 'Reliable ongoing technical assistance, policy tweaks, report building, and user troubleshooting in Erode.',
+        details: [
+          'Local Erode-based support team with prompt response times',
+          'Monthly workflow reviews, automation tuning, and feature upgrades',
+          'Troubleshooting for user access, email sync, and automations',
+          'Dependable after-sales service and ongoing business consulting'
+        ]
+      }
+    ],
+    benefits: [
+      {
+        title: 'Unified Business Operations',
+        description: 'Bring sales, invoicing, email, and customer service together into one integrated cloud platform.',
+        metric: 'All-in-One'
+      },
+      {
+        title: 'Automated Sales & Invoicing',
+        description: 'Accelerate customer follow-ups and cut billing time by up to 50% with automated workflows.',
+        metric: '50% Faster'
+      },
+      {
+        title: 'Competitive Zoho Pricing',
+        description: 'Transparent subscription plans and licensing advice tailored to small and mid-market businesses.',
+        metric: 'Competitive Pricing'
+      },
+      {
+        title: 'Dependable Support in Erode',
+        description: 'Local Zoho consultants providing personalized setup, staff training, and dependable after-sales service.',
+        metric: 'Reliable Support'
+      }
+    ],
+    process: [
+      {
+        step: '01',
+        title: 'Requirement & Workflow Discovery',
+        description: 'We analyze your business processes, sales pipeline, and accounting needs.'
+      },
+      {
+        step: '02',
+        title: 'Architecture & Blueprinting',
+        description: 'We map Zoho modules, custom fields, approval rules, and integrations.'
+      },
+      {
+        step: '03',
+        title: 'Data Migration & Configuration',
+        description: 'We clean and import historical contacts, invoices, and email accounts.'
+      },
+      {
+        step: '04',
+        title: 'Testing & Team Training',
+        description: 'We conduct pilot runs and hands-on training sessions for your staff.'
+      },
+      {
+        step: '05',
+        title: 'Go-Live & Ongoing Support',
+        description: 'Seamless launch backed by reliable ongoing support and after-sales service.'
+      }
+    ],
+    useCases: [
+      {
+        industry: 'Textile & Manufacturing in Erode',
+        challenge: 'Disjointed sales leads and manual invoice generation causing delays in order fulfillment.',
+        solution: 'Implemented Zoho CRM integrated with Zoho Books and Zoho Mail for automated order tracking and GST billing by Vamvora Tech.',
+        result: 'Reduced billing turnaround by 45% and improved customer reorder rates by 30%.'
+      },
+      {
+        industry: 'Retail & Distribution Business',
+        challenge: 'Multi-branch inventory and disparate spreadsheet tracking leading to stock discrepancies.',
+        solution: 'Deployed Zoho One with unified inventory, central CRM, and financial visibility across all locations.',
+        result: 'Achieved real-time inventory visibility and eliminated billing discrepancies.'
+      }
+    ],
+    technologies: [
+      { name: 'Zoho CRM', category: 'Sales & Marketing' },
+      { name: 'Zoho Workplace & Mail', category: 'Business Email & Docs' },
+      { name: 'Zoho Books', category: 'GST Accounting & Billing' },
+      { name: 'Zoho One', category: 'All-in-One Suite' },
+      { name: 'Zoho Cliq & Meeting', category: 'Team Collaboration' },
+      { name: 'Zoho Desk & Forms', category: 'Customer Support' }
+    ],
+    faqs: [
+      {
+        question: 'Does Vamvora Tech provide Zoho implementation and support in Erode?',
+        answer: 'Yes. As a trusted Zoho partner and reseller in Erode, Vamvora Tech provides complete end-to-end Zoho implementation, configuration, data migration, and dependable ongoing support for businesses across Erode and Tamil Nadu.'
+      },
+      {
+        question: 'What is Zoho One and is it suitable for small businesses?',
+        answer: 'Zoho One provides access to over 45 integrated business applications for CRM, accounting (Zoho Books), business email (Zoho Mail), HR, and operations under a single, cost-effective license. It is ideal for small and growing businesses wanting an all-in-one platform with competitive pricing.'
+      },
+      {
+        question: 'Can you migrate our existing accounting and email data to Zoho?',
+        answer: 'Yes. We execute structured migrations from legacy accounting software, Excel spreadsheets, cPanel/Google Workspace emails, and older CRM systems into Zoho with zero data loss.'
+      },
+      {
+        question: 'Do you provide ongoing technical support and staff training after Zoho setup?',
+        answer: 'Yes. Reliable ongoing support is one of our key strengths. We train your staff, assist with custom workflow automations, and provide dependable after-sales support whenever your team needs help.'
       }
     ]
   },
@@ -580,7 +773,7 @@ export const servicesData: ServiceDetail[] = [
     capabilities: [
       {
         name: 'AI Chatbots',
-        summary: '24/7 intelligent customer-facing and internal conversational agents trained exclusively on your business data.',
+        summary: 'Intelligent customer-facing and internal conversational agents trained exclusively on your business data.',
         details: [
           'Omnichannel deployment (Website, WhatsApp, Slack, MS Teams)',
           'Natural conversational flow with custom brand tone and guardrails',
@@ -642,8 +835,8 @@ export const servicesData: ServiceDetail[] = [
     benefits: [
       {
         title: '70% Faster Response Times',
-        description: 'Instant 24/7 responses to customer inquiries and employee requests without staffing bottlenecks.',
-        metric: '24/7 Instant'
+        description: 'Instant automated responses to customer inquiries and employee requests without staffing bottlenecks.',
+        metric: 'Instant Response'
       },
       {
         title: '85% Reduction in Manual Tasks',
@@ -745,7 +938,7 @@ export const servicesData: ServiceDetail[] = [
         'Ransomware threats capable of encrypting critical databases',
         'Phishing emails deceiving employees into credential disclosure',
         'Unmanaged personal devices accessing sensitive customer data',
-        'Lack of 24/7 threat detection and incident response capabilities'
+        'Lack of proactive threat detection and incident response capabilities'
       ]
     },
     solutionOverview: {
@@ -786,7 +979,7 @@ export const servicesData: ServiceDetail[] = [
           'Deep packet inspection and SSL/TLS traffic decryption',
           'Intrusion Prevention System (IPS) rule tuning and threat feeds',
           'Secure branch-to-cloud VPN tunnels and SD-WAN architecture',
-          '24/7 firewall firmware upgrades and rulebase auditing'
+          'Regular firewall firmware upgrades and rulebase auditing'
         ]
       },
       {
@@ -832,9 +1025,9 @@ export const servicesData: ServiceDetail[] = [
         metric: 'Audit-Ready'
       },
       {
-        title: '24/7 Peace of Mind',
+        title: 'Continuous Threat Protection',
         description: 'Continuous monitoring ensures potential threats are intercepted before damage occurs.',
-        metric: '24/7 Vigilance'
+        metric: 'Active Vigilance'
       },
       {
         title: 'Educated & Alert Workforce',

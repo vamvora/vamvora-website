@@ -13,11 +13,11 @@ export const HomePage: React.FC = () => {
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://vamvoratech.com/#organization',
-        name: 'VAM VORA Technologies',
-        url: 'https://vamvoratech.com/',
-        logo: 'https://vamvoratech.com/logo.png',
-        description: 'VAM VORA Technologies provides enterprise IT solutions and business technology services including cloud solutions, Google Workspace, Microsoft 365, AI solutions and cybersecurity.',
+        '@id': 'https://www.vamvoratech.com/#organization',
+        name: 'Vamvora Tech',
+        url: 'https://www.vamvoratech.com/',
+        logo: 'https://www.vamvoratech.com/logo.png',
+        description: 'Vamvora Tech provides Google Workspace, Microsoft 365 and Zoho solutions in Erode with competitive pricing, professional implementation and reliable ongoing support.',
         contactPoint: {
           '@type': 'ContactPoint',
           telephone: '+91-63821-14955',
@@ -33,19 +33,19 @@ export const HomePage: React.FC = () => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://vamvoratech.com/#website',
-        url: 'https://vamvoratech.com/',
-        name: 'VAM VORA Technologies',
+        '@id': 'https://www.vamvoratech.com/#website',
+        url: 'https://www.vamvoratech.com/',
+        name: 'Vamvora Tech',
         publisher: {
-          '@id': 'https://vamvoratech.com/#organization'
+          '@id': 'https://www.vamvoratech.com/#organization'
         }
       },
       {
         '@type': 'LocalBusiness',
-        '@id': 'https://vamvoratech.com/#localbusiness',
-        name: 'VAM VORA Technologies',
-        image: 'https://vamvoratech.com/logo.png',
-        url: 'https://vamvoratech.com/',
+        '@id': 'https://www.vamvoratech.com/#localbusiness',
+        name: 'Vamvora Tech',
+        image: 'https://www.vamvoratech.com/logo.png',
+        url: 'https://www.vamvoratech.com/',
         telephone: '+91-63821-14955',
         email: 'sales@vamvoratech.com',
         priceRange: '$$',
@@ -69,9 +69,9 @@ export const HomePage: React.FC = () => {
   return (
     <main className="bg-[#F1F5F9] min-h-screen text-slate-900">
       <SEO
-        title="IT Solutions & Services | VAM VORA Technologies"
-        description="VAM VORA Technologies provides IT solutions and business technology services including cloud solutions, Google Workspace, Microsoft 365, AI solutions and cybersecurity."
-        canonicalUrl="https://vamvoratech.com/"
+        title="Google Workspace, Microsoft 365 & Zoho Partner in Erode | Vamvora Tech"
+        description="Vamvora Tech provides Google Workspace, Microsoft 365 and Zoho solutions in Erode with competitive pricing, professional implementation and reliable ongoing support."
+        canonicalUrl="https://www.vamvoratech.com/"
         schemaJson={homeSchema}
       />
       {/* 1. Hero Section with Cinematic HLS Video Background */}

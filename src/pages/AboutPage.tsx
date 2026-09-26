@@ -42,8 +42,8 @@ export const AboutPage: React.FC = () => {
     },
     {
       icon: Activity,
-      title: '24/7 Operational SLA',
-      description: 'Dedicated engineers providing around-the-clock telemetry, incident triage, and uptime guarantees for mission-critical workloads.',
+      title: 'Reliable Operational Support',
+      description: 'Dedicated engineers providing proactive telemetry, incident triage, and reliable uptime guarantees for mission-critical workloads.',
       accent: 'text-cyan-600 bg-cyan-50 border-cyan-200'
     }
   ];
@@ -51,7 +51,7 @@ export const AboutPage: React.FC = () => {
   const milestones = [
     { year: '120+', title: 'Enterprise Migrations', desc: 'Seamless cloud migrations executed with zero downtime.' },
     { year: '99.9%', title: 'Managed Uptime SLA', desc: 'Continuous availability across global infrastructure.' },
-    { year: '24/7', title: 'Security Coverage', desc: 'Real-time threat monitoring and incident response.' },
+    { year: 'Active', title: 'Security Coverage', desc: 'Real-time threat monitoring and incident response.' },
     { year: '8+ Yrs', title: 'Average Experience', desc: 'Certified architects across AWS, Azure, Google & M365.' }
   ];
 
@@ -95,14 +95,14 @@ export const AboutPage: React.FC = () => {
     '@graph': [
       {
         '@type': 'AboutPage',
-        '@id': 'https://vamvoratech.com/about#webpage',
-        url: 'https://vamvoratech.com/about',
-        name: 'About VAM VORA Technologies',
-        description: 'Learn about VAM VORA Technologies, our engineering principles, certified cloud and AI architects, zero-trust security focus, and commitment to enterprise digital transformation.',
+        '@id': 'https://www.vamvoratech.com/about#webpage',
+        url: 'https://www.vamvoratech.com/about',
+        name: 'About Vamvora Tech | Enterprise IT & Cloud Solutions in Erode',
+        description: 'Learn about Vamvora Tech, our engineering principles, certified cloud architects, zero-trust security focus, and commitment to enterprise digital transformation in Erode.',
         publisher: {
           '@type': 'Organization',
-          name: 'VAM VORA Technologies',
-          url: 'https://vamvoratech.com/'
+          name: 'Vamvora Tech',
+          url: 'https://www.vamvoratech.com/'
         }
       },
       {
@@ -112,13 +112,13 @@ export const AboutPage: React.FC = () => {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://vamvoratech.com/'
+            item: 'https://www.vamvoratech.com/'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'About Us',
-            item: 'https://vamvoratech.com/about'
+            item: 'https://www.vamvoratech.com/about'
           }
         ]
       }
@@ -128,9 +128,9 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="pt-32 sm:pt-36 lg:pt-40 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden font-sans">
       <SEO
-        title="About VAM VORA Technologies | IT Solutions & Services"
-        description="Learn about VAM VORA Technologies, our engineering principles, certified cloud and AI architects, zero-trust security focus, and commitment to enterprise digital transformation."
-        canonicalUrl="https://vamvoratech.com/about"
+        title="About Vamvora Tech | Enterprise IT & Cloud Solutions in Erode"
+        description="Learn about Vamvora Tech, our engineering principles, certified cloud architects, zero-trust security focus, and commitment to enterprise digital transformation in Erode."
+        canonicalUrl="https://www.vamvoratech.com/about"
         schemaJson={aboutSchema}
       />
       {/* Hyper-Saturated Ambient Background Glow via native GPU radial gradients */}

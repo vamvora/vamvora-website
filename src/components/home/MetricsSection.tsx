@@ -29,7 +29,7 @@ const metrics: MetricItem[] = [
   },
   {
     id: 'monitoring',
-    value: '24/7',
+    value: 'Active',
     label: 'Monitoring coverage',
     description: 'Continuous real-time threat detection, anomaly monitoring, and incident triage.',
     icon: ShieldCheck,

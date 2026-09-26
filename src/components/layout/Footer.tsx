@@ -112,7 +112,7 @@ export const Footer: React.FC = () => {
                 <div className="relative px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-white/90 shadow-[0_8px_30px_rgba(0,0,0,0.35)] group-hover:shadow-[0_12px_35px_rgba(0,0,0,0.45)] group-hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
                   <img 
                     src={logoImg} 
-                    alt="VAM VORA Technologies" 
+                    alt="Vamvora Tech - IT & Cloud Solutions in Erode" 
                     className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover/logo:scale-105" 
                   />
                 </div>
@@ -143,18 +143,23 @@ export const Footer: React.FC = () => {
             </div>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300 font-normal">
               <li>
-                <Link to="/services/cloud-solutions" className="hover:text-white hover:translate-x-1 transition-all inline-block">
-                  Cloud Infrastructure & Migration
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/google-workspace" className="hover:text-white hover:translate-x-1 transition-all inline-block">
+                <Link to="/google-workspace" className="hover:text-white hover:translate-x-1 transition-all inline-block">
                   Google Workspace
                 </Link>
               </li>
               <li>
-                <Link to="/services/microsoft-365" className="hover:text-white hover:translate-x-1 transition-all inline-block">
+                <Link to="/microsoft-365" className="hover:text-white hover:translate-x-1 transition-all inline-block">
                   Microsoft 365
+                </Link>
+              </li>
+              <li>
+                <Link to="/zoho" className="hover:text-white hover:translate-x-1 transition-all inline-block">
+                  Zoho Workplace & CRM
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/cloud-solutions" className="hover:text-white hover:translate-x-1 transition-all inline-block">
+                  Cloud Infrastructure
                 </Link>
               </li>
               <li>
@@ -186,7 +191,17 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/services" className="hover:text-white hover:translate-x-1 transition-all inline-block">
-                  Services Overview
+                  All Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/pricing" className="hover:text-white hover:translate-x-1 transition-all inline-block">
+                  Plans & Pricing
+                </Link>
+              </li>
+              <li>
+                <Link to="/support" className="hover:text-white hover:translate-x-1 transition-all inline-block">
+                  Reliable Support
                 </Link>
               </li>
               <li>

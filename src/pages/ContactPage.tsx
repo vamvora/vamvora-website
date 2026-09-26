@@ -38,15 +38,17 @@ export const ContactPage: React.FC = () => {
     '@graph': [
       {
         '@type': 'ContactPage',
-        '@id': 'https://vamvoratech.com/contact#webpage',
-        url: 'https://vamvoratech.com/contact',
-        name: 'Contact VAM VORA Technologies',
-        description: 'Contact VAM VORA Technologies for enterprise IT solutions, cloud migrations, AI automation, cybersecurity consultations, and Google Workspace or Microsoft 365 deployments.',
+        '@id': 'https://www.vamvoratech.com/contact#webpage',
+        url: 'https://www.vamvoratech.com/contact',
+        name: 'Contact Vamvora Tech | IT & Cloud Solutions in Erode',
+        description: 'Contact Vamvora Tech in Erode for Google Workspace, Microsoft 365, Zoho deployments, cloud migrations, and reliable ongoing IT support.',
         mainEntity: {
           '@type': 'LocalBusiness',
-          name: 'VAM VORA Technologies',
-          telephone: '+91-63821-14955',
+          name: 'Vamvora Tech',
+          telephone: '+91 63821 14955',
           email: 'sales@vamvoratech.com',
+          url: 'https://www.vamvoratech.com/',
+          priceRange: '$$',
           address: {
             '@type': 'PostalAddress',
             streetAddress: '19/1, Kongu Nagar second street, Municipal Colony Main Rd, near Anna theatre',
@@ -64,13 +66,13 @@ export const ContactPage: React.FC = () => {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://vamvoratech.com/'
+            item: 'https://www.vamvoratech.com/'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Contact',
-            item: 'https://vamvoratech.com/contact'
+            item: 'https://www.vamvoratech.com/contact'
           }
         ]
       }
@@ -80,9 +82,9 @@ export const ContactPage: React.FC = () => {
   return (
     <div className="pt-32 sm:pt-36 lg:pt-40 pb-20 min-h-screen bg-[#F1F5F9] relative overflow-hidden font-sans">
       <SEO
-        title="Contact VAM VORA Technologies | IT Solutions & Services"
-        description="Contact VAM VORA Technologies for enterprise IT solutions, cloud migrations, AI automation, cybersecurity consultations, and Google Workspace or Microsoft 365 deployments."
-        canonicalUrl="https://vamvoratech.com/contact"
+        title="Contact Vamvora Tech | IT & Cloud Solutions in Erode"
+        description="Contact Vamvora Tech in Erode for Google Workspace, Microsoft 365, Zoho deployments, cloud migrations, and reliable ongoing IT support."
+        canonicalUrl="https://www.vamvoratech.com/contact"
         schemaJson={contactSchema}
       />
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
@@ -173,9 +175,9 @@ export const ContactPage: React.FC = () => {
                     Operational SLA
                   </span>
                   <p className="text-sm sm:text-base font-bold text-slate-900">
-                    24/7/365 Incident Response
+                    Proactive Incident Response
                   </p>
-                  <p className="text-xs text-slate-500 mt-0.5">For active SLA clients</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Reliable ongoing support for active SLA clients</p>
                 </div>
               </div>
 
@@ -309,9 +311,10 @@ export const ContactPage: React.FC = () => {
                       className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200/90 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"
                     >
                       <option value="General Inquiry">General Inquiry</option>
-                      <option value="Cloud Architecture Inquiry">Cloud Architecture Inquiry</option>
                       <option value="Google Workspace Setup">Google Workspace Setup</option>
                       <option value="Microsoft 365 Licensing">Microsoft 365 Licensing</option>
+                      <option value="Zoho Workplace & CRM">Zoho Workplace & CRM</option>
+                      <option value="Cloud Architecture Inquiry">Cloud Architecture Inquiry</option>
                       <option value="AI Automation Solutions">AI Automation Solutions</option>
                       <option value="Cybersecurity & Compliance">Cybersecurity & Compliance</option>
                       <option value="Billing & Partner Relations">Billing & Partner Relations</option>

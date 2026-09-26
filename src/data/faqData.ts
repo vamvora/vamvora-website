@@ -4,20 +4,20 @@ export const faqData: FAQItem[] = [
   // General (Top 3 for Homepage)
   {
     id: 'gen-1',
-    question: 'What services does VAM VORA Technologies provide?',
-    answer: 'VAM VORA Technologies is an enterprise B2B technology partner specializing in five core disciplines: Cloud Solutions (migration, infrastructure, disaster recovery), Google Workspace deployment & security, Microsoft 365 enterprise architecture, AI Solutions (chatbots, workflow automation, private knowledge assistants), and Proactive Cybersecurity (EDR, email security, Zero-Trust network defense).',
+    question: 'What services does Vamvora Tech provide in Erode?',
+    answer: 'Vamvora Tech is an IT and cloud solutions partner based in Erode, Tamil Nadu. We specialize in Google Workspace deployment & business email, Microsoft 365 implementation & support, Zoho business solutions (CRM, Books, Workplace & Zoho One), Cloud infrastructure & migration, and cybersecurity with competitive pricing and dependable ongoing support.',
     category: 'General'
   },
   {
     id: 'gen-2',
-    question: 'How does the consultation process work?',
-    answer: 'Our consultation begins with a free 30-minute discovery session to understand your business objectives and technology bottlenecks. We then assess your current architecture, deliver a structured recommendations blueprint with transparent pricing, and present a clear deployment timeline with zero business downtime guarantees.',
+    question: 'Do you provide ongoing support after software setup?',
+    answer: 'Yes. Reliable after-sales support and ongoing assistance are core advantages of working with Vamvora Tech. We provide dependable technical support, troubleshooting, user management, and regular security health checks for all Google Workspace, Microsoft 365, and Zoho clients.',
     category: 'General'
   },
   {
     id: 'gen-3',
-    question: 'How is the pricing for your services determined?',
-    answer: 'Our pricing is structured with 100% transparency. Depending on the service, we offer fixed-scope project pricing (e.g. cloud migrations or AI prototype deployments), predictable per-user monthly management tiers (e.g. Microsoft 365 / Google Workspace governance), and customized retainer agreements for continuous cybersecurity & cloud management.',
+    question: 'Which business cloud solution is right for my business—Google Workspace, Microsoft 365, or Zoho?',
+    answer: 'The ideal choice depends on your daily workflows. Google Workspace is perfect for fast, real-time collaboration with Gmail and Google Docs. Microsoft 365 is standard for organizations relying heavily on desktop Excel, Outlook, and Teams. Zoho delivers an integrated business operating suite with CRM, GST invoicing, and business email. Our team in Erode evaluates your requirements and recommends the most cost-effective solution.',
     category: 'General'
   },
 
@@ -69,6 +69,26 @@ export const faqData: FAQItem[] = [
     category: 'Microsoft 365'
   },
 
+  // Zoho
+  {
+    id: 'zoho-1',
+    question: 'Does Vamvora Tech provide Zoho implementation and support in Erode?',
+    answer: 'Yes. As a Zoho partner and reseller in Erode, Vamvora Tech provides complete end-to-end Zoho implementation, configuration, data migration, and dependable ongoing support for businesses across Erode and Tamil Nadu.',
+    category: 'Zoho'
+  },
+  {
+    id: 'zoho-2',
+    question: 'What is Zoho One and is it suitable for small businesses?',
+    answer: 'Zoho One provides access to over 45 integrated business applications for CRM, accounting (Zoho Books), business email (Zoho Mail), HR, and operations under a single, cost-effective license. It is ideal for small and growing businesses wanting an all-in-one platform with competitive pricing.',
+    category: 'Zoho'
+  },
+  {
+    id: 'zoho-3',
+    question: 'Can you migrate our existing accounting and email data to Zoho?',
+    answer: 'Yes. We execute structured migrations from legacy accounting software, Excel spreadsheets, cPanel/Google Workspace emails, and older CRM systems into Zoho with zero data loss.',
+    category: 'Zoho'
+  },
+
   // AI Solutions
   {
     id: 'ai-1',
@@ -79,7 +99,7 @@ export const faqData: FAQItem[] = [
   {
     id: 'ai-2',
     question: 'What business workflows yield the highest return on investment (ROI) with AI?',
-    answer: 'High-ROI workflows typically include 24/7 intelligent customer support chatbots, automated invoice/receipt data ingestion, AI-powered sales quote drafting from emails, and internal employee policy & documentation query assistants.',
+    answer: 'High-ROI workflows typically include intelligent customer support chatbots, automated invoice/receipt data ingestion, AI-powered sales quote drafting from emails, and internal employee policy & documentation query assistants.',
     category: 'AI Solutions'
   },
 
@@ -120,7 +140,7 @@ export const faqData: FAQItem[] = [
   },
   {
     id: 'prc-2',
-    question: 'Are software licenses (Microsoft / Google / AWS) included in the billing?',
+    question: 'Are software licenses (Microsoft / Google / Zoho / AWS) included in the billing?',
     answer: 'We can either consolidate your software licensing directly onto a single, clear monthly invoice or manage your tenant while you pay the vendor directly.',
     category: 'Pricing & Payments'
   },
@@ -129,7 +149,7 @@ export const faqData: FAQItem[] = [
   {
     id: 'sup-1',
     question: 'What are your support hours and guaranteed response times (SLAs)?',
-    answer: 'We provide 24/7 critical incident response for cybersecurity and infrastructure outages with response times as low as 15 minutes. For standard administrative requests, our help desk operates during standard business hours with a 1-hour SLA.',
+    answer: 'We provide prompt critical incident response for cybersecurity and infrastructure outages. For standard administrative requests, our help desk operates during business hours with rapid SLA response.',
     category: 'Support'
   },
   {

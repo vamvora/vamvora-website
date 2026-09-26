@@ -76,7 +76,7 @@ export interface BlogPost {
   seoDescription?: string;
   excerpt: string;
   content: string[];
-  category: 'Cloud' | 'AI' | 'Cybersecurity' | 'Microsoft 365' | 'Google Workspace';
+  category: 'Cloud' | 'AI' | 'Cybersecurity' | 'Microsoft 365' | 'Google Workspace' | 'Zoho' | 'Comparisons';
   date: string;
   readTime: string;
   author: {
@@ -95,6 +95,7 @@ export interface FAQItem {
     | 'Cloud Solutions'
     | 'Google Workspace'
     | 'Microsoft 365'
+    | 'Zoho'
     | 'AI Solutions'
     | 'Cybersecurity'
     | 'Consultation'
